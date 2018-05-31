@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Crazy guy",
+        "width": 190,
+        "height": 220,
+        "max_health": 1000,
+        "speed": 1.2,
+        "projectiles": [1, 2],      
+        "sprite_src": "crazy_guy.png",
+        "portrait_src": "crazy_guy_portrait.png"
+    },
+    {
+        "id": 2,
+        "name": "Less crazy guy",
+        "width": 190,
+        "height": 220,
+        "max_health": 750,
+        "speed": 1.5,
+        "projectiles": [4, 3],
+        "sprite_src": "less_crazy_guy.png",
+        "portrait_src": "less_crazy_guy_portrait.png"
+    },
+    {
+        "id": 3,
+        "name": "Slow guy",
+        "width": 190,
+        "height": 220,
+        "max_health": 1250,
+        "speed": 0.5,
+        "projectiles": [1, 3],
+        "sprite_src": "crazy_guy.png",
+        "portrait_src": "crazy_guy_portrait.png"
+    },
+    {
+        "id": 4,
+        "name": "Fast guy",
+        "width": 190,
+        "height": 220,
+        "max_health": 500,
+        "speed": 2.0,
+        "projectiles": [4, 2],
+        "sprite_src": "less_crazy_guy.png",
+        "portrait_src": "less_crazy_guy_portrait.png"
+    }
+]

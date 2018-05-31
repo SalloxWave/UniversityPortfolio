@@ -1,0 +1,129 @@
+\hypertarget{classProjectile}{}\section{Projectile Class Reference}
+\label{classProjectile}\index{Projectile@{Projectile}}
+
+
+A class representing a shootable projectile.  
+
+
+
+
+{\ttfamily \#include $<$projectile.\+h$>$}
+
+Inheritance diagram for Projectile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classProjectile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProjectile_af8b4c110af08163aeca99610e3906311}{Projectile} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classProjectile_a7b321cb748e1c2fbe83a44d4f9ec2576}{Projectile} (unsigned int projectile\+\_\+id)
+\item 
+bool \hyperlink{classProjectile_a54f456e92b08f461ae7410da49757f3f}{collides} (\hyperlink{classLevel}{Level} const \&level) const
+\item 
+void \hyperlink{classProjectile_a0ecfd73e9c4fe504f635d9b318cd241a}{change\+State} (Projectile\+\_\+\+State projectile\+\_\+state)
+\item 
+int \hyperlink{classProjectile_af5cd30772ad4cb3894629ca76c6b8f79}{get\+Damage} () const
+\item 
+double \hyperlink{classProjectile_a845770fb2b5806e1729e4bbda85849f7}{get\+Cooldown} () const
+\item 
+Projectile\+\_\+\+State \hyperlink{classProjectile_aa864e84b8777bed6114ef09da0c9bdad}{get\+State} () const
+\begin{DoxyCompactList}\small\item\em Get the current state of the projectile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A class representing a shootable projectile. 
+
+An entity but with extra members needed to represent a shootable projectile 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProjectile_af8b4c110af08163aeca99610e3906311}\label{classProjectile_af8b4c110af08163aeca99610e3906311}} 
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Projectile()}{Projectile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+A default constructor. 
+
+Constructor uses compiler\textquotesingle{}s default way of constructing class. \mbox{\Hypertarget{classProjectile_a7b321cb748e1c2fbe83a44d4f9ec2576}\label{classProjectile_a7b321cb748e1c2fbe83a44d4f9ec2576}} 
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\index{Projectile@{Projectile}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{Projectile()}{Projectile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Projectile\+::\+Projectile (\begin{DoxyParamCaption}\item[{unsigned int}]{projectile\+\_\+id }\end{DoxyParamCaption})}
+
+Constructing a projectile with properties based on the projectile id 
+\begin{DoxyParams}{Parameters}
+{\em projectile\+\_\+id} & The specified projectile id \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProjectile_a0ecfd73e9c4fe504f635d9b318cd241a}\label{classProjectile_a0ecfd73e9c4fe504f635d9b318cd241a}} 
+\index{Projectile@{Projectile}!change\+State@{change\+State}}
+\index{change\+State@{change\+State}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{change\+State()}{changeState()}}
+{\footnotesize\ttfamily void Projectile\+::change\+State (\begin{DoxyParamCaption}\item[{Projectile\+\_\+\+State}]{projectile\+\_\+state }\end{DoxyParamCaption})}
+
+Change the projectile state of the projectile 
+\begin{DoxyParams}{Parameters}
+{\em projectile\+\_\+state} & The specfied projectile state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProjectile_a54f456e92b08f461ae7410da49757f3f}\label{classProjectile_a54f456e92b08f461ae7410da49757f3f}} 
+\index{Projectile@{Projectile}!collides@{collides}}
+\index{collides@{collides}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{collides()}{collides()}}
+{\footnotesize\ttfamily bool Projectile\+::collides (\begin{DoxyParamCaption}\item[{\hyperlink{classLevel}{Level} const \&}]{level }\end{DoxyParamCaption}) const}
+
+Checks if the projectile collides with the specified level or not. This is done by comparing position of projectile with width and height of the level. 
+\begin{DoxyParams}{Parameters}
+{\em level} & The specified level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the projectile collides with the specified level or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProjectile_a845770fb2b5806e1729e4bbda85849f7}\label{classProjectile_a845770fb2b5806e1729e4bbda85849f7}} 
+\index{Projectile@{Projectile}!get\+Cooldown@{get\+Cooldown}}
+\index{get\+Cooldown@{get\+Cooldown}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{get\+Cooldown()}{getCooldown()}}
+{\footnotesize\ttfamily double Projectile\+::get\+Cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the cooldown of the projectile \begin{DoxyReturn}{Returns}
+The cooldown of the projectile 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProjectile_af5cd30772ad4cb3894629ca76c6b8f79}\label{classProjectile_af5cd30772ad4cb3894629ca76c6b8f79}} 
+\index{Projectile@{Projectile}!get\+Damage@{get\+Damage}}
+\index{get\+Damage@{get\+Damage}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{get\+Damage()}{getDamage()}}
+{\footnotesize\ttfamily int Projectile\+::get\+Damage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get the damage of the projectile \begin{DoxyReturn}{Returns}
+The damage of the projectile 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProjectile_aa864e84b8777bed6114ef09da0c9bdad}\label{classProjectile_aa864e84b8777bed6114ef09da0c9bdad}} 
+\index{Projectile@{Projectile}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Projectile@{Projectile}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily Projectile\+\_\+\+State Projectile\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current state of the projectile. 
+
+Get the current state of the projectile \begin{DoxyReturn}{Returns}
+The current state of the projectile 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+projectile.\+h\item 
+projectile.\+cpp\end{DoxyCompactItemize}

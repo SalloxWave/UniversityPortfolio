@@ -1,0 +1,3 @@
+/home/alejo720/git-clones/tdp005/game/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alejo720/git-clones/tdp005/game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alejo720/git-clones/tdp005/game/cmake-build-debug/CMakeFiles/game38.dir

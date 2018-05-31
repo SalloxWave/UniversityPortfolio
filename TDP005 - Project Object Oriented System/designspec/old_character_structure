@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Crazy guy",
+        "max_health": 1000,
+        "speed": 1.2,
+        "projectiles": [1, 2],      
+        "sprite_src": "crazy_guy.png",
+        "portrait_src": "crazy_guy_portrait.png"
+    },
+    {
+        "id": 1,
+        "name": "Less crazy guy",
+        "max_health": 750,
+        "speed": 1.5,
+        "projectiles": [3, 4],      
+        "sprite_src": "less_crazy_guy.png",
+        "portrait_src": "less_crazy_guy_portrait.png"
+    }
+]

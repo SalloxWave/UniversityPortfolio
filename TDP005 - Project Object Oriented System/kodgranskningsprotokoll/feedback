@@ -1,0 +1,58 @@
+
+Klassdiagram:
+	- Ni har inte angett vilka funktioner/variabler som är privata/protected (görs med minus framför).
+
+	- Angle i tank tycker vi borde vara en double.
+
+	- Specificera klassen exakt. Byt ut t.ex. Event mot sf::Event och Sprite till sf::Sprite. Annars kan den som läser klassdiagram tro att det är en klass ni har implemterat.
+
+	- Ni behöver multiplicitet i erat klassdiagram. Det visar hur många instanser av en klass en klass äger. T.ex. en Tank har en pipa, en Engine har två Tanks.
+
+	- Publika funktionen "Destroy" i projektilklassen har inte konsekvent namngivning eftersom den börjar med stor bokstav till skillnad från era andra publika funktioner.
+
+	- Eran key_stream variabel är av typen sf::Event men namnet får en att tro att det är specifikt ett Key Event. Byt namn.
+
+	- Engine är inte uppbyggd så det fungerar enligt krav:
+Engine engine; 
+engine.run(); 
+Dessutom har ni en Update() funktion i engine men tanken är ju att spel-loopen ska finnas i en "run()"-funktion.
+
+	- Raka pilar tack.
+
+	- change_angle(direction::bool) är otydlig för användaren av koden. Tänk er detta exempel:
+Det var en gång en björn. Denna björn vill ha en projektil i sitt spel så därför inkluderar björnen eran färdiga klass. Han skriver detta:
+	Projectile projectile;
+	projectile.change_angle(false);
+Björnen tänker vadå byta riktning sant eller falskt? Antingen byter man riktning eller inte. Björnen tror att false betyder att projektilen inte byter riktning. Men eftersom false byter riktning till motsatt riktning blir björnen skjuten av projektilen. 
+Kontentan är alltså att det är sorgligt att representera en riktning med en bool.
+	Detta gäller även change_power(amount:bool)
+
+
+Koden:
+	- Sätt const på medlemsfunktioner som inte ska ändra på några variabler, t.ex. "get"-funktionerna. Sätt även const referens på avancerade datastrukturer i parametrarna (om ni inte vill kunna ändra dem så klart).
+	
+	- Fler förklarande kommentar, mer dokumentation.
+
+	- Ni behöver en gemensam basklass för alla "sprites". Ni skulle kunna ha en Enitity klass som både projectile och tank ärver ifrån. Ni skulle till exempel kunna ha en funktion som heter move som projektilen och tanken kan skriva över.
+
+	- För att minska beroendet mellan det grafiska och det logiska skulle ni kunna byta ut eran sf::Sprite objekt mot ett filnamn och ha spelarspriten i er grafiska klass. Tänk er att klasserna ni bygger ska kunnas använda med endast terminalen som det grafiska.
+
+	- Ni har många publika medlemsfunktioner där ni skriver klassens namn tillsammans med vad funktionen gör. Detta är redundant då funktioner endast kan anroppas ifrån klassen.
+
+	- Som vi nämnde i feedbacken om klassdiagrammet behöver ni strukturera Engine klassen så ni kan köra som detta:
+	int main()
+	{
+		Engine engine;
+		engine.run();
+		return 0;
+	}
+
+	- Ni borde ha en mapp som alla bilder så blir det lättare att navigera i projektet samt lättare att länka till bilder i filen. T.ex. om ni vill implementera olika Tanks med olika bilder.
+
+	- Er brist på kommentarer gör koden svår att förstå.
+
+	- Era sprites i pipe klassen heter piSprite vilket tog ett tag för oss att förstå att det var förkortning för pipeSprite. Det är viktigt med tydliga namn i klassen.
+
+	- Just nu representerar ni Player och Pipe klassen genom en Sprite. Tänk om man vill använda sig av de klasserna på ett annan GUI. Just nu tänker ni: "En sprite är en Player". Tänk istället en Player har en Sprite. Att ni har filväg i konstruktorn försämrar klassens flexibilitet då någon kanske vill använda sig av Player klassen utan en Sprite. Gör klasserna generella.
+
+	- Ni skickar en en char för att välja vilken riktning ett objekt ska röra sig. Om ni istället skulle ha en enum som representerar en riktning blir det lättare för användaren av koden att förstå vad den ska skicka in till. Annars skulle det krävas kommenterar vilken char som leder till vilken riktning.

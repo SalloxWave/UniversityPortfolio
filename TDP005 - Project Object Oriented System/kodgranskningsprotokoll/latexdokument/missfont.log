@@ -1,0 +1,4 @@
+mktextfm pzdr
+mktextfm ecrm1000
+mktextfm ecrm2986
+mktextfm nullfont

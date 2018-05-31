@@ -1,0 +1,149 @@
+\hypertarget{classLevel}{}\section{Level Class Reference}
+\label{classLevel}\index{Level@{Level}}
+
+
+A class representing a level where entity can move.  
+
+
+
+
+{\ttfamily \#include $<$level.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel_ac1c79fc13a67584d22e3d7295cd3cc9d}{Level} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classLevel_a8fc569ff48384440a513dfc188d4f96d}{Level} (unsigned int level\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Constructs a level based on level id. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a403167dadfaccc9f5d9269845bcda34f}{add\+Player} (\hyperlink{classPlayer}{Player} \&player)
+\begin{DoxyCompactList}\small\item\em Add a player to the level. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a9a1fb164259e6a8c91410ed992a8b878}{reload} ()
+\begin{DoxyCompactList}\small\item\em Reload the level. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classLevel_a0b6dd5b18919a849c374b67625a849fb}{get\+Name} () const
+\begin{DoxyCompactList}\small\item\em Get name of the level. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classLevel_ab37b554aa2379fb9c99fa4c83eef1823}{get\+Width} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the level. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classLevel_a134002eee88eb3af6955241948309934}{get\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the level. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classLevel_af7eb4bcc3f48dce1da830b4601cc8bb5}{get\+Bg\+Source} () const
+\begin{DoxyCompactList}\small\item\em Get source to the background image of level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class representing a level where entity can move. 
+
+Essentially represents a gamebaord where entity can move. A level for example has a size and contains players and the player\textquotesingle{}s side of the board 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLevel_ac1c79fc13a67584d22e3d7295cd3cc9d}\label{classLevel_ac1c79fc13a67584d22e3d7295cd3cc9d}} 
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection{\texorpdfstring{Level()}{Level()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+A default constructor. 
+
+Constructor uses compiler\textquotesingle{}s default way of constructing class. \mbox{\Hypertarget{classLevel_a8fc569ff48384440a513dfc188d4f96d}\label{classLevel_a8fc569ff48384440a513dfc188d4f96d}} 
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection{\texorpdfstring{Level()}{Level()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{unsigned int}]{level\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Constructs a level based on level id. 
+
+Constructing a level with properties based on the level id 
+\begin{DoxyParams}{Parameters}
+{\em projectile\+\_\+id} & The specified level id \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classLevel_a403167dadfaccc9f5d9269845bcda34f}\label{classLevel_a403167dadfaccc9f5d9269845bcda34f}} 
+\index{Level@{Level}!add\+Player@{add\+Player}}
+\index{add\+Player@{add\+Player}!Level@{Level}}
+\subsubsection{\texorpdfstring{add\+Player()}{addPlayer()}}
+{\footnotesize\ttfamily void Level\+::add\+Player (\begin{DoxyParamCaption}\item[{\hyperlink{classPlayer}{Player} \&}]{player }\end{DoxyParamCaption})}
+
+
+
+Add a player to the level. 
+
+Adds a player to the level by pointing to the specified player 
+\begin{DoxyParams}{Parameters}
+{\em player} & A reference to the player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLevel_af7eb4bcc3f48dce1da830b4601cc8bb5}\label{classLevel_af7eb4bcc3f48dce1da830b4601cc8bb5}} 
+\index{Level@{Level}!get\+Bg\+Source@{get\+Bg\+Source}}
+\index{get\+Bg\+Source@{get\+Bg\+Source}!Level@{Level}}
+\subsubsection{\texorpdfstring{get\+Bg\+Source()}{getBgSource()}}
+{\footnotesize\ttfamily std\+::string Level\+::get\+Bg\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get source to the background image of level. 
+
+\begin{DoxyReturn}{Returns}
+The source to the background image of level 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_a134002eee88eb3af6955241948309934}\label{classLevel_a134002eee88eb3af6955241948309934}} 
+\index{Level@{Level}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Level@{Level}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily unsigned int Level\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the height of the level. 
+
+\begin{DoxyReturn}{Returns}
+The height of the level 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_a0b6dd5b18919a849c374b67625a849fb}\label{classLevel_a0b6dd5b18919a849c374b67625a849fb}} 
+\index{Level@{Level}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Level@{Level}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily std\+::string Level\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get name of the level. 
+
+\begin{DoxyReturn}{Returns}
+The name of the level 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_ab37b554aa2379fb9c99fa4c83eef1823}\label{classLevel_ab37b554aa2379fb9c99fa4c83eef1823}} 
+\index{Level@{Level}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Level@{Level}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily unsigned int Level\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the width of the level. 
+
+\begin{DoxyReturn}{Returns}
+The width of the level 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLevel_a9a1fb164259e6a8c91410ed992a8b878}\label{classLevel_a9a1fb164259e6a8c91410ed992a8b878}} 
+\index{Level@{Level}!reload@{reload}}
+\index{reload@{reload}!Level@{Level}}
+\subsubsection{\texorpdfstring{reload()}{reload()}}
+{\footnotesize\ttfamily void Level\+::reload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reload the level. 
+
+Reload the level by resetting players 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+level.\+h\item 
+level.\+cpp\end{DoxyCompactItemize}

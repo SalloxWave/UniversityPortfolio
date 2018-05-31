@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Amazing projectile",
+        "state": "low",
+        "width": 75,
+        "height": 25,
+        "damage": 25,
+        "speed": 3.0,
+        "cooldown": 3,
+        "sprite_src": "projectile_name.png"      
+    },
+    {
+        "id": 2,
+        "name": "Awesome projectile",
+        "state": "high",
+        "width": 75,
+        "height": 25,
+        "damage": 100,
+        "speed": 1.0,
+	"cooldown": 6,
+        "sprite_src": "projectile_name.png"
+    }
+]

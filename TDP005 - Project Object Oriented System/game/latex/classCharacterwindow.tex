@@ -1,0 +1,113 @@
+\hypertarget{classCharacterwindow}{}\section{Characterwindow Class Reference}
+\label{classCharacterwindow}\index{Characterwindow@{Characterwindow}}
+
+
+A class representing a character selection window.  
+
+
+
+
+{\ttfamily \#include $<$characterwindow.\+h$>$}
+
+Inheritance diagram for Characterwindow\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCharacterwindow}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharacterwindow_a2f9d2f2231c33265918bc9697f03c894}{Characterwindow} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classCharacterwindow_a0e7738c002afb23bb1d571d5d4f1dd1d}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Initialize the window. \end{DoxyCompactList}\item 
+void \hyperlink{classCharacterwindow_aaca1dea6e04dbd2843907d652dcf2fb0}{update\+Graphics} ()
+\begin{DoxyCompactList}\small\item\em Update graphical display of the window. \end{DoxyCompactList}\item 
+void \hyperlink{classCharacterwindow_a3e74d9d40166eb88e2259f4f0d1da2ab}{change\+Character} (Direction direction, bool is\+\_\+player1=true)
+\begin{DoxyCompactList}\small\item\em Change selected character for a player. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classCharacterwindow_a9af7aeece3281823e2e972beb797283a}{get\+Selected\+Character\+Id} (bool is\+\_\+player1=true) const
+\begin{DoxyCompactList}\small\item\em Get the id of the selected character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A class representing a character selection window. 
+
+A class inheriting from \char`\"{}\+Base\+\_\+\+Window\char`\"{} to make class represent a window. In addition the class contains members needed for a character selection window in the game. A character selection window is where the players select a character to play (and other possible options before a match starts). 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCharacterwindow_a2f9d2f2231c33265918bc9697f03c894}\label{classCharacterwindow_a2f9d2f2231c33265918bc9697f03c894}} 
+\index{Characterwindow@{Characterwindow}!Characterwindow@{Characterwindow}}
+\index{Characterwindow@{Characterwindow}!Characterwindow@{Characterwindow}}
+\subsubsection{\texorpdfstring{Characterwindow()}{Characterwindow()}}
+{\footnotesize\ttfamily Characterwindow\+::\+Characterwindow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+A default constructor. 
+
+Constructor uses compiler\textquotesingle{}s default way of constructing class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCharacterwindow_a3e74d9d40166eb88e2259f4f0d1da2ab}\label{classCharacterwindow_a3e74d9d40166eb88e2259f4f0d1da2ab}} 
+\index{Characterwindow@{Characterwindow}!change\+Character@{change\+Character}}
+\index{change\+Character@{change\+Character}!Characterwindow@{Characterwindow}}
+\subsubsection{\texorpdfstring{change\+Character()}{changeCharacter()}}
+{\footnotesize\ttfamily void Characterwindow\+::change\+Character (\begin{DoxyParamCaption}\item[{Direction}]{direction,  }\item[{bool}]{is\+\_\+player1 = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Change selected character for a player. 
+
+Changes either player 1\textquotesingle{}s or player 2\textquotesingle{}s character by moving player in the desired direction in the character list. N\+O\+TE\+: It\textquotesingle{}s only moved if possible. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & The direction to go in the character list \\
+\hline
+{\em is\+\_\+player1} & If player 1 should change character or not (player 2) (default is true) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCharacterwindow_a9af7aeece3281823e2e972beb797283a}\label{classCharacterwindow_a9af7aeece3281823e2e972beb797283a}} 
+\index{Characterwindow@{Characterwindow}!get\+Selected\+Character\+Id@{get\+Selected\+Character\+Id}}
+\index{get\+Selected\+Character\+Id@{get\+Selected\+Character\+Id}!Characterwindow@{Characterwindow}}
+\subsubsection{\texorpdfstring{get\+Selected\+Character\+Id()}{getSelectedCharacterId()}}
+{\footnotesize\ttfamily unsigned int Characterwindow\+::get\+Selected\+Character\+Id (\begin{DoxyParamCaption}\item[{bool}]{is\+\_\+player1 = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Get the id of the selected character. 
+
+Get the selected character id for the specified player. 
+\begin{DoxyParams}{Parameters}
+{\em is\+\_\+player1} & If you should return selected character id for player 1 or not (player 2) (default is player 1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Selected character id for the specified player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCharacterwindow_a0e7738c002afb23bb1d571d5d4f1dd1d}\label{classCharacterwindow_a0e7738c002afb23bb1d571d5d4f1dd1d}} 
+\index{Characterwindow@{Characterwindow}!initialize@{initialize}}
+\index{initialize@{initialize}!Characterwindow@{Characterwindow}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Characterwindow\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the window. 
+
+Initializes member variables by for example setting textures, position and sizes. \mbox{\Hypertarget{classCharacterwindow_aaca1dea6e04dbd2843907d652dcf2fb0}\label{classCharacterwindow_aaca1dea6e04dbd2843907d652dcf2fb0}} 
+\index{Characterwindow@{Characterwindow}!update\+Graphics@{update\+Graphics}}
+\index{update\+Graphics@{update\+Graphics}!Characterwindow@{Characterwindow}}
+\subsubsection{\texorpdfstring{update\+Graphics()}{updateGraphics()}}
+{\footnotesize\ttfamily void Characterwindow\+::update\+Graphics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update graphical display of the window. 
+
+Member function to update the graphics of the window based on possible changes 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+characterwindow.\+h\item 
+characterwindow.\+cpp\end{DoxyCompactItemize}

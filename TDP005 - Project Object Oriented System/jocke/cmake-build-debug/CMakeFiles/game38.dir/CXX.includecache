@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/alexanderlinux/git-clones/tdp005/jocke/Animation.cpp
+stdlib.h
+-
+Animation.h
+/home/alexanderlinux/git-clones/tdp005/jocke/Animation.h
+
+/home/alexanderlinux/git-clones/tdp005/jocke/Animation.h
+SFML/Window.hpp
+-
+SFML/Graphics.hpp
+-
+
+/home/alexanderlinux/git-clones/tdp005/jocke/Player.cpp
+Player.h
+/home/alexanderlinux/git-clones/tdp005/jocke/Player.h
+
+/home/alexanderlinux/git-clones/tdp005/jocke/Player.h
+SFML/Graphics/RectangleShape.hpp
+-
+Animation.h
+/home/alexanderlinux/git-clones/tdp005/jocke/Animation.h
+
+/home/alexanderlinux/git-clones/tdp005/jocke/main.cpp
+iostream
+-
+string
+-
+SFML/Graphics.hpp
+-
+Player.h
+/home/alexanderlinux/git-clones/tdp005/jocke/Player.h
+

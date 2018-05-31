@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Football",
+        "state": "low",
+        "width": 40,
+        "height": 40,
+        "damage": 25,
+        "speed": 3.0,
+        "sprite_src": "football.png",
+        "cooldown": 0.3
+    },
+    {
+        "id": 2,
+        "name": "Mountain Dew",
+        "state": "high",
+        "width": 40,
+        "height": 40,
+        "damage": 100,
+        "speed": 1.0,
+        "sprite_src": "mountain_dew.png",
+        "cooldown": 1
+    }
+]

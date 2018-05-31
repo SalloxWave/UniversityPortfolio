@@ -1,0 +1,55 @@
+Feedback - Sokrates/Benjamin
+Ändringar kritisk feedback:
+Allmänt:
+	Revisionshistoriken? Om detta bara är "Grundstrukturen", hur lång kommer det bli när dokumentet är klart ;)
+	Byt ut "man" för att det ska se "snyggare" ut
+	
+2.1 Spelide:
+    "2D-environment": 2D miljö?
+    "profil-perspektiv": 2D perspektiv? Sidoperspektiv? Ett perspektiv från sidan? Ett perspektiv där man bara ser profilerna på pansarvagnarna?
+
+2.2 Målgrupp:
+	Rimligt att nämna ålder? Tävlingsinriktade personer? Rivaler/två kompisar?
+
+2.3 Spelupplevelse:
+	"variabler"?
+	Lägg bilden under texten (tips: \usepackage{float} och sett [H] istället för [!h] på bilden (figuren))
+	Grafens y-led borde ha jämna heltal för att det ska bli enklare att läsa, och varför heter den belöning? Är det hur glad spelaren är? Eller kanske hur mycket "hype" det är i stunden?
+
+2.4 Spelmekanik:
+	Lägg bilden under texten
+	"Spelplanen är plan en inom ett intervall?" Hur menar ni?
+	"vals" = "väljs"
+	Kommer man veta vilket håll och hur mycket det blåser innan man skjuter med sin pansarvagn?
+	Vad driver spelet framåt? Jag har förstått att det är olika rundor, hur stor är en runda? Men är det typ "turnbased"? så man turas om att göra ett drag eller kör man bara på och sen när någon vinner så börjar en ny runda?
+
+2.6.1 Regler:Allmäna
+	"hit points", blanda svenska och engelska?
+2.6.2 Regler:Spelplan
+	- Ni ska kunna ge kravspec till annan grupp och dem ska kunna göra samma spel. Detta betyder att dem måste generera sin spelplan på ert sätt? Detta är för detaljerat och krångligt för en kravspec (enligt oss).
+	Förslag: 
+		Spelplanen kommer byggas upp av ett rutnät.
+		Toppen av rutnätet kommer slumpas vilket bildar en kull-liknande form.
+		Spelplanen kommer endast kunna
+		Spelplanen är fast och ändras inte på sig
+		Spelplanen innehåller två spelare som kan röra sig vänster och höger längst med spelplanens rutnät
+
+2.7 Visualisering:
+	Fixa bild!
+	Gärna även en förklaring på vad man ser på bilden
+
+3.1 Ska-krav:
+	Hit points eller HP är engelska, blanda inte HP och hit points, välj en av dem
+	"Pansarvagnarna SKA ha"
+3.2 Bör-krav:
+	1 c"spelaren får en extra tur ATT släppa en bomd", inte och
+	1 e "spelaren ska kunna byta", inte toogla
+	2 a"Träffas av projektilens explosionsradie" istället för "träffas av projektilen"
+	3 Ta bort trippelpunkter i slutet av raden "..."
+	4 a "För varje ökning av svårighetsgrad/för varje nivå", välj själv vilket som passar
+
+Bra feedback:
+	- Tydliga och rimliga ska och bör-krav.
+	- Tydliga och fina bilder. Spelupplevelsegrafen är väldigt bra!
+	- Innovativ idé hur ni har tänkt att hantera AI:n. (med intervallet)
+	- Tydlig spelidé/spelupplevelse/spelmekanik

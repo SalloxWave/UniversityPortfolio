@@ -1,0 +1,22 @@
+resources
+    img
+        level
+            *_portrait.png
+            *.png
+        character
+            *_portrait.png
+            *.png
+        projectile
+            *.png
+    data
+        levels.json
+        characters.json
+        projectiles.json
+        *.json
+    music
+        *.mp3
+    sfx
+        *.wav
+*.cc
+*.h
+settings.config

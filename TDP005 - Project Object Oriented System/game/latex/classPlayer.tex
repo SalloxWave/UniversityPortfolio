@@ -1,0 +1,460 @@
+\hypertarget{classPlayer}{}\section{Player Class Reference}
+\label{classPlayer}\index{Player@{Player}}
+
+
+A class representing a playable character.  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+Inheritance diagram for Player\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPlayer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPlayer_aaa23b3bf80e8c0267cf08d4fe4d6ddc1}{Player} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer_aaaf437645956b7fd7e0acc28b64d0ae4}{Player} (unsigned int character\+\_\+id, bool is\+\_\+player1=true)
+\begin{DoxyCompactList}\small\item\em Constructs a new player. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_acadddee1df9fd4fcf1a1bcca7f8b0149}{set\+Restrictions} (std\+::array$<$ int, 2 $>$ restrictions)
+\begin{DoxyCompactList}\small\item\em Set restrictions in x-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_ad3a9bf907eed07ee7ec3e2caddbb7c01}{set\+Restrictions} (int left, int right)
+\begin{DoxyCompactList}\small\item\em Set restrictions in x-\/axis. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_ad61f1f07cc8e7faed52cd055a98a03d3}{set\+Start\+Position} (\hyperlink{structPoint}{Point} position)
+\begin{DoxyCompactList}\small\item\em Set where player should start. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_a278252ff033b18ee6a5d9f2da5ca4fe0}{set\+Start\+Position} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Set where player should start. \end{DoxyCompactList}\item 
+bool \hyperlink{classPlayer_a8ad2d6057db638b755b89347fbce25bb}{has\+Key} (sf\+::\+Keyboard\+::\+Key key\+\_\+code) const
+\begin{DoxyCompactList}\small\item\em Checks if player has a specified key. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_a36adab5b0f1a273290786c75c280d69d}{shoot} (unsigned int projectile\+\_\+id, sf\+::\+Time current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Shoots a projectile with the specified projectile id. \end{DoxyCompactList}\item 
+bool \hyperlink{classPlayer_a1f5b4b98f1fa5fd8508cc2172f671b36}{ready\+To\+Use} (unsigned int projectile\+\_\+id, sf\+::\+Time current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Checks if player is ready to use a projectile. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_a5fd87607be56c5175539f4e30ab09923}{remove\+Projectile} (int index)
+\begin{DoxyCompactList}\small\item\em Removes a projectile for the player. \end{DoxyCompactList}\item 
+bool \hyperlink{classPlayer_a5257af396fd0c0623fdf8baf0a9a634b}{collides} (\hyperlink{classProjectile}{Projectile} const \&projectile) const
+\begin{DoxyCompactList}\small\item\em Checks if player collides with a projectile. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_acfc10fe38c7a5c41b201c2f29c23d544}{give\+Damage} (int amount)
+\begin{DoxyCompactList}\small\item\em Damage the player. \end{DoxyCompactList}\item 
+bool \hyperlink{classPlayer_a20665e4647baa8f898a62021e6204450}{is\+Dead} () const
+\begin{DoxyCompactList}\small\item\em Tells if player is dead or not. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_a1af5d39f7bac2aeaa1e30c7dda2332fa}{reset} ()
+\begin{DoxyCompactList}\small\item\em Reset a player. \end{DoxyCompactList}\item 
+void \hyperlink{classPlayer_aa83d815158b15b6847b36c8d3473b371}{change\+State} (Player\+\_\+\+State state)
+\begin{DoxyCompactList}\small\item\em Change the state of the player. \end{DoxyCompactList}\item 
+Player\+\_\+\+Action \hyperlink{classPlayer_a7c1ccd08bb0263db78641f4397d5f158}{get\+Action} (sf\+::\+Keyboard\+::\+Key keycode)
+\begin{DoxyCompactList}\small\item\em Get action of the player. \end{DoxyCompactList}\item 
+std\+::map$<$ sf\+::\+Keyboard\+::\+Key, Player\+\_\+\+Action $>$ \hyperlink{classPlayer_af6527c6b10c6c421b07064db039c03e6}{get\+\_\+controls} () const
+\begin{DoxyCompactList}\small\item\em Get player\textquotesingle{}s set controls. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classProjectile}{Projectile} $>$ \& \hyperlink{classPlayer_a0e8dc2d397dc0a6e3634cb32a01ff4cb}{get\+Active\+Projectiles} ()
+\begin{DoxyCompactList}\small\item\em Get player\textquotesingle{}s shot active projectiles. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classProjectile}{Projectile} $>$ const  \& \hyperlink{classPlayer_a7593094855014964596dd9d8e6347ae6}{get\+Active\+Projectiles} () const
+\begin{DoxyCompactList}\small\item\em Get player\textquotesingle{}s shot active projectiles. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPlayer_a46eff785fb376112059c90a137ac25f7}{get\+Projectile\+Id} (Projectile\+\_\+\+State const \&projectile\+\_\+state) const
+\begin{DoxyCompactList}\small\item\em Get a projectile id based on projectile state. \end{DoxyCompactList}\item 
+Player\+\_\+\+State \hyperlink{classPlayer_a37a57d7d3ee9e4a1a6376ac54bb71642}{get\+State} () const
+\begin{DoxyCompactList}\small\item\em Get current player state. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classPlayer_a6e54a09592987eef8d690ef06d815d6b}{get\+Portrait\+Source} () const
+\begin{DoxyCompactList}\small\item\em Get player\textquotesingle{}s portrait source. \end{DoxyCompactList}\item 
+int \hyperlink{classPlayer_ad527d6ed6e22851b0e58455ad1d602da}{get\+Current\+Health} () const
+\begin{DoxyCompactList}\small\item\em Get current health. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classPlayer_a367fed9b576ce0058c6f419f91ec3c7d}{get\+Max\+Health} () const
+\begin{DoxyCompactList}\small\item\em Get max health. \end{DoxyCompactList}\item 
+bool \hyperlink{classPlayer_ae70f285a61f1bb20d824f44cb28efa4b}{is\+Player\+One} () const
+\begin{DoxyCompactList}\small\item\em Tells if player is player is player 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A class representing a playable character. 
+
+An entity but with extra members needed for a playable character. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlayer_aaa23b3bf80e8c0267cf08d4fe4d6ddc1}\label{classPlayer_aaa23b3bf80e8c0267cf08d4fe4d6ddc1}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+A default constructor. 
+
+Constructor uses compiler\textquotesingle{}s default way of constructing class. \mbox{\Hypertarget{classPlayer_aaaf437645956b7fd7e0acc28b64d0ae4}\label{classPlayer_aaaf437645956b7fd7e0acc28b64d0ae4}} 
+\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{unsigned int}]{character\+\_\+id,  }\item[{bool}]{is\+\_\+player1 = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Constructs a new player. 
+
+Constructing a player with properties based on the character id and if the player is player 1 or not (else player 2) 
+\begin{DoxyParams}{Parameters}
+{\em character\+\_\+id} & The specified character id \\
+\hline
+{\em is\+\_\+player1} & If the player should be player 1 or not (else player 2) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlayer_aa83d815158b15b6847b36c8d3473b371}\label{classPlayer_aa83d815158b15b6847b36c8d3473b371}} 
+\index{Player@{Player}!change\+State@{change\+State}}
+\index{change\+State@{change\+State}!Player@{Player}}
+\subsubsection{\texorpdfstring{change\+State()}{changeState()}}
+{\footnotesize\ttfamily void Player\+::change\+State (\begin{DoxyParamCaption}\item[{Player\+\_\+\+State}]{state }\end{DoxyParamCaption})}
+
+
+
+Change the state of the player. 
+
+Change player state of the player 
+\begin{DoxyParams}{Parameters}
+{\em state} & The specified player state \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a5257af396fd0c0623fdf8baf0a9a634b}\label{classPlayer_a5257af396fd0c0623fdf8baf0a9a634b}} 
+\index{Player@{Player}!collides@{collides}}
+\index{collides@{collides}!Player@{Player}}
+\subsubsection{\texorpdfstring{collides()}{collides()}}
+{\footnotesize\ttfamily bool Player\+::collides (\begin{DoxyParamCaption}\item[{\hyperlink{classProjectile}{Projectile} const \&}]{projectile }\end{DoxyParamCaption}) const}
+
+
+
+Checks if player collides with a projectile. 
+
+Checks if player collides with a specified projectile based on position, player state and projectile state 
+\begin{DoxyParams}{Parameters}
+{\em projectile} & The specified projectile \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If player collides with the projectile or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_af6527c6b10c6c421b07064db039c03e6}\label{classPlayer_af6527c6b10c6c421b07064db039c03e6}} 
+\index{Player@{Player}!get\+\_\+controls@{get\+\_\+controls}}
+\index{get\+\_\+controls@{get\+\_\+controls}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+\_\+controls()}{get\_controls()}}
+{\footnotesize\ttfamily std\+::map$<$ sf\+::\+Keyboard\+::\+Key, Player\+\_\+\+Action $>$ Player\+::get\+\_\+controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get player\textquotesingle{}s set controls. 
+
+Get list of controls where a keyboard key is connected to a player action \begin{DoxyReturn}{Returns}
+A list of controls 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a7c1ccd08bb0263db78641f4397d5f158}\label{classPlayer_a7c1ccd08bb0263db78641f4397d5f158}} 
+\index{Player@{Player}!get\+Action@{get\+Action}}
+\index{get\+Action@{get\+Action}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Action()}{getAction()}}
+{\footnotesize\ttfamily Player\+\_\+\+Action Player\+::get\+Action (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{keycode }\end{DoxyParamCaption})}
+
+
+
+Get action of the player. 
+
+Get the player action based on the specified keyboard key. If the key was not in the set controls of the player, return player action None 
+\begin{DoxyParams}{Parameters}
+{\em keycode} & The specified keyboard key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPlayer}{Player} action (None if key was not found) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a0e8dc2d397dc0a6e3634cb32a01ff4cb}\label{classPlayer_a0e8dc2d397dc0a6e3634cb32a01ff4cb}} 
+\index{Player@{Player}!get\+Active\+Projectiles@{get\+Active\+Projectiles}}
+\index{get\+Active\+Projectiles@{get\+Active\+Projectiles}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Active\+Projectiles()}{getActiveProjectiles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classProjectile}{Projectile} $>$ \& Player\+::get\+Active\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get player\textquotesingle{}s shot active projectiles. 
+
+Get a reference to player\textquotesingle{}s currently active projectiles (projectiles that have been shot) \begin{DoxyReturn}{Returns}
+A reference to player\textquotesingle{}s active projectiles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a7593094855014964596dd9d8e6347ae6}\label{classPlayer_a7593094855014964596dd9d8e6347ae6}} 
+\index{Player@{Player}!get\+Active\+Projectiles@{get\+Active\+Projectiles}}
+\index{get\+Active\+Projectiles@{get\+Active\+Projectiles}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Active\+Projectiles()}{getActiveProjectiles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{classProjectile}{Projectile} $>$ const  \& Player\+::get\+Active\+Projectiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get player\textquotesingle{}s shot active projectiles. 
+
+Get an unchangeable reference to player\textquotesingle{}s currently active projectiles (projectiles that have been shot) \begin{DoxyReturn}{Returns}
+An unchangeable reference to player\textquotesingle{}s active projectiles 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_ad527d6ed6e22851b0e58455ad1d602da}\label{classPlayer_ad527d6ed6e22851b0e58455ad1d602da}} 
+\index{Player@{Player}!get\+Current\+Health@{get\+Current\+Health}}
+\index{get\+Current\+Health@{get\+Current\+Health}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Current\+Health()}{getCurrentHealth()}}
+{\footnotesize\ttfamily int Player\+::get\+Current\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get current health. 
+
+\begin{DoxyReturn}{Returns}
+The current health 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a367fed9b576ce0058c6f419f91ec3c7d}\label{classPlayer_a367fed9b576ce0058c6f419f91ec3c7d}} 
+\index{Player@{Player}!get\+Max\+Health@{get\+Max\+Health}}
+\index{get\+Max\+Health@{get\+Max\+Health}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Max\+Health()}{getMaxHealth()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Max\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get max health. 
+
+\begin{DoxyReturn}{Returns}
+The max health 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a6e54a09592987eef8d690ef06d815d6b}\label{classPlayer_a6e54a09592987eef8d690ef06d815d6b}} 
+\index{Player@{Player}!get\+Portrait\+Source@{get\+Portrait\+Source}}
+\index{get\+Portrait\+Source@{get\+Portrait\+Source}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Portrait\+Source()}{getPortraitSource()}}
+{\footnotesize\ttfamily std\+::string Player\+::get\+Portrait\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get player\textquotesingle{}s portrait source. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classPlayer}{Player}\textquotesingle{}s portrait source. This is the texture to display when wanting to only show player\textquotesingle{}s face 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a46eff785fb376112059c90a137ac25f7}\label{classPlayer_a46eff785fb376112059c90a137ac25f7}} 
+\index{Player@{Player}!get\+Projectile\+Id@{get\+Projectile\+Id}}
+\index{get\+Projectile\+Id@{get\+Projectile\+Id}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+Projectile\+Id()}{getProjectileId()}}
+{\footnotesize\ttfamily unsigned int Player\+::get\+Projectile\+Id (\begin{DoxyParamCaption}\item[{Projectile\+\_\+\+State const \&}]{projectile\+\_\+state }\end{DoxyParamCaption}) const}
+
+
+
+Get a projectile id based on projectile state. 
+
+Get a player\textquotesingle{}s projectile id based on the specified projectile state 
+\begin{DoxyParams}{Parameters}
+{\em projectile\+\_\+state} & Specified projectile state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A projectile id with the specified projectile state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a37a57d7d3ee9e4a1a6376ac54bb71642}\label{classPlayer_a37a57d7d3ee9e4a1a6376ac54bb71642}} 
+\index{Player@{Player}!get\+State@{get\+State}}
+\index{get\+State@{get\+State}!Player@{Player}}
+\subsubsection{\texorpdfstring{get\+State()}{getState()}}
+{\footnotesize\ttfamily Player\+\_\+\+State Player\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get current player state. 
+
+\begin{DoxyReturn}{Returns}
+Current player state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_acfc10fe38c7a5c41b201c2f29c23d544}\label{classPlayer_acfc10fe38c7a5c41b201c2f29c23d544}} 
+\index{Player@{Player}!give\+Damage@{give\+Damage}}
+\index{give\+Damage@{give\+Damage}!Player@{Player}}
+\subsubsection{\texorpdfstring{give\+Damage()}{giveDamage()}}
+{\footnotesize\ttfamily void Player\+::give\+Damage (\begin{DoxyParamCaption}\item[{int}]{amount }\end{DoxyParamCaption})}
+
+
+
+Damage the player. 
+
+Damage player with a specified amount by decreasing player\textquotesingle{}s health 
+\begin{DoxyParams}{Parameters}
+{\em amount} & Amount of damage to give to player \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a8ad2d6057db638b755b89347fbce25bb}\label{classPlayer_a8ad2d6057db638b755b89347fbce25bb}} 
+\index{Player@{Player}!has\+Key@{has\+Key}}
+\index{has\+Key@{has\+Key}!Player@{Player}}
+\subsubsection{\texorpdfstring{has\+Key()}{hasKey()}}
+{\footnotesize\ttfamily bool Player\+::has\+Key (\begin{DoxyParamCaption}\item[{sf\+::\+Keyboard\+::\+Key}]{key\+\_\+code }\end{DoxyParamCaption}) const}
+
+
+
+Checks if player has a specified key. 
+
+Checks if the specified keyboard key can be used for the player by comparing with player\textquotesingle{}s set controls 
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+code} & Specified keyboard key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the specified keyboard key can be used for the player 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a20665e4647baa8f898a62021e6204450}\label{classPlayer_a20665e4647baa8f898a62021e6204450}} 
+\index{Player@{Player}!is\+Dead@{is\+Dead}}
+\index{is\+Dead@{is\+Dead}!Player@{Player}}
+\subsubsection{\texorpdfstring{is\+Dead()}{isDead()}}
+{\footnotesize\ttfamily bool Player\+::is\+Dead (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tells if player is dead or not. 
+
+Checks if player is dead or not based on current health \begin{DoxyReturn}{Returns}
+If player is dead or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_ae70f285a61f1bb20d824f44cb28efa4b}\label{classPlayer_ae70f285a61f1bb20d824f44cb28efa4b}} 
+\index{Player@{Player}!is\+Player\+One@{is\+Player\+One}}
+\index{is\+Player\+One@{is\+Player\+One}!Player@{Player}}
+\subsubsection{\texorpdfstring{is\+Player\+One()}{isPlayerOne()}}
+{\footnotesize\ttfamily bool Player\+::is\+Player\+One (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Tells if player is player is player 1. 
+
+Tells if the player is player 1 or not (else player 2) \begin{DoxyReturn}{Returns}
+If the player is player 1 or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a1f5b4b98f1fa5fd8508cc2172f671b36}\label{classPlayer_a1f5b4b98f1fa5fd8508cc2172f671b36}} 
+\index{Player@{Player}!ready\+To\+Use@{ready\+To\+Use}}
+\index{ready\+To\+Use@{ready\+To\+Use}!Player@{Player}}
+\subsubsection{\texorpdfstring{ready\+To\+Use()}{readyToUse()}}
+{\footnotesize\ttfamily bool Player\+::ready\+To\+Use (\begin{DoxyParamCaption}\item[{unsigned int}]{projectile\+\_\+id,  }\item[{sf\+::\+Time}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Checks if player is ready to use a projectile. 
+
+Checks if the projectile with the specified projectile can id is ready to use based on projectiles cooldown 
+\begin{DoxyParams}{Parameters}
+{\em projectile\+\_\+id} & The specified projectile id \\
+\hline
+{\em current\+\_\+time} & Time to compare to player\textquotesingle{}s projectile cooldowns \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlayer_a5fd87607be56c5175539f4e30ab09923}\label{classPlayer_a5fd87607be56c5175539f4e30ab09923}} 
+\index{Player@{Player}!remove\+Projectile@{remove\+Projectile}}
+\index{remove\+Projectile@{remove\+Projectile}!Player@{Player}}
+\subsubsection{\texorpdfstring{remove\+Projectile()}{removeProjectile()}}
+{\footnotesize\ttfamily void Player\+::remove\+Projectile (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes a projectile for the player. 
+
+Remove projectile in list of projectiles based on index 
+\begin{DoxyParams}{Parameters}
+{\em index} & Specified list index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a1af5d39f7bac2aeaa1e30c7dda2332fa}\label{classPlayer_a1af5d39f7bac2aeaa1e30c7dda2332fa}} 
+\index{Player@{Player}!reset@{reset}}
+\index{reset@{reset}!Player@{Player}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Player\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset a player. 
+
+Resets a player by moving to start position and give player full health \mbox{\Hypertarget{classPlayer_acadddee1df9fd4fcf1a1bcca7f8b0149}\label{classPlayer_acadddee1df9fd4fcf1a1bcca7f8b0149}} 
+\index{Player@{Player}!set\+Restrictions@{set\+Restrictions}}
+\index{set\+Restrictions@{set\+Restrictions}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Restrictions()}{setRestrictions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Player\+::set\+Restrictions (\begin{DoxyParamCaption}\item[{std\+::array$<$ int, 2 $>$}]{restrictions }\end{DoxyParamCaption})}
+
+
+
+Set restrictions in x-\/axis. 
+
+A player can\textquotesingle{}t move outside of the restriction. This is essentially the player\textquotesingle{}s side of the gamebaord 
+\begin{DoxyParams}{Parameters}
+{\em restrictions} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_ad3a9bf907eed07ee7ec3e2caddbb7c01}\label{classPlayer_ad3a9bf907eed07ee7ec3e2caddbb7c01}} 
+\index{Player@{Player}!set\+Restrictions@{set\+Restrictions}}
+\index{set\+Restrictions@{set\+Restrictions}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Restrictions()}{setRestrictions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Player\+::set\+Restrictions (\begin{DoxyParamCaption}\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+
+
+Set restrictions in x-\/axis. 
+
+A player can\textquotesingle{}t move outside of the restriction. This is essentially the player\textquotesingle{}s side of the gamebaord 
+\begin{DoxyParams}{Parameters}
+{\em left} & The restriction on the left side \\
+\hline
+{\em right} & The restriction on the right side \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_ad61f1f07cc8e7faed52cd055a98a03d3}\label{classPlayer_ad61f1f07cc8e7faed52cd055a98a03d3}} 
+\index{Player@{Player}!set\+Start\+Position@{set\+Start\+Position}}
+\index{set\+Start\+Position@{set\+Start\+Position}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Start\+Position()}{setStartPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Player\+::set\+Start\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{position }\end{DoxyParamCaption})}
+
+
+
+Set where player should start. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Specified position for player to start \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a278252ff033b18ee6a5d9f2da5ca4fe0}\label{classPlayer_a278252ff033b18ee6a5d9f2da5ca4fe0}} 
+\index{Player@{Player}!set\+Start\+Position@{set\+Start\+Position}}
+\index{set\+Start\+Position@{set\+Start\+Position}!Player@{Player}}
+\subsubsection{\texorpdfstring{set\+Start\+Position()}{setStartPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Player\+::set\+Start\+Position (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Set where player should start. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Where to start on x-\/axis \\
+\hline
+{\em y} & Where to start on y-\/axis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPlayer_a36adab5b0f1a273290786c75c280d69d}\label{classPlayer_a36adab5b0f1a273290786c75c280d69d}} 
+\index{Player@{Player}!shoot@{shoot}}
+\index{shoot@{shoot}!Player@{Player}}
+\subsubsection{\texorpdfstring{shoot()}{shoot()}}
+{\footnotesize\ttfamily void Player\+::shoot (\begin{DoxyParamCaption}\item[{unsigned int}]{projectile\+\_\+id,  }\item[{sf\+::\+Time}]{current\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Shoots a projectile with the specified projectile id. 
+
+Shoots a projectile with a specified projectile id 
+\begin{DoxyParams}{Parameters}
+{\em projectile\+\_\+id} & The projectile id to shoot \\
+\hline
+{\em current\+\_\+time} & Time to update in player\textquotesingle{}s projectile cooldowns \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+player.\+h\item 
+player.\+cpp\end{DoxyCompactItemize}

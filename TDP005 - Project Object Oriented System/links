@@ -1,0 +1,19 @@
+Animated sprite:
+https://github.com/SFML/SFML/wiki/Source:-AnimatedSprite
+
+Remove delay when changing direction
+http://stackoverflow.com/questions/23071517/slight-pause-delay-when-moving
+
+JSON API:
+https://github.com/nlohmann/json
+
+Textbox?
+http://en.sfml-dev.org/forums/index.php?topic=2734.0
+
+Doxygen - documentation
+http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html
+
+Extension to reading folders
+Code: http://www.softagalleria.net/download/dirent/
+http://stackoverflow.com/questions/612097/how-can-i-get-the-list-of-files-in-a-directory-using-c-or-c
+

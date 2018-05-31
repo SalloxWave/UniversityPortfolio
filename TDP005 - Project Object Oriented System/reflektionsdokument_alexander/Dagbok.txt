@@ -1,0 +1,68 @@
+---------------------------------------------------------------------------------------
+2016 - 11 - 08
+Jobbat med kravspec
+
+Jobba tillsammans hjälper pga diskussion av kravspec gör det lättare att komma på fler saker man kanske inte tänkte på om spelet.
+
+Fördelar med google docs:
+	Såg hur strukturen på dokumetet blev medan vi skrev den (skulle finnas om vi skulle kompilera med konsolen).
+
+	Båda har problem med att kompilera latex vilket vi inte har lust/tid att fixa
+
+	Vi kan båda skriva samtidigt i samma dokument och det uppdateras direkt. Då kan vi sitta vid varsin dator, antingen bredbiv eller hemma.
+Nackdelar:
+	Har inte lika bra koll att skapa tabeller/innehållsförteckning/automatisk sidfot/huvud jämfört med latex. I Latex har vi en mallklass som kan fixa automatiskt sidfot/huvud åt oss.
+
+	Måste exportera dokument om vi ska git commita.
+
+Nackdel med att jobba i par kan vara att man pratar om annat och flummar istället för att jobba effektivt. Dock jämnar det ut sig eftersom då vi väl pararbetar ger det bätre effektivtet.
+---------------------------------------------------------------------------------------
+2016 - 11 - 09
+Jobbade ensam med kravspec version 2 inklusive skisser till vårat spel (som ska in i kravspec).
+
+Fördel med skisser:
+	Hjälper att tänka på saker i förväg så man inte kommer på saker försent. 
+	Hjälper att få en bättre bild vilka klasser/objekt som krävs för att kunna få spelet att bli som skissen.
+	Då båda tänker på skissen tillsammans får vi båda samma bild på hur spelet ska ha. Det är lätt att två personer får olika bild på saker pga olika perspektiv och tolkningar.
+---------------------------------------------------------------------------------------
+2016 - 11 - 16
+Jobbade ensam med lista labb, Joakim inte var här gjorde det svårare, inte diskutera med andra, parprogrammering osv.
+
+Fördel med git:
+	Jobba när som helst med vad som helst, t.ex. Joakim jobbade hemma som jag sedan fortsatte på.
+
+Fördel med texstudio:
+	Lätthanterligt
+	En knapp för att kompilera
+	Jobba direkt i git utan någon google docs eller sharelatex, slipper alltså ladda ner och hålla på.
+
+Fördel med kravspec:
+	Bra för att sätta sina avgränsningar med ska och bör krav
+	Får en att tänka på saker i spelet som är viktigt inför utveckling senare
+	Få ut sin idé konkret, så båda är ensam om 1 idé och båda har samma perspektiv.
+---------------------------------------------------------------------------------------
+2016 - 11 - 18
+Joakim och jag har jobbat med designspecifikation ca 3 timmar
+Vi gjorde klassdiagram
+
+Fördel med klassdiagram:
+	- Leder till struktur innan skapande vilket är väldigt viktigt vid stora projekt.
+	- Fundering/diskussion gör det lättare att tänka på saker som inte tidigare har tänks på. Tänkar på saker innan det är för sent.
+	- Sparar tid vid programmering eftersom klassdiagram minskar risken att behöva struktura/skriva om sitt program.
+	- Lättare för andra i projektet att förstå strukturen på programmet. T.ex. om någon ska implementera grafiska klassen, krävs förståelse av hur de logiska klasserna är uppbyggda och hur de samarbetar.
+---------------------------------------------------------------------------------------
+2016 - 11 - 28
+Joakim och jag har kompletterat kravspecifikation, försökt fixa SFML till clion och skrivit statusrapport.
+Det är svårt att minimera ska-kraven eftersom många krav kommer automatiskt då vi har byggt klassdiagrammet för att stödja flera bör-krav. T.ex. att en projektil ska kunna skjuta högt eller lågt implementeras ju automatiskt då vi skapar klassen. Detsamma gäller de olika egenskaperna hos karaktärerna, nivåerna och projektilerna. Då vi skapar klassen ifrån klassdiagrammet tar vi ju inte endast hälften av klassen och utelämnar enkla saker som hastighet.
+
+Vi har planerat att använda oss av testdriven programmering då vi implementerar klasserna.
+
+Fördel med testdriven programmering (med catch):
+	- Tänker ut hur man vill att klassen faktiskt ska fungera innan man skapar den.
+	- Kan köra alla testfall enkelt igen vid ändring av något. Detta ger säkerhet att allt fortfarande fungerar.
+	- Lätt att se (med Catch) vilken del av testerna som blev fel.
+Nackdel med testdriven programmering:
+	- Möjligt att testerna inte blir rätta eller felfria.
+	- I detta fall måste vi implementera ett stort bibliotek vilket är rätt så krävande.
+	- Större ombyggnaden kan kräva mycket ändring i testfallen.
+	- Relativt tidskrävande att skriva testerna (krävs mycket dokumentation om vad som händer).

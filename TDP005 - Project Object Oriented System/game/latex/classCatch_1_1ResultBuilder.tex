@@ -1,0 +1,79 @@
+\hypertarget{classCatch_1_1ResultBuilder}{}\section{Catch\+:\+:Result\+Builder Class Reference}
+\label{classCatch_1_1ResultBuilder}\index{Catch\+::\+Result\+Builder@{Catch\+::\+Result\+Builder}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a8579c3056f64f9324cf1181532828376}\label{classCatch_1_1ResultBuilder_a8579c3056f64f9324cf1181532828376}} 
+{\bfseries Result\+Builder} (char const $\ast$macro\+Name, \hyperlink{structCatch_1_1SourceLineInfo}{Source\+Line\+Info} const \&line\+Info, char const $\ast$captured\+Expression, Result\+Disposition\+::\+Flags result\+Disposition, char const $\ast$second\+Arg=\char`\"{}\char`\"{})
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_ad76939f5a52fcb534f97b49a0b7bc560}\label{classCatch_1_1ResultBuilder_ad76939f5a52fcb534f97b49a0b7bc560}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classCatch_1_1ExpressionLhs}{Expression\+Lhs}$<$ T const  \& $>$ {\bfseries operator$<$=} (T const \&operand)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a3b87b20bcd1ef9e630880e59eeefba2a}\label{classCatch_1_1ResultBuilder_a3b87b20bcd1ef9e630880e59eeefba2a}} 
+\hyperlink{classCatch_1_1ExpressionLhs}{Expression\+Lhs}$<$ bool $>$ {\bfseries operator$<$=} (bool value)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a5aa79ce6160ab8cd800eb65bbd7a28a4}\label{classCatch_1_1ResultBuilder_a5aa79ce6160ab8cd800eb65bbd7a28a4}} 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classCatch_1_1ResultBuilder}{Result\+Builder} \& {\bfseries operator$<$$<$} (T const \&value)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_ae92c6badf3f8e2ad4df66701a285f996}\label{classCatch_1_1ResultBuilder_ae92c6badf3f8e2ad4df66701a285f996}} 
+{\footnotesize template$<$typename RhsT $>$ }\\S\+T\+A\+T\+I\+C\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+Expression\+\_\+\+Too\+\_\+\+Complex\+\_\+\+Please\+\_\+\+Rewrite\+\_\+\+As\+\_\+\+Binary\+\_\+\+Comparison \& {\bfseries operator\&\&} (RhsT const \&)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_ad489243e89e9f0ec3cb1f95392a537de}\label{classCatch_1_1ResultBuilder_ad489243e89e9f0ec3cb1f95392a537de}} 
+{\footnotesize template$<$typename RhsT $>$ }\\S\+T\+A\+T\+I\+C\+\_\+\+A\+S\+S\+E\+R\+T\+\_\+\+Expression\+\_\+\+Too\+\_\+\+Complex\+\_\+\+Please\+\_\+\+Rewrite\+\_\+\+As\+\_\+\+Binary\+\_\+\+Comparison \& {\bfseries operator$\vert$$\vert$} (RhsT const \&)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_af896e372db9d7fc90ddeceff3ad110d0}\label{classCatch_1_1ResultBuilder_af896e372db9d7fc90ddeceff3ad110d0}} 
+\hyperlink{classCatch_1_1ResultBuilder}{Result\+Builder} \& {\bfseries set\+Result\+Type} (Result\+Was\+::\+Of\+Type result)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_ae504348b073d0360bfd5fc33347ec689}\label{classCatch_1_1ResultBuilder_ae504348b073d0360bfd5fc33347ec689}} 
+\hyperlink{classCatch_1_1ResultBuilder}{Result\+Builder} \& {\bfseries set\+Result\+Type} (bool result)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a5de584deec90fc6b7cc5bcf9eb636442}\label{classCatch_1_1ResultBuilder_a5de584deec90fc6b7cc5bcf9eb636442}} 
+\hyperlink{classCatch_1_1ResultBuilder}{Result\+Builder} \& {\bfseries set\+Lhs} (std\+::string const \&lhs)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_aaeb41a00cf352c7a0bcf75a0ded0a4a2}\label{classCatch_1_1ResultBuilder_aaeb41a00cf352c7a0bcf75a0ded0a4a2}} 
+\hyperlink{classCatch_1_1ResultBuilder}{Result\+Builder} \& {\bfseries set\+Rhs} (std\+::string const \&rhs)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a8232ed051ed7f6adfbc152c98aa1dc0c}\label{classCatch_1_1ResultBuilder_a8232ed051ed7f6adfbc152c98aa1dc0c}} 
+\hyperlink{classCatch_1_1ResultBuilder}{Result\+Builder} \& {\bfseries set\+Op} (std\+::string const \&op)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a75ac2dbabd8d4b4b3a75de9bbc3abf02}\label{classCatch_1_1ResultBuilder_a75ac2dbabd8d4b4b3a75de9bbc3abf02}} 
+void {\bfseries end\+Expression} ()
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_aebe098f8d206a89995076b95a3348195}\label{classCatch_1_1ResultBuilder_aebe098f8d206a89995076b95a3348195}} 
+std\+::string {\bfseries reconstruct\+Expression} () const
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a4fc96e7bb8b5f7119a8e79692ec97808}\label{classCatch_1_1ResultBuilder_a4fc96e7bb8b5f7119a8e79692ec97808}} 
+\hyperlink{classCatch_1_1AssertionResult}{Assertion\+Result} {\bfseries build} () const
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a5bbd2f14a678f3e8d0f791ac6d233d65}\label{classCatch_1_1ResultBuilder_a5bbd2f14a678f3e8d0f791ac6d233d65}} 
+void {\bfseries use\+Active\+Exception} (Result\+Disposition\+::\+Flags result\+Disposition=Result\+Disposition\+::\+Normal)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a10e467f7b7a4976e5d148b4d5066e8fd}\label{classCatch_1_1ResultBuilder_a10e467f7b7a4976e5d148b4d5066e8fd}} 
+void {\bfseries capture\+Result} (Result\+Was\+::\+Of\+Type result\+Type)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_af2ae2343965802eeeb0abbd4ea9d2d36}\label{classCatch_1_1ResultBuilder_af2ae2343965802eeeb0abbd4ea9d2d36}} 
+void {\bfseries capture\+Expression} ()
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a9ac96f6220c8dd8e4feee725c6228d77}\label{classCatch_1_1ResultBuilder_a9ac96f6220c8dd8e4feee725c6228d77}} 
+void {\bfseries capture\+Expected\+Exception} (std\+::string const \&expected\+Message)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a7d443d632eaeabe2cb36218b8dcb7400}\label{classCatch_1_1ResultBuilder_a7d443d632eaeabe2cb36218b8dcb7400}} 
+void {\bfseries capture\+Expected\+Exception} (\hyperlink{structCatch_1_1Matchers_1_1Impl_1_1Matcher}{Matchers\+::\+Impl\+::\+Matcher}$<$ std\+::string $>$ const \&matcher)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_ad8bb17e4ac590b75bf8630d8f3502f4e}\label{classCatch_1_1ResultBuilder_ad8bb17e4ac590b75bf8630d8f3502f4e}} 
+void {\bfseries handle\+Result} (\hyperlink{classCatch_1_1AssertionResult}{Assertion\+Result} const \&result)
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a3085cdc46533d45bed6f652a2ac295c0}\label{classCatch_1_1ResultBuilder_a3085cdc46533d45bed6f652a2ac295c0}} 
+void {\bfseries react} ()
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a6f2b0dbcc6cc5e0a500ac45f2534e3e7}\label{classCatch_1_1ResultBuilder_a6f2b0dbcc6cc5e0a500ac45f2534e3e7}} 
+bool {\bfseries should\+Debug\+Break} () const
+\item 
+\mbox{\Hypertarget{classCatch_1_1ResultBuilder_a0428fd78ab9e8e6f1aca6855f20fc715}\label{classCatch_1_1ResultBuilder_a0428fd78ab9e8e6f1aca6855f20fc715}} 
+bool {\bfseries allow\+Throws} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+catch.\+hpp\end{DoxyCompactItemize}

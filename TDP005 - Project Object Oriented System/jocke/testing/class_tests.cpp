@@ -1,0 +1,8 @@
+#include "catch.hpp"
+#include "level.h"
+#include "player.h"
+#include "projectile.h"
+#include "gui.h"
+#include "gui_characterscreen"
+#include "gui_main_menu"
+#include "gui_gameboard"

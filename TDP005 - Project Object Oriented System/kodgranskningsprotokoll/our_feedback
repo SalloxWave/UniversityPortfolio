@@ -1,0 +1,8 @@
+Vi hade missat att vi skulle ha spelet i en Game class:
+Game game;
+game.run();
+Detta ledde till att vi fick bygga på klassdiagrammet.
+
+Eftersom vi inte ska ha en publik variabel (bool:win) så tog vi bort den variabeln. Vi bestämde oss för att lösa detta i Game klassen då vi skickar in vilken spelare som vann när vi behöver det.
+
+Vi hade inga abstrakta metoder i våran entity klass vilket är ett krav. Detta ledde till att vi la till en abstrakt metod can_move(Direction direction) som alla som ärvde från entity var tvungen att skriva över.

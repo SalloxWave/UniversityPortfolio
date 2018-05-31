@@ -1,0 +1,36 @@
+- "Tillsammans med koden ska en Makefile lämnas in. Handledaren ska kunna köra koden i terminalen med hjälp av denna Makefile."
+
+- "Koden ska vara väldokumenterad. Doxygen ska användas."
+
+- Uppdatera designspec innan måndag
+
+- "Minneshantering är god och inga minnesläckor finns"
+valgrind test 2016-12-16:
+==19131==    definitely lost: 224 bytes in 4 blocks
+==19131==    indirectly lost: 224 bytes in 4 blocks
+==19131==      possibly lost: 0 bytes in 0 blocks
+==19131==    still reachable: 255,056 bytes in 1,576 blocks
+==19131==         suppressed: 0 bytes in 0 blocks
+
+- "Koden är säker:
+Den ska inte kunna krascha
+Input från användaren kontrolleras på ett säkert sätt"
+Felhantering, buggtestning?
+
+- "Koden är effektiv, till exempel genom att:
+Lämpliga algoritmer och datastrukturer har använts
+De vanligaste valen står först i if-satser
+Beräkningar som kan göras utanför en loop gör det snarare än att stå i loopen"
+Dubbelkolla, speciellt med if-satser
+
+- "Reflektionsdokument"
+
+- "Portfoliotillägg"
+
+- Byta collides funktion att ta in en entity och kanske ha can_move på en entity itället för specifika klasser                    
+
+Färdigt:
+
+Ska-krav:
+Alla ska-krav uppnåda!
+

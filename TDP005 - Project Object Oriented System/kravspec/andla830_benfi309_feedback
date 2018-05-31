@@ -1,0 +1,8 @@
+#1:
+Under spelmekanik beskriver ni vilka knappar som leder till vilken händelse (t.ex. W = Hoppa). Vi tänkte typ om ni kunde förklara lite mer i detalj vad hoppet innebär. Använder ni en fysikmotor med kraft uppåt eller bara en vanlig uppdatering med setposition.
+
+#2:
+Spelflödesdiagrammet; givande med ett diagram över spelflödet, men vad innebär det att ni har dubletter av varje event? Två st programstart etc etc
+
+#3:
+Ni verkar ha blandat ihop terminolgin lite, främst under bör kraven där ni på många ställen använder ska istället för bör.

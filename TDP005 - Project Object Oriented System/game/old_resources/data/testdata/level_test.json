@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Avalanche Leftovers",
+        "width": 800,
+        "height": 640,
+        "y_level": 100,
+        "restriction_left": [20, 350],
+        "restriction_right": [400, 780],
+        "bg_src": "avalanche_leftovers.png",
+        "portrait_src": "avalanche_leftovers_portrait.png",
+        "music_src": "icy_wind.wav"
+    },
+    {
+        "id": 2,
+        "name": "Firelands",
+        "width": 1024,
+        "height": 1280,
+        "y_level": 20,
+        "restriction_left": [100, 200],
+        "restriction_right": [824, 924],
+        "bg_src": "firelands.png",
+        "portrait_src": "firelands_portrait.png",
+        "music_src": "scorching_battle.wav"
+    }
+]

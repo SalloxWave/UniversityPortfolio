@@ -1,0 +1,6 @@
+220 px höjd på spelaren
+100 px bredd på spelaren
+40 px höjd på projektiler
+40 px bredd på projektiler
+
+Main Menu förstret ska vara 800px gånger 600px stor

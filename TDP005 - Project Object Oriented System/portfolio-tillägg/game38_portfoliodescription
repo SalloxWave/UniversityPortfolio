@@ -1,0 +1,9 @@
+<h3>What is the game?</h3>
+<p>This game is a 2v2 shooter game. Each player selects a character with different properties such as speed, health and projectiles. Each projectile also has different properties such as speed, state (high or low) cooldown and damage.
+</p>
+<h3>How do you play it?</h3><p>The goal is then to shoot projectiles at each other until one player has lost all their health. But it's not as simple as that, the player's can also jump or duck to avoid high or low projectiles. The players controls their characters on the same keyboard.</p>
+<h3>What have I learned?</h3>
+<p>
+<p>The process of creating this game didn't only include programming but also planning before the project as well as reflecting the result after the project was finsished. This means I've gained knowledge how the process of creating a game works. Also, since the game ended up relatively big compared to other programs I've done, it became very important to document the code. Documenting the code is something I learned to highly value during the making of the Game38.</p>
+<p>While developing the game I tried testdriven development. This was done by first structuring HOW the game should be created, and then creating test scenarios based on HOW the game is supposed to work. Then, you program the program until the program works as the test scenarios require. Even though testdriven development relies on correctly created test scenarios and can be time consuming, I believe it's still a good way of working, since you always makes sure everything works as intended when added new featues and code to the program.</p>
+</p>

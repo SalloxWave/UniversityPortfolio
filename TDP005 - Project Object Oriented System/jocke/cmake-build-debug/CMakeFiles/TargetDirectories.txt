@@ -1,0 +1,3 @@
+/home/alexanderlinux/git-clones/tdp005/jocke/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alexanderlinux/git-clones/tdp005/jocke/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alexanderlinux/git-clones/tdp005/jocke/cmake-build-debug/CMakeFiles/game38.dir

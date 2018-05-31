@@ -1,0 +1,96 @@
+\hypertarget{classBase__Window}{}\section{Base\+\_\+\+Window Class Reference}
+\label{classBase__Window}\index{Base\+\_\+\+Window@{Base\+\_\+\+Window}}
+
+
+An abstract class representing a window.  
+
+
+
+
+{\ttfamily \#include $<$base\+\_\+window.\+h$>$}
+
+Inheritance diagram for Base\+\_\+\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBase__Window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classBase__Window_a89fc36aacdebe0a28371648c16a51be6}{Base\+\_\+\+Window} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classBase__Window_a0d0e107e9eb19bd74b25f4465688e862}{load\+\_\+textures} ()=0
+\begin{DoxyCompactList}\small\item\em A pure virtual function loading textures needed for the window. \end{DoxyCompactList}\item 
+sf\+::\+Texture \& \hyperlink{classBase__Window_a7795a731d3e0dba029219b0d81954dfc}{get\+\_\+texture} (std\+::string const \&filename)
+\begin{DoxyCompactList}\small\item\em A function member returning a texture based on specified filename of texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBase__Window_aaf143aef62737103510092d9eda06118}\label{classBase__Window_aaf143aef62737103510092d9eda06118}} 
+sf\+::\+Sprite {\bfseries bg\+\_\+sprite}
+\item 
+\mbox{\Hypertarget{classBase__Window_a95819b9928fd4943c0478e2f9baa3842}\label{classBase__Window_a95819b9928fd4943c0478e2f9baa3842}} 
+sf\+::\+Font {\bfseries font}
+\item 
+\mbox{\Hypertarget{classBase__Window_a0063751d92040019a7086dfc39808274}\label{classBase__Window_a0063751d92040019a7086dfc39808274}} 
+std\+::map$<$ std\+::string, sf\+::\+Texture $>$ {\bfseries textures}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract class representing a window. 
+
+An abstract (pure virtual) class inheriting a \char`\"{}sf\+::\+Render\+Window\char`\"{} from the S\+F\+ML library to behave as a window. In addition the class also has other variable members every window wants to have in the game. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBase__Window_a89fc36aacdebe0a28371648c16a51be6}\label{classBase__Window_a89fc36aacdebe0a28371648c16a51be6}} 
+\index{Base\+\_\+\+Window@{Base\+\_\+\+Window}!Base\+\_\+\+Window@{Base\+\_\+\+Window}}
+\index{Base\+\_\+\+Window@{Base\+\_\+\+Window}!Base\+\_\+\+Window@{Base\+\_\+\+Window}}
+\subsubsection{\texorpdfstring{Base\+\_\+\+Window()}{Base\_Window()}}
+{\footnotesize\ttfamily Base\+\_\+\+Window\+::\+Base\+\_\+\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+A default constructor. 
+
+Constructor uses compiler\textquotesingle{}s default way of constructing class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBase__Window_a7795a731d3e0dba029219b0d81954dfc}\label{classBase__Window_a7795a731d3e0dba029219b0d81954dfc}} 
+\index{Base\+\_\+\+Window@{Base\+\_\+\+Window}!get\+\_\+texture@{get\+\_\+texture}}
+\index{get\+\_\+texture@{get\+\_\+texture}!Base\+\_\+\+Window@{Base\+\_\+\+Window}}
+\subsubsection{\texorpdfstring{get\+\_\+texture()}{get\_texture()}}
+{\footnotesize\ttfamily sf\+::\+Texture \& Base\+\_\+\+Window\+::get\+\_\+texture (\begin{DoxyParamCaption}\item[{std\+::string const \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A function member returning a texture based on specified filename of texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & a std\+::string with the name of the texture file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The texture 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBase__Window_a0d0e107e9eb19bd74b25f4465688e862}\label{classBase__Window_a0d0e107e9eb19bd74b25f4465688e862}} 
+\index{Base\+\_\+\+Window@{Base\+\_\+\+Window}!load\+\_\+textures@{load\+\_\+textures}}
+\index{load\+\_\+textures@{load\+\_\+textures}!Base\+\_\+\+Window@{Base\+\_\+\+Window}}
+\subsubsection{\texorpdfstring{load\+\_\+textures()}{load\_textures()}}
+{\footnotesize\ttfamily virtual void Base\+\_\+\+Window\+::load\+\_\+textures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+A pure virtual function loading textures needed for the window. 
+
+Loads all the textures needed for the window. This is done by creating a container in which the filename of the texture is connected to the texture object. Since all windows want to load textures in a different way the function needs to be overrided by each subwindow. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+base\+\_\+window.\+h\item 
+base\+\_\+window.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="game38"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alejo720/git-clones/tdp005/game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alejo720/git-clones/tdp005/game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alejo720/git-clones/tdp005/game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="game38">
+				<Option output="/home/alejo720/git-clones/tdp005/game/cmake-build-debug/game38" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alejo720/git-clones/tdp005/game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 game38"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="game38/fast">
+				<Option output="/home/alejo720/git-clones/tdp005/game/cmake-build-debug/game38" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alejo720/git-clones/tdp005/game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 game38/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alejo720/git-clones/tdp005/game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/base_window.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/base_window.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/characterwindow.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/characterwindow.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/entity.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/entity.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_direction.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_menu_choice.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_player_action.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_player_state.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_projectile_state.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_window_state.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/enum_winning_option.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/game38.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/game38.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/gameboard.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/gameboard.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/level.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/level.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/main.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/main_menu.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/main_menu.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/player.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/player.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/projectile.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/projectile.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/resources">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/struct_point.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/winning_window.cpp">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/winning_window.h">
+			<Option target="game38"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/alejo720/git-clones/tdp005/game/cmake_modules/FindSFML.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

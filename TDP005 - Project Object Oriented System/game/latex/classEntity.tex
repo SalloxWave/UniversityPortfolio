@@ -1,0 +1,258 @@
+\hypertarget{classEntity}{}\section{Entity Class Reference}
+\label{classEntity}\index{Entity@{Entity}}
+
+
+A pure virtual class representing a movable entity.  
+
+
+
+
+{\ttfamily \#include $<$entity.\+h$>$}
+
+Inheritance diagram for Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classEntity}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classEntity_aba38705a06cf12c0e87b8b42713f3ce7}{move} (Direction direction, unsigned int steps=1)
+\begin{DoxyCompactList}\small\item\em Moves the entity in a direction. \end{DoxyCompactList}\item 
+void \hyperlink{classEntity_a8c7f316068b48003621f301b24d6ff47}{change\+Direction} (Direction direction)
+\begin{DoxyCompactList}\small\item\em Change direction entity is faced. \end{DoxyCompactList}\item 
+void \hyperlink{classEntity_abfef59d2e7f81727d43a86425e8e06df}{set\+Position} (\hyperlink{structPoint}{Point} pos)
+\begin{DoxyCompactList}\small\item\em Change position of the entity. \end{DoxyCompactList}\item 
+void \hyperlink{classEntity_a8871ade33babf42d554f498154f35e26}{set\+Position} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Change position of the entity. \end{DoxyCompactList}\item 
+\hyperlink{structPoint}{Point} \hyperlink{classEntity_a0db2ab8dd08e0da409133786803bd4e0}{get\+Position} () const
+\begin{DoxyCompactList}\small\item\em Get the position of the entity. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a403f69eb888da7c5a690b79c658cdf47}{get\+Name} () const
+\begin{DoxyCompactList}\small\item\em Get the name of the entity. \end{DoxyCompactList}\item 
+double \hyperlink{classEntity_a7cf65c6f73d2a17e59a26344c8ffb999}{get\+Speed} () const
+\begin{DoxyCompactList}\small\item\em Get the speed of the entity. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classEntity_a002be2c6f13d59bff1806ef8815478d5}{get\+Width} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the entity. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classEntity_a5bbd1da83a9212d0de7e6d0dca659bf8}{get\+Height} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the entity. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classEntity_a0d10637b4a1e31e139fcf992227d4ef8}{get\+Sprite\+Source} () const
+\begin{DoxyCompactList}\small\item\em Get the source to the sprite image. \end{DoxyCompactList}\item 
+Direction \hyperlink{classEntity_a6e758491533926eb0c27d4ddad83a210}{get\+Direction} () const
+\begin{DoxyCompactList}\small\item\em Get the direction the entity is currently facing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classEntity_a6a8f776c063333b5756e720d9b6dfeac}{can\+\_\+move} (Direction direction) const =0
+\begin{DoxyCompactList}\small\item\em A pure virtual function that checks if the entity can move or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}\label{classEntity_a931b21fbdebb1a5963b4bcab5df128f5}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{classEntity_a0fa3249cb9d74341cbd1343ef735e741}\label{classEntity_a0fa3249cb9d74341cbd1343ef735e741}} 
+\hyperlink{structPoint}{Point} {\bfseries position}
+\item 
+\mbox{\Hypertarget{classEntity_a1376f94e972719f8153716ccfda85c6f}\label{classEntity_a1376f94e972719f8153716ccfda85c6f}} 
+Direction {\bfseries dir}
+\item 
+\mbox{\Hypertarget{classEntity_a98572d956beb757675259e55bf79d5fd}\label{classEntity_a98572d956beb757675259e55bf79d5fd}} 
+double {\bfseries speed}
+\item 
+\mbox{\Hypertarget{classEntity_ac5e09232fb967bf716cc6e6684d32cea}\label{classEntity_ac5e09232fb967bf716cc6e6684d32cea}} 
+unsigned int {\bfseries width}
+\item 
+\mbox{\Hypertarget{classEntity_aebf02bb745e69e68f44d5b5cee318d97}\label{classEntity_aebf02bb745e69e68f44d5b5cee318d97}} 
+unsigned int {\bfseries height}
+\item 
+\mbox{\Hypertarget{classEntity_a998573f778e41028ebae46d195314ab9}\label{classEntity_a998573f778e41028ebae46d195314ab9}} 
+std\+::string {\bfseries sprite\+\_\+src}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A pure virtual class representing a movable entity. 
+
+The class has basic members all movable entities should have, such as position, direction, size etc. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEntity_a6a8f776c063333b5756e720d9b6dfeac}\label{classEntity_a6a8f776c063333b5756e720d9b6dfeac}} 
+\index{Entity@{Entity}!can\+\_\+move@{can\+\_\+move}}
+\index{can\+\_\+move@{can\+\_\+move}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{can\+\_\+move()}{can\_move()}}
+{\footnotesize\ttfamily virtual bool Entity\+::can\+\_\+move (\begin{DoxyParamCaption}\item[{Direction}]{direction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+A pure virtual function that checks if the entity can move or not. 
+
+Checks if the entity can move or not. Since this is checked differently for each entity type the function is pure virtual. 
+\begin{DoxyParams}{Parameters}
+{\em direction} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If entity can move or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a8c7f316068b48003621f301b24d6ff47}\label{classEntity_a8c7f316068b48003621f301b24d6ff47}} 
+\index{Entity@{Entity}!change\+Direction@{change\+Direction}}
+\index{change\+Direction@{change\+Direction}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{change\+Direction()}{changeDirection()}}
+{\footnotesize\ttfamily void Entity\+::change\+Direction (\begin{DoxyParamCaption}\item[{Direction}]{direction }\end{DoxyParamCaption})}
+
+
+
+Change direction entity is faced. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Direction to change into \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEntity_a6e758491533926eb0c27d4ddad83a210}\label{classEntity_a6e758491533926eb0c27d4ddad83a210}} 
+\index{Entity@{Entity}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Direction()}{getDirection()}}
+{\footnotesize\ttfamily Direction Entity\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the direction the entity is currently facing. 
+
+\begin{DoxyReturn}{Returns}
+Direction entity is currently facing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a5bbd1da83a9212d0de7e6d0dca659bf8}\label{classEntity_a5bbd1da83a9212d0de7e6d0dca659bf8}} 
+\index{Entity@{Entity}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily unsigned int Entity\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the height of the entity. 
+
+\begin{DoxyReturn}{Returns}
+Height of the entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a403f69eb888da7c5a690b79c658cdf47}\label{classEntity_a403f69eb888da7c5a690b79c658cdf47}} 
+\index{Entity@{Entity}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily std\+::string Entity\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the name of the entity. 
+
+\begin{DoxyReturn}{Returns}
+Name of entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a0db2ab8dd08e0da409133786803bd4e0}\label{classEntity_a0db2ab8dd08e0da409133786803bd4e0}} 
+\index{Entity@{Entity}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily \hyperlink{structPoint}{Point} Entity\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the entity. 
+
+\begin{DoxyReturn}{Returns}
+Position of entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a7cf65c6f73d2a17e59a26344c8ffb999}\label{classEntity_a7cf65c6f73d2a17e59a26344c8ffb999}} 
+\index{Entity@{Entity}!get\+Speed@{get\+Speed}}
+\index{get\+Speed@{get\+Speed}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Speed()}{getSpeed()}}
+{\footnotesize\ttfamily double Entity\+::get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the speed of the entity. 
+
+\begin{DoxyReturn}{Returns}
+Speed of entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a0d10637b4a1e31e139fcf992227d4ef8}\label{classEntity_a0d10637b4a1e31e139fcf992227d4ef8}} 
+\index{Entity@{Entity}!get\+Sprite\+Source@{get\+Sprite\+Source}}
+\index{get\+Sprite\+Source@{get\+Sprite\+Source}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Sprite\+Source()}{getSpriteSource()}}
+{\footnotesize\ttfamily std\+::string Entity\+::get\+Sprite\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the source to the sprite image. 
+
+\begin{DoxyReturn}{Returns}
+Source to the sprite image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_a002be2c6f13d59bff1806ef8815478d5}\label{classEntity_a002be2c6f13d59bff1806ef8815478d5}} 
+\index{Entity@{Entity}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily unsigned int Entity\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the width of the entity. 
+
+\begin{DoxyReturn}{Returns}
+Width of entity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEntity_aba38705a06cf12c0e87b8b42713f3ce7}\label{classEntity_aba38705a06cf12c0e87b8b42713f3ce7}} 
+\index{Entity@{Entity}!move@{move}}
+\index{move@{move}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Entity\+::move (\begin{DoxyParamCaption}\item[{Direction}]{direction,  }\item[{unsigned int}]{steps = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Moves the entity in a direction. 
+
+Moves the entity in the specified direction a specified amount of steps (essentially the same as distance) 
+\begin{DoxyParams}{Parameters}
+{\em direction} & The direction to move in \\
+\hline
+{\em steps} & Amount of steps to move entity (essentially the same as distance) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEntity_abfef59d2e7f81727d43a86425e8e06df}\label{classEntity_abfef59d2e7f81727d43a86425e8e06df}} 
+\index{Entity@{Entity}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Entity\+::set\+Position (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{pos }\end{DoxyParamCaption})}
+
+
+
+Change position of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Specified position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEntity_a8871ade33babf42d554f498154f35e26}\label{classEntity_a8871ade33babf42d554f498154f35e26}} 
+\index{Entity@{Entity}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Entity@{Entity}}
+\subsubsection{\texorpdfstring{set\+Position()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Entity\+::set\+Position (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Change position of the entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/position \\
+\hline
+{\em y} & y-\/position \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+entity.\+h\item 
+entity.\+cpp\end{DoxyCompactItemize}

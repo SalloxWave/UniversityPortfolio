@@ -1,0 +1,137 @@
+\documentclass{TDP003mall}
+
+\newcommand{\version}{Version 1.1}
+\author{Alexander Jonsson, \url{alejo720@student.liu.se}\\
+  Joakim Johansson, \url{joajo229@student.liu.se}}
+\title{Kodgranskningsprotokoll}
+\date{2016-12-09}
+\rhead{Alexander Jonsson \\
+Joakim Johansson}
+
+
+
+\begin{document}
+\projectpage
+\section{Revisionshistorik}
+\begin{table}[!h]
+\begin{tabularx}{\linewidth}{|l|X|l|}
+\hline
+Ver. & Revisionsbeskrivning & Datum \\\hline
+1.1 & Lagt till mottagen feedback & 2016-11-09 \\\hline
+1.0 & Första version, positiv och konstruktiv feedback & 2016-11-08 \\\hline
+\end{tabularx}
+\end{table}
+
+\section{Kodgranskningsmötet}
+Datum: 2016 - 12 - 08 
+\\ \\
+Given feedback från: \\
+alejo720 (Alexander Jonsson) \\
+joajo229 (Joakim Johansson) 
+\\ \\
+Mottagen feedback från: \\
+Sokrates Lamprou (andla830@student.liu.se) \\
+Benjamin Fischer (benfi309@student.liu.se)
+\\ \\
+Mötet gick till på så sätt att vi gick igenom och förklarade varandras kod och diskuterade lite om vad som var bra och mindre bra med koden. Efter mötet pushade vi upp koden till git för att kunna inspektera vidare.
+
+\newpage
+
+\section{Vår granskning}
+Feedback till projektgruppen.
+\subsection{Positiv feedback}
+Saker som är bra och inte borde ändras.
+\subsubsection{Klassdiagram}
+Bra att ni har...
+\begin{itemize}
+\item Separation mellan medlemsvariabler och funktioner.
+\item En 'Engine'-klass som håller reda på spelet.
+\item Datatyp på alla variabler.
+\item Visat vilka klasser som äger andra klasser.
+\end{itemize}
+
+\subsubsection{Koden}
+Bra att ni har...
+\begin{itemize}
+\item Påbörjat utveckling och testning av era klasser.
+\item Delat upp klasserna i filer.
+\item Gömt undan privata variabler inuti klassen.
+\item Skapat klasser med en tydlig uppgift i tanke.
+\end{itemize}
+I övrigt fina bilder och bra speltitel.
+
+\newpage
+
+\subsection{Konstruktiv feedback}
+Saker som borde tänkas en extra gång på.
+\subsubsection{Klassdiagram}
+Tänk på att...
+\begin{itemize}
+\item Ni har inte angett vilka funktioner/variabler som är privata/protected (görs med '-' respektive '\#' framför).
+\item 'Angle' i tank tycker vi borde vara en double.
+\item Specificera klassen exakt. Byt ut t.ex. 'Event' mot 'sf::Event' och 'Sprite' till 'sf::Sprite'. Annars kan den som läser klassdiagram tro att det är en klass ni själva har implemterat.
+\item Ni behöver multiplicitet i erat klassdiagram. Det visar hur många instanser av en klass en klass äger. T.ex. en 'Tank' har 1 'Pipe', en 'Engine' har 2 'Tanks'. (* betyder ospecificerat antal).
+\item Publika funktionen 'Destroy' i projektilklassen har inte konsekvent namngivning eftersom den börjar med stor bokstav till skillnad från era andra publika funktioner.
+\item Er 'key\_stream'-variabel är av typen 'sf::Event' men namnet får en att tro att det är specifikt ett 'Key Event'.
+\item 'Engine'-klassen är inte uppbyggd så det fungerar enligt följande krav: \\
+	int main()\\
+	\{\\
+		Engine engine;\\
+		engine.run();\\
+		return 0;\\
+	\}\\
+Dessutom har ni en 'Update()'-funktion i engine men tanken är ju att spel-loopen ska finnas i en "run()"-funktion som automatiskt uppdaterar spelet varje iteration.
+\item Raka pilar skulle se snyggt ut.
+\item change\_angle(direction::bool) och change\_power(amount:bool) har otydlig parametervariabel.
+\end{itemize}
+
+\newpage
+
+\subsection{Koden}
+Tänk på att...
+\begin{itemize}
+\item Sätt 'const' på medlemsfunktioner som inte ska ändra på några variabler, t.ex. 'getters'. Sätt även 'const-reference(const \&)' på avancerade datastrukturer i parametrarna där ni inte ska ändra på parametern.
+\item Fler förklarande kommentar, mer dokumentation.
+\item Ni behöver en gemensam basklass för alla 'sprites'. Ni skulle kunna ha en 'Enitity' klass som både 'Projectile' och 'Tank' ärver ifrån. Den klassen skulle till exempel kunna ha en funktion 'move' som 'Projectile'-klassen och 'Tank'-klassen ärver ifrån.
+\item För att minska beroendet mellan det grafiska och det logiska skulle ni kunna byta ut er 'sf::Sprite' objekt mot ett filnamn och ha spelarspriten i er grafiska klass. Tänk er att klasserna ni bygger borde kunna användas med endast terminalen som det grafiska.
+\item Ni har många publika medlemsfunktioner där ni skriver klassens namn tillsammans med vad funktionen gör. Detta är redundant då funktioner endast kan anropas ifrån objektet skapat av klassen. 'player.move' är minst lika tydligt som 'player.movePlayer'.
+\item Som vi nämnde i feedbacken om klassdiagrammet behöver ni strukturera 'Engine' klassen så ni kan köra erat spel på liknande vis: \\
+	int main()	\{\\
+		Engine engine;\\
+		engine.run();\\
+		return 0;\\
+	\}
+\item Ni borde ha en mapp med alla bilder så blir det lättare att navigera i projektet samt lättare att länka till bilder i mappen. Det gör det lättare om ni t.ex. vill implementera olika pansarvagnar med olika bilder.
+\item Er brist på kommentarer gör koden ibland svår att förstå.
+\item Era sprites i 'Pipe'-klassen heter 'piSprite' vilket tog ett tag för oss att förstå att det var förkortning för 'pipeSprite'. Det är viktigt med tydliga variabelnamn.
+\item Just nu representerar ni 'Player' och 'Pipe'-klassen genom en 'sf::Sprite'. Tänk om man vill använda sig av de klasserna på ett annan grafiskt gränssnitt. Just nu tänker ni: "En sprite är en Player". Tänk istället: "En Player har en 'Sprite'". Att ni har filväg i konstruktorn försämrar även klassens flexibilitet då någon kanske vill använda sig av Player klassen utan en Sprite. Generella klasser är att föredra.
+\item Ni skickar en 'char' för att välja vilken riktning ett objekt ska röra sig. Om ni istället skulle ha en 'enumeration' som representerar en riktning blir det lättare för användaren av koden att förstå vad den ska skicka in till funktionen. Som ni har nu krävs det kommenterar vilken 'char' som leder till vilken riktning.
+\end{itemize}
+
+\newpage
+
+\section{Mottagen feedback}
+\subsection{Feedback}
+\begin{enumerate}
+\item Ni har ingen 'Game'-klass.
+\item Variabeln 'win' i 'Player' är publik vilket inte en variabel bör vara.
+\item Klassen använder sig av datatypen 'Point' men ni har inte inkluderat den i filen. Går det att kompilera ändå?
+\item Ni har alla spelarsprites i 'GUI\_Gameboard'-klassen. Vi tycker det skulle vara bättre att ha så att varje objekt håller i sin egen 'sf::Sprite' för att koncentrera allt som har med en sak att göra till en och samma klass. Då skulle ni även kunna använda er av SFML's inbyggda 'setPosition()' för att ändra positionen på ett objekt. Denna funktion tar alltså in en sf::Vector2f innehållandes två punkter.
+\item Ni sätter position på en spelare i y-led men ni säger att en spelare endast kan sättas på x-led?
+\item En 'GUI' är en metod för att underlätta interaktion med en människa och en dator, typiskt genom bilder och andra grafiska element. T.ex. menyer,HP-bars, ammunition och sikte för vapen (se exempelbild: https://postimg.org/image/6zdd0o901/). Därför tycker vi inte att ni borde kalla klasser som har att göra med själva världen för något annat. T.ex. 'GUI\_Gameboard' håller spelararnas sprite vilket gör att den inte egentligen är en 'GUI' utifrån den tolkning vi har av vad en 'GUI' är i dess sanna bemärkelse.
+\item I 'GUI'-klassen har ni variabel för ljud. Detta tycker vi inte tillhör det grafiska. Ni skulle kunna möjligtvis kunna lägga ljudet i en t.ex. spelarklassen och koppla det till en 'Action'.
+
+\end{enumerate}
+
+\subsection{Konsekvenser}
+\begin{enumerate}
+\item Detta ledde till att vi fick bygga en 'Game'-klass istället för att köra allt i 'main'-funktionen.
+\item Vi tog bort variabeln och bestämde oss för att hantera vilken spelare som vunnit genom att när det behövs titta vilka spelare som är döda.
+\item Anledningen att det fungerar ändå är för att 'Entity'-klassen som 'Player'-klassen ärver ifrån inkluderar datatypen 'Point'. Men vi inkluderade 'Point' i 'Player'-klassen ändå för tydlighetens skull. Vi kollade även om vi hade missat samma sak på andra ställen i koden.
+\item Vi vill bygga upp vår spelarklass på så sätt att den är så lite beroende av ett specifikt grafiskt gränssnitt som möjligt. Därför vill vi varken ha 'sf::Sprite' eller 'sf::Vector' i vår spelarklass. Därför ändrade vi inte, trots feedback.
+\item Detta är för att en spelare måste starta på en y-position. Dessutom ger det flexibilitet om vi vill lägga till rörelse i y-led i framtiden. Därför ändrade vi inte, trots feedback.
+\item Detta ledde till att vi tog bort 'GUI' framför de grafiska klassernas namn. Det ledde också till att vi tänkte en extra gång på vad de grafiska klasserna egentligen borde heta utifrån vad de ska representera.
+\item Detta ledde till att vi flyttade ut ljudet från 'GUI' till logiska klasser. T.ex. Musiken ladde vi in i 'Level'-klassen.
+\end{enumerate}
+
+\end{document}

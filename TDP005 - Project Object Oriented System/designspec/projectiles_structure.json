@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Football",
+        "state": "low",
+        "width": 40,
+        "height": 40,
+        "damage": 25,
+        "speed": 3.0,
+        "sprite_src": "football.png",
+        "cooldown": 0.3
+    },
+    {
+        "id": 2,
+        "name": "Mountain Dew",
+        "state": "high",
+        "width": 40,
+        "height": 40,
+        "damage": 100,
+        "speed": 1.0,
+        "sprite_src": "mountain_dew.png",
+        "cooldown": 1
+    },
+    {
+        "id": 3,
+        "name": "BOMB",
+        "state": "high",
+        "width": 40,
+        "height": 40,
+        "damage": 450,
+        "speed": 0.3,
+        "sprite_src": "bomb.png",
+        "cooldown": 5
+    },
+    {
+        "id": 4,
+        "name": "Nut",
+        "state": "low",
+        "width": 40,
+        "height": 40,
+        "damage": 7,
+        "speed": 2,
+        "sprite_src": "nut.png",
+        "cooldown": 0.1
+    }
+]

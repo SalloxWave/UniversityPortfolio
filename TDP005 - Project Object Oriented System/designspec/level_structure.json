@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Ice Cave",
+        "width": 1580,
+        "height": 880,
+        "y_level": 699,
+        "restriction_left": [87, 715],
+        "restriction_right": [875, 1502],
+        "bg_src": "ice_cave.png",
+        "portrait_src": "ice_cave_portrait.png",
+        "music_src": "hit.wav"
+    },
+    {
+        "id": 2,
+        "name": "Firelands",
+        "width": 1400,
+        "height": 780,
+        "y_level": 697,
+        "restriction_left": [81, 644],
+        "restriction_right": [766, 1329],
+        "bg_src": "firelands.png",
+        "portrait_src": "firelands_portrait.png",
+        "music_src": "shoot.wav"
+    }
+]

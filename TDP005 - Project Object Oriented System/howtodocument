@@ -1,0 +1,33 @@
+Detailed description
+/**
+* text...
+* text...
+*/
+
+/*!
+* text...
+* text...
+*/
+
+Brief desciption
+/**
+* \brief text...
+* text...
+*/
+
+/*!
+* \brief text...
+* text...
+*/
+
+Brief with one line:
+/// Brief description
+//! Brief desciption
+
+Documentation after a member
+int var; /*!< Detailed description after the member */
+int var; /**< Detailed description after the member */
+int var; //!< Detailed description after the member
+         //!< 
+int var; ///< Detailed description after the member
+         ///< 

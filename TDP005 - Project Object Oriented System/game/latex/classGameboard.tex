@@ -1,0 +1,92 @@
+\hypertarget{classGameboard}{}\section{Gameboard Class Reference}
+\label{classGameboard}\index{Gameboard@{Gameboard}}
+
+
+A class representing a main menu window.  
+
+
+
+
+{\ttfamily \#include $<$gameboard.\+h$>$}
+
+Inheritance diagram for Gameboard\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classGameboard}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGameboard_a35e7c6d4e378d0e62a5cd964933410cf}{Gameboard} ()=default
+\begin{DoxyCompactList}\small\item\em A default constructor. \end{DoxyCompactList}\item 
+void \hyperlink{classGameboard_a26dc97929c4382659d1f52bb0f8bb19a}{initialize} (\hyperlink{classLevel}{Level} const \&level, \hyperlink{classPlayer}{Player} const \&player1, \hyperlink{classPlayer}{Player} const \&player2)
+\begin{DoxyCompactList}\small\item\em Initializes member variables of the gameboard window. \end{DoxyCompactList}\item 
+void \hyperlink{classGameboard_a6192fda60355f9bb0175af2fc50f40d0}{update\+Graphics} (\hyperlink{classLevel}{Level} const \&level, \hyperlink{classPlayer}{Player} const \&player1, \hyperlink{classPlayer}{Player} const \&player2)
+\begin{DoxyCompactList}\small\item\em Update graphical display of the gameboard window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A class representing a main menu window. 
+
+A class inheriting from \char`\"{}\+Base\+\_\+\+Window\char`\"{} to make class represent a window. In addition the class contains members needed for a gameboard in the game. A gameboard is a graphical representation of a level with two players fighting. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameboard_a35e7c6d4e378d0e62a5cd964933410cf}\label{classGameboard_a35e7c6d4e378d0e62a5cd964933410cf}} 
+\index{Gameboard@{Gameboard}!Gameboard@{Gameboard}}
+\index{Gameboard@{Gameboard}!Gameboard@{Gameboard}}
+\subsubsection{\texorpdfstring{Gameboard()}{Gameboard()}}
+{\footnotesize\ttfamily Gameboard\+::\+Gameboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+A default constructor. 
+
+Constructor uses compiler\textquotesingle{}s default way of constructing class. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameboard_a26dc97929c4382659d1f52bb0f8bb19a}\label{classGameboard_a26dc97929c4382659d1f52bb0f8bb19a}} 
+\index{Gameboard@{Gameboard}!initialize@{initialize}}
+\index{initialize@{initialize}!Gameboard@{Gameboard}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Gameboard\+::initialize (\begin{DoxyParamCaption}\item[{\hyperlink{classLevel}{Level} const \&}]{level,  }\item[{\hyperlink{classPlayer}{Player} const \&}]{player1,  }\item[{\hyperlink{classPlayer}{Player} const \&}]{player2 }\end{DoxyParamCaption})}
+
+
+
+Initializes member variables of the gameboard window. 
+
+Initializes member variables based on the specified level, player 1 and player 2 
+\begin{DoxyParams}{Parameters}
+{\em level} & The specified level for gameboard to represent \\
+\hline
+{\em player1} & \hyperlink{classPlayer}{Player} 1 on the gameboard \\
+\hline
+{\em player2} & \hyperlink{classPlayer}{Player} 2 on the gameboard \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameboard_a6192fda60355f9bb0175af2fc50f40d0}\label{classGameboard_a6192fda60355f9bb0175af2fc50f40d0}} 
+\index{Gameboard@{Gameboard}!update\+Graphics@{update\+Graphics}}
+\index{update\+Graphics@{update\+Graphics}!Gameboard@{Gameboard}}
+\subsubsection{\texorpdfstring{update\+Graphics()}{updateGraphics()}}
+{\footnotesize\ttfamily void Gameboard\+::update\+Graphics (\begin{DoxyParamCaption}\item[{\hyperlink{classLevel}{Level} const \&}]{level,  }\item[{\hyperlink{classPlayer}{Player} const \&}]{player1,  }\item[{\hyperlink{classPlayer}{Player} const \&}]{player2 }\end{DoxyParamCaption})}
+
+
+
+Update graphical display of the gameboard window. 
+
+Updates graphics of window based on possible changes, the specified level, player 1 and player 2 
+\begin{DoxyParams}{Parameters}
+{\em level} & The specified level for gameboard to represent \\
+\hline
+{\em player1} & \hyperlink{classPlayer}{Player} 1 on the gameboard \\
+\hline
+{\em player2} & \hyperlink{classPlayer}{Player} 2 on the gameboard \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+gameboard.\+h\item 
+gameboard.\+cpp\end{DoxyCompactItemize}
