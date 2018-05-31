@@ -1,0 +1,22 @@
+JavaScript
+
+Java släpptes, interaktiva saker kunde göras
+Java börjar få lite fart i media, häng på
+
+ECMAScript edition 5 2009
+ECMAScript edition 6 2015
+
+utan "var" deklarerar globalt
+var deklarerar lokalt i functionen (inte lokalt i t.ex. for-loopar)
+"let" deklarerar i blocket (t.ex. i en for-loop)
+
+JavaScript OOP
+Prototypbaserat
+
+Prototyping:
+- Funktioner är motsvarigheten till klasser
+- Funktioner kan innehålla funktioner
+- Klasser kan utökas efter att objekt har skapats
+- Objekt kan utökas...
+
+

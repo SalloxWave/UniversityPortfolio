@@ -1,0 +1,22 @@
+html
+    include includes/head.pug    
+    body
+        include includes/nav.pug
+
+        div.area.login_area
+            div.dark-background
+                div.container.jumbotron.hor_center.login_custom
+                    h1 It's Now or Never
+                    p.desc Boost your gameplay by login in.
+                    form(id="loginForm")
+                        
+                        div.login_container
+                            input.form-control(id="loginName" placeholder="Username or Email")
+                            input.form-control(id="password" type="password" placeholder="Password")
+                            button.btn.btn-success.btn-lg(id="btnLogin" type="submit") LOGIN
+                    span(id="errLogin")
+                    p Doesn't have an account yet? <a href="/register">Sign up here</a>
+                        
+                        
+        include includes/script.pug
+        script(type="text/javascript" src="scripts/login.js")

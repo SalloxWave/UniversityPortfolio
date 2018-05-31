@@ -1,0 +1,38 @@
+html
+    include includes/head.pug    
+    body
+        include includes/nav.pug
+
+        div.area.main_area
+            div.dark-background
+                div.container.jumbotron.hor_center
+                    h1 Website3826
+                    p A tool to track all your game hours across all your accounts
+                    p
+                        a.btn.btn-success.btn-lg(href="/register" role="button") JOIN NOW
+                    p
+                        a.btn.btn-success.btn-lg(href="/login" role="button") LOGIN NOW
+        
+        div.area.apps_area
+            div.container.jumbotron
+                div.hor_center
+                    h2 Sync hours from all the major platforms
+                    p Where every you game, we have you covered
+                    span
+                        img.app_image(src="http://www.logoeps.net/wp-content/uploads/2016/12/steam-logo.png")
+                        img.app_image(src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Origin.svg/2000px-Origin.svg.png")
+                        img.app_image(src="https://vignette.wikia.nocookie.net/logopedia/images/6/65/Chorme_old_logo.png/revision/latest?cb=20150418193622")
+                        img.app_image(src="http://vignette3.wikia.nocookie.net/logopedia/images/8/83/Xbox_One_stacked.png/revision/latest?cb=20130522114903")
+                        img.app_image(src="https://vignette.wikia.nocookie.net/logopedia/images/7/7e/PlayStation_Network.png/revision/latest?cb=20110901131500")
+                        img.app_image(src="https://www.vectorcast.com/sites/default/files/styles/large/public/api-icon.png?itok=bDuDClfU")
+        
+        div.area.features_area
+            div.container.jumbotron
+                div.features_area_text
+                    h1 How it works
+                    p Website3826 is a place where you can track all your game hours in one place. You can even add your friends and see who is the boss!
+                img.features_area_image(src="https://images.vexels.com/media/users/3/135991/isolated/preview/ee03f76ed0711b770c0c797d83bd2ea0-gaming-controller-icon-by-vexels.png")
+
+        
+        include includes/footer.pug
+        include includes/script.pug

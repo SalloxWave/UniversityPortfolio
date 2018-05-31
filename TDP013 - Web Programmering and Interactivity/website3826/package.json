@@ -1,0 +1,35 @@
+{
+  "name": "website3826",
+  "version": "1.0.0",
+  "description": "Social website",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha tests/serverTest.js --delay",
+    "test_istanbul": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha tests/serverTest.js",
+    "start": "node server.js",
+    "selenium": "python tests/test_selenium.py",
+    "selenium_nav": "python tests/test_selenium.py A_NavigationTest",
+    "selenium_account": "python tests/test_selenium.py B_CreateAccount",
+    "selenium_friend_post": "python tests/test_selenium.py C_FriendAndPost"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ida.liu.se:joajo229/tdp013.git"
+  },
+  "author": "Joakim Johansson, Alexander Jonsson",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.1",
+    "express-session": "^1.15.6",
+    "mongodb": "^2.2.31",
+    "pug": "^2.0.0-rc.4",
+    "superagent": "^3.6.3"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.0"
+  }
+}

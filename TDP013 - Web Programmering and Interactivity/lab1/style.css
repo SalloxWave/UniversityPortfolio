@@ -1,0 +1,179 @@
+
+/* ===================================== */
+/* ==   Containers and broad styles   == */
+/* ===================================== */
+body
+{
+	margin: 0px;
+	background-color: #55ACEF;
+}
+main
+{
+	max-width: 500px;
+	height: 100vh;
+	box-sizing: border-box;
+	margin: 0 auto;
+	overflow: hidden;
+}
+*
+{
+	box-sizing: border-box;
+}
+h1, h2, h3, h4, p, span, a
+{
+	color: white;
+	text-shadow: 2px 2px 2px rgba(150, 150, 150, 1);
+}
+hr
+{
+	margin: 0px 0px 5px 0px;
+	border: 1px solid white;
+}
+
+
+/* ===================================== */
+/* ==          Header Area            == */
+/* ===================================== */
+header
+{
+	text-align: center;
+	padding: 5px;
+	font-family: sans-serif;
+	height: 140px;
+	line-height: 140px;
+}
+header h1
+{
+	margin: 0px;
+}
+
+
+/* ===================================== */
+/* ==          New Post Area          == */
+/* ===================================== */
+#postForm
+{	
+	display: flex;
+	justify-content: center;
+	height: 40px;
+}
+#text
+{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	border: 0px;
+	background: none;
+	resize: none;
+	color: white;
+	outline: none;
+	font-size: 15px;
+	word-break: break-word;
+}
+#text::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #D7D7D7;
+}
+#btnPost
+{
+	width: 80px;
+	height: 100%;
+	display: absolute;
+	top: 0px;
+	right: 0px;
+	outline: none;
+	background: none;
+	color: white;
+	border: none;
+	font-size: 20px;
+}
+#btnPost:hover
+{
+	background-color: white;
+	color: #55ACEF;
+	cursor: pointer;
+}
+#postError
+{
+	background-color: red;
+	width: 100%;
+	text-align: center;
+	display: none;
+	margin-top: 10px;
+	padding: 5px;
+}
+#charsCount
+{
+	margin-right: 10px;
+	display: flex;
+	justify-content: center;
+}
+#charsCount span
+{
+	text-shadow: none;
+	font-size: 12px;
+	padding: 5px 8px;
+	margin: 9px 2px;
+	display: inline-block;
+	height: auto;
+}
+
+
+/* ===================================== */
+/* ==          List of Posts          == */
+/* ===================================== */
+#postList
+{
+	text-align: center;
+	width: 100%;
+	text-align: center;
+	height: calc(100vh - 250px);
+	overflow: scroll;
+}
+#postList li
+{	
+	display: inline-block;
+	text-align: left;
+	width: 100%;
+	padding: 10px;
+	margin-top: 10px;
+	position: relative;
+	border: 1px solid rgba(255,255,255,0.4);
+	background-color: rgba(255,255,255,0.2);
+}
+#postList span
+{	
+	display: inline-block;
+	max-width: 100%;		
+	padding: 10px;
+	font-size: 14px;
+	padding-right: 110px;
+	box-sizing: border-box;
+	text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.3);
+	font-family: sans-serif;
+	font-weight: bold;
+}
+#postList li button
+{
+	padding: 10px 15px;
+	position: absolute;
+	top: 10px;
+	border: none;
+	background: none;
+	color: white;
+	right: 10px;
+	outline: none;
+}
+#postList li button:hover
+{
+	background-color: white;
+	color: #55ACEF;
+	cursor: pointer;
+}
+.read
+{
+	background: none !important;
+}
+.read span
+{
+	font-weight: lighter !important;
+}

@@ -1,0 +1,238 @@
+body {
+    padding-top: 0px;
+}
+a {
+    color: white;
+}
+
+.jumbotron {
+    background: none;
+}
+.jumbotron {
+    background: none;
+}
+.hor_center {
+    text-align: center;
+}
+.area {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.btn {
+    border-radius: 0px;
+}
+.dark-background {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+}
+.search-icon:hover {
+    background-color: white;
+}
+
+
+/* Main Navbar */
+.nav-bar-container {
+    padding-right: 15px;
+}
+.navbar-fixed-top {
+    border-width: 0 0 0px;
+}
+
+/* Main Area */
+.main_area {
+    background-image: url('https://s3-us-west-1.amazonaws.com/shacknews/assets/editorial/2016/10/overwatch-4k.0.jpg');
+    padding-top: 50px;   
+    height: 80vh;
+    color: white !important;
+}
+.main_area .jumbotron {
+    color: white;
+}
+
+/* Features area */
+.features_area {
+    background-color: white;
+    height: 60vh;
+}
+.features_area_image {
+    width: 200px;
+    max-height: 100%;
+    float: right;
+}
+.features_area_text {
+    display: inline-block;
+    width: 60%;
+}
+
+/* Apps area */
+.apps_area {
+    background-color: #F0F0F0;
+    height: 40vh;
+}
+.app_image {
+    height: 30px;
+    margin: 10px;
+}
+
+/* Footer area */
+.footer_area {
+    background-color: #555;
+    height: 100px;
+    text-align: center;
+}
+.footer_area nav {
+    margin: auto;
+}
+.footer_area nav a {
+    margin: 10px;
+}
+
+/* Login area */
+.login_area {
+    background-image: url('https://s3-us-west-1.amazonaws.com/shacknews/assets/editorial/2016/10/overwatch-4k.0.jpg');
+    padding-top: 50px;   
+    height: 100vh;
+    color: white !important;
+}
+.login_area p {
+    font-size: 15px;
+}
+.login_area a {
+    text-decoration: underline;
+}
+.login_custom {
+    max-width: 800px;
+}
+.login_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login_container input {
+/* Currently makes text invisible
+    padding: 22px;*/
+    border-radius: 0px;
+}
+#loginForm input {
+    margin-right: 10px;
+}
+.custom_label {
+    margin-top: 10px;
+}
+.desc {
+    font-size: 25px !important;
+}
+
+/* Login area */
+.register_area {
+    background-image: url('https://s3-us-west-1.amazonaws.com/shacknews/assets/editorial/2016/10/overwatch-4k.0.jpg');
+    padding-top: 50px;   
+    height: 100vh;
+    color: white !important;
+}
+.register_area p {
+    font-size: 15px;
+}
+.register_area a {
+    text-decoration: underline;
+}
+.login_custom {
+    max-width: 800px;
+}
+.register_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+ 
+#registerForm input {
+    /* Makes text invisible
+    padding: 20px;*/
+    border-radius: 0px;
+    margin-bottom: 8px;
+    width: 300px;
+}
+.custom_label {
+    margin-top: 10px;
+}
+#btnRegister {
+    width: 300px;
+    margin-bottom: 20px;
+}
+.desc {
+    font-size: 25px !important;
+}
+
+/* Profile Area */
+.profile-picture {
+    width: 140px;
+    margin-top: 80px;
+}
+.profile_area {
+    background-image: url('https://s3-us-west-1.amazonaws.com/shacknews/assets/editorial/2016/10/overwatch-4k.0.jpg');
+    padding-top: 50px;   
+    height: 50vh;
+    color: white !important;
+}
+.dark-background-profile {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+}
+
+/* Stats */
+.stats_area {
+    background-color: #555;
+}
+.stats_area a {
+    padding: 15px;
+    display: inline-block;
+}
+.stats_area a:hover {
+   background-color: white;
+   text-decoration: none;
+}
+.fulllwidth {
+    width: 100%;
+}
+
+/* Content Area */
+.content_area {
+    background-color: white;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.friends_list img {
+    width: 30px;
+}
+.friends_list span {
+    color: black;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+.friends_list a {
+    color: black;    
+}
+.friend_request a {
+    font-size: 24px;
+}
+.badge {
+    color: white !important;
+    float: right;
+}

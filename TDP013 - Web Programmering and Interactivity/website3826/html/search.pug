@@ -1,0 +1,39 @@
+html
+    include includes/head    
+    body
+        include includes/nav.pug
+
+        div.area.profile_area
+            div.dark-background-profile
+                div.container.jumbotron.hor_center
+                    h1 Search for a user
+                    p Find new BFFS
+
+        div.area.content_area.hor_center
+            div.container.row
+                div.col-md-6
+                    form.form-horizontal(id="searchForm" method="GET")
+                        div.form-group
+                            div.col-md-12
+                                label(for="txtQuery") Search for username or email:
+                                input.form-control(id="txtQuery" type="text" placeholder="Search for user")
+                        div.form-group
+                            div.col-md-12
+                                label(for="numLimit") Limit search results (0 = no limit)
+                                input.form-control(id="numLimit" type="number" min="0" value="0")
+                        div.form-group
+                            div.col-md-12
+                                button(id="btnSearch", type="submit") Search
+
+                div.col-md-6.friends_list
+                    h4 Found #{results.length} results
+                    ul.list-group.friends-list
+                        for result in results
+                            li.list-group-item
+                                a(href="/" + result.userName) 
+                                    img(src="https://static1.squarespace.com/static/526839d5e4b0a6ea6c312276/526ef8b1e4b0aa6f78f3f614/5271642ce4b03e61739879b6/1383162937731/tim+in+India+profile_circle.png%22")
+                                    span #{result.userName}
+
+        include includes/footer.pug
+        include includes/script.pug
+        script(type="text/javascript" src="scripts/search.js")

@@ -1,0 +1,76 @@
+html
+	include includes/head.pug
+	title Website3826 - #{title}	
+	body
+		include includes/nav.pug
+
+		div.area.profile_area
+			div.dark-background-profile
+				div.container.jumbotron.hor_center
+					img.profile-picture(src="images/example_profile_image.png")
+					h1 #{user.userName}					
+					if showRequestPending
+						p
+							button.btn.btn-primary(href="#" disabled="true") Friend request pending
+					else if showRequestFriend
+						p
+							button.btn.btn-primary(href="#" onClick="requestFriend()") Send friend request
+					else if !ownProfile && loggedIn
+						p
+							button.btn.btn-danger(href="#" onClick="removeFriend()") Remove friend
+					p(id="friendAlert")
+
+					
+		div.area.stats_area
+			div.hor_center.fulllwidth
+				if ownProfile
+					a(href="#" id="posts") My posts
+					a(href="#") Settings
+				
+		
+		div.area.content_area.hor_center
+			div.container.row
+				div.col-md-6                    
+					h1 Posts (#{posts.length})					
+					if !ownProfile
+						form.form-horizontal(id="postForm")
+							div.form-group
+								div.col-md-12
+									label(for="txtMessage") Message:
+									input.form-control.col-xs-3(id="txtMessage" type="text" placeholder="Input message here")
+							div.form-group
+								div.col-md-12
+									p(id="postAlert")
+									button.btn.btn-primary(id="btnPost" type="submit") Post									
+					//-Placeholder for posts
+					ul.list-group.friends_list(id="postList")
+					if posts.length > 0
+						for post in posts
+							li.list-group-item
+								h3 #{post.message}                                    
+								a(href="/" + post.ownerName) Poster: #{post.ownerName}
+
+
+					
+				div.col-md-6.friends_list
+					div.list-group.friend_request(id="friendRequestList")
+					if ownProfile && user.friendRequests.length > 0						
+						h3(id="friendRequestHeader") Friend requests (#{user.friendRequests.length})						
+							for friendRequest in user.friendRequests
+								div.list-group-item.list-group-item-info(id="friendRequest" + friendRequest)
+									a(href="/" + friendRequest) #{friendRequest}
+									button.pull-right.btn.btn-primary(id="btn" + friendRequest onClick="addFriend('" + friendRequest + "')") Accept									
+									p(id="friendRequestAlert")
+					h1(id="friendHeader") Friends (#{user.friends.length})
+					//-Placeholder for friends
+					ul.list-group.friends_list(id="friendList")
+						for friend in user.friends
+							li.list-group-item
+								a(href="/" + friend)
+									img(src="images/example_profile_image.png") 
+									span #{friend}						
+			
+		
+		include includes/footer.pug
+		include includes/script.pug
+		script(type="text/javascript" src="scripts/profile.js")

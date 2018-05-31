@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Almost Twitter &copy;</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <main>
+
+      <!-- Header -->
+      <header>
+        <h1>Welcome to Almost Twitter!</h1>
+      </header>
+
+      <!-- New Post Area -->
+      <form id="postForm">   
+        <input autofocus id="text" placeholder="Input what to tweet!" />
+        <span id="charsCount"><span>0/140</span></span>
+        <button id="btnPost" type="submit">POST</button>
+      </form>
+
+      <!-- Field for showing error messages -->
+      <span id="postError">
+          Post can't be empty or surpass 140 characters
+      </span>
+
+      <hr>
+
+      <!-- List with submitted posts -->
+      <div id="postList">
+
+        <!--=== Example post ===
+        <li id="post<id>">
+          <span>This text should not be seen ever</span>
+          <button onclick="markAsRead("post<id>")">Mark as read</button>
+        </li>
+        -->
+
+      </div>
+
+    </main>
+
+    <!-- Home made JavaScript -->
+    <script type="text/javascript" src="script.js"></script>
+  </body> 
+</html>

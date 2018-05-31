@@ -1,0 +1,6 @@
+node_modules/
+mongodb_installation/
+lab1/lab1/
+geckodriver.log
+coverage/
+.vscode/

@@ -1,0 +1,9 @@
+- Don't use ajax for register, lougout and login?
+
+- Don't send password via url, this can be done with $.get and specify data
+https://www.w3schools.com/jquery/jquery_ajax_get_post.asp
+
+- Realized we don't need to store "created" datetime since it's already store in the _id:
+https://stackoverflow.com/questions/3778428/best-way-to-store-date-time-in-mongodb
+
+Render error to client from server?

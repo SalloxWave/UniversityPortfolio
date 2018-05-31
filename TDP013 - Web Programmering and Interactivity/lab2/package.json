@@ -1,0 +1,28 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "Almost Twitter backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --check-leaks",
+    "start": "node index.js"    
+  },  
+  "author": "Alexander Jonsson, Joakim Johansson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ida.liu.se:joajo229/tdp013.git"
+  },
+  "devDependencies": {
+    "babel-plugin-istanbul": "^4.1.5",
+    "babel-register": "^6.26.0",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.5.3",
+    "nyc": "^11.2.1"
+  }
+}

@@ -1,0 +1,14 @@
+User:
+_id (string)
+userName (string)
+email (string)
+password (string)
+profileImg (string)
+friendRequests: list(userName)
+friends: list(userName)
+
+Post:
+_id
+ownerName
+friendName
+message (HTML string)

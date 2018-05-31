@@ -1,0 +1,28 @@
+html
+    include includes/head.pug    
+    body
+        include includes/nav.pug
+
+        div.area.register_area
+            div.dark-background
+                div.container.jumbotron.hor_center.login_custom
+                    h1 Good, you are here
+                    p.desc Your life will never be the same after this... for the better ofcourse.
+                    form(id="registerForm")
+                        
+                        div.register_container
+                            label(id="errorUsername" for="userName")
+                            input.form-control(id="userName" placeholder="Username")
+                            
+                            input.form-control(id="email" placeholder="Email" type="email")
+                            span(id="errorEmail")
+                            input.form-control(id="password" placeholder="Password" type="password")
+                            span(id="errorPassword")
+                            button.btn.btn-success.btn-lg(id="btnRegister" type="submit") Sign Me Up for a Better Life
+                            p(id="alertRegister")
+                    
+                    p Already have an account? <a href="/login">Login here</a>.
+                        
+                        
+        include includes/script.pug
+        script(type="text/javascript" src="scripts/register.js")

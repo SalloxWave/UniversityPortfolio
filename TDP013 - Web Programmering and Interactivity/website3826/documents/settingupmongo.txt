@@ -1,0 +1,6 @@
+Install: https://docs.mongodb.com/manual/administration/install-on-linux/
+
+Initializing database
+use website3826
+db.createCollection("users")
+db.createCollection("posts");

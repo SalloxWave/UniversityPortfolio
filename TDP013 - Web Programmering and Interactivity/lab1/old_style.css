@@ -1,0 +1,103 @@
+body
+{
+	margin: 0px;
+}
+
+header
+{
+	background-color: darkgray;
+	border-radius: 30px;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+
+main
+{
+	width: 80%;
+	min-height: 100vh;
+	box-sizing: border-box;
+	border-radius: 30px;
+	background-color: lightgray;
+	margin: 0 auto;
+	padding: 10px;	
+}
+
+textarea
+{
+	width: 50%;
+	height: 10%;
+	padding: 10px;
+	margin-right: 30px;
+	resize: none;
+}
+
+#postForm button
+{
+	width: 20%;
+	height: 10%;
+	font-size: 48px;
+}
+
+#postForm
+{	
+	display: flex;
+	justify-content: center;
+}
+
+#postError
+{
+	color: red;	
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	margin-top: 10px;	
+}
+
+ul
+{
+	padding: 0px;
+	list-style: none;
+	text-align: center;
+}
+
+#postList
+{
+	text-align: center;
+	width: 100%;
+}
+
+#postList li
+{	
+	display: inline-block;
+	width: 70%;
+	padding: 10px;
+	background-color: gray;
+	margin-top: 20px;
+	position: relative;
+}
+
+#postList span
+{	
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;		
+	padding: 10px;
+	font-size: 14px;
+	text-overflow: ellipsis;
+	padding-right: 100px;
+	box-sizing: border-box;
+}
+
+#postList li button
+{
+	padding: 10px 15px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.read 
+{
+	background-color: green !important;
+}

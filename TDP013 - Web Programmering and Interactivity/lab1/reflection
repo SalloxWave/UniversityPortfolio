@@ -1,0 +1,24 @@
+"Är det bra eller dåligt att webbläsaren automatiskt förändrar utseende och beteende på vissa HTML-element?"
+- Dåligt: Förstör sin tänkta design
+- Bra: Möjlighet att släppa nya funktioner oberoende
+
+
+"Vad kan enligt er förbättras i HTML, JavaScript eller CSS syntax?"
+- Inkonsekvent om det krävs sluttag eller inte
+- Kommentarer onödigt jobbiga (HTML), ingen single line kommentar
+- Valfria semikolon?
+
+
+"Finns det något värde i att skriva testfall för HTML när man ändå kan testa det genom att öppna webbläsaren?"
+- (LAT)
+- (Man känner sig som en hacker)
+- Testa allt vid ny implementation, så allt fortfarande fungerar
+- Kan vara svårt att testa användervänligheten (då man själv skrivit sin kod)
+
+
+"Eftersom det inte finns code-coverage i selenium, när har man skrivit tillräckligt många testfall för att vara säker på att allt fungerar?"
+- (När man behöver kaffepaus)
+- Testa med flera fungerande och icke-fungerande värden. Gärna närmevärden
+- Låtsas vara en dum användare som kan göra vad som helst. Skriv tester för allt som den dumma användaren kan göra fel.
+- Kan aldrig vara säker om det fungerar för alla fall.
+

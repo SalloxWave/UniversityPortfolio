@@ -1,0 +1,56 @@
+GET /
+GET /register
+GET /login
+GET /search
+        query(userName/email), limit
+GET /registered
+GET /<username>
+
+---------------API------------------:
+POST /api/register
+        userName, email, password       
+
+GET /api/<username>
+
+POST /api/takenname
+        userName
+
+POST /api/takenemail
+        email
+
+POST /api/login        
+        userName/email, password
+
+POST /api/friendrequest
+        userName, friendName
+
+POST /api/addfriend
+        userName, friendName
+
+POST /api/removefriend
+        userName, friendName
+
+POST /api/post
+        ownerName (logged in user), friendName, message
+
+#Clear posts posted on specified profile
+POST /api/clearposts
+        userName
+
+#Clear posted posts of specified user
+POST /api/clearposted
+        userName
+
+#Get posts posted on specified profile
+GET /api/<username>/posts
+
+#Get posted posts of specified user
+GET /api/<username>/posted
+
+GET *
+	404 page, page not found
+
+ALL *
+	405 page, bad method
+
+

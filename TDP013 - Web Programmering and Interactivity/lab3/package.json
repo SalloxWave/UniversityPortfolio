@@ -1,0 +1,19 @@
+{
+  "name": "lab3",
+  "version": "1.0.0",
+  "description": "Almost Twitter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Alexander Jonsson, Joakim Johansson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.ida.liu.se:joajo229/tdp013.git"
+  }
+}

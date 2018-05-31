@@ -1,0 +1,9 @@
+Webbprogrammering och interaktivitet
+Introduktion, HTML5, CSS & Selenium
+
+Validering av HTML kod: http://validator.w3.org
+
+Inlinestyle CSS okej om det handlar om förändring via kod
+
+span - utan radbryt
+div - med radbryt

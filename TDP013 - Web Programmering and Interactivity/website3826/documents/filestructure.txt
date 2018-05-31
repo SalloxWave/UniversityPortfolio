@@ -1,0 +1,17 @@
+server.js
+html/
+    index.html
+    register.html
+    login.html
+    profile.html
+public/
+    style.css
+    (bootstrap)
+    scripts/
+        index.js
+        register.js
+        login.js
+        profile.js
+    images/
+        fdg785yh47gd78h855yeg.png
+        df7854hf6t6h787h785hu.png
