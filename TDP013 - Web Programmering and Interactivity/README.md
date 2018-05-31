@@ -1,9 +1,10 @@
 
 
 # TDP013 Webbprogrammering och interaktivitet
+Link to course website: https://www.ida.liu.se/~TDP013/
 =============================================
 
-## Official Description in Swedish
+## Official Description in Swedish (from course website)
 Av denna anledning är denna kurs byggd på ett sätt som lägger stor vikt vid att ge studenterna möjlighet att själva söka efter den information som behövs för att lösa de innefattande laborationerna. Föreläsningarna är tänkta att introducera ämnena och hjälpa studenterna att komma igång med sin informationssökning.
 
 
@@ -17,15 +18,6 @@ Det finns ingen särskild litteratur i kursen utan information förväntas stude
 ## Team Members
 * Alexander Jonsson ([alejo720@student.liu.se](mailto:alejo720@student.liu.se))
 * Joakim Johansson ([joajo229@student.liu.se](mailto:joajo229@student.liu.se))
-
-## Labs
-
-### / Lab 1
-In this lab, we should learn the basics of HTML, CSS and Javascript. The assignment are to create a simple messageboard where the user can type a mesage and click "Post" and the messages appends to the list. Aditional, every messages should be able to be marked as read.
-
-
-For more information about the assignment, look at the link below:
-[http://www.ida.liu.se/~TDP013/labs/lab1.sv.shtml](http://www.ida.liu.se/~TDP013/labs/lab1.sv.shtml)
 
 
 ## License
