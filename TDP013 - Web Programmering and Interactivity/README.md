@@ -1,10 +1,12 @@
 
 
 # TDP013 Webbprogrammering och interaktivitet
-Link to course website: https://www.ida.liu.se/~TDP013/
-=============================================
 
-## Official Description in Swedish (from course website)
+
+## Official Description in Swedish (from course website
+Link to course website: https://www.ida.liu.se/~TDP013/)
+
+
 Av denna anledning är denna kurs byggd på ett sätt som lägger stor vikt vid att ge studenterna möjlighet att själva söka efter den information som behövs för att lösa de innefattande laborationerna. Föreläsningarna är tänkta att introducera ämnena och hjälpa studenterna att komma igång med sin informationssökning.
 
 
