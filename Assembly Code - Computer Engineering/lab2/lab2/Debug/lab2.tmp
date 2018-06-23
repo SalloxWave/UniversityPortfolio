@@ -1,0 +1,43 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega16A"</DEVICE>
+ <WORKING_DIR>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m16adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\Debug\lab2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab2.map</FILE>
+  <FILE>lab2.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MESSAGE><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>111</LINE></MESSAGE>
+  <GET_CHAR><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>38</LINE></GET_CHAR>
+  <MORSE><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>27</LINE></MORSE>
+  <LOOKUP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>42</LINE></LOOKUP>
+  <SEND><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>64</LINE></SEND>
+  <NOBEEP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>92</LINE></NOBEEP>
+  <SPACE><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>56</LINE></SPACE>
+  <BTAB><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>112</LINE></BTAB>
+  <HOPP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>52</LINE></HOPP>
+  <SPACE2><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>59</LINE></SPACE2>
+  <SLUT><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>78</LINE></SLUT>
+  <GET_BIT><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>81</LINE></GET_BIT>
+  <LOOP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>68</LINE></LOOP>
+  <SKIP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>73</LINE></SKIP>
+  <BEEP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>85</LINE></BEEP>
+  <DELAY><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>98</LINE></DELAY>
+  <delayInreLoop><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab2\lab2\main.asm</FILE><LINE>103</LINE></delayInreLoop>
+ </LABELS>
+</ASSEMBLER_INFO>

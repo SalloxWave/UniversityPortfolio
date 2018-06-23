@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega16A"</DEVICE>
+ <WORKING_DIR>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m16adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\Debug\lab1v2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab1v2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab1v2.map</FILE>
+  <FILE>lab1v2.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <FOREVER><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</FILE><LINE>27</LINE></FOREVER>
+  <READ_NUM><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</FILE><LINE>38</LINE></READ_NUM>
+  <HALFD><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</FILE><LINE>64</LINE></HALFD>
+  <DELAY><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</FILE><LINE>62</LINE></DELAY>
+  <DELAY_OUTER_LOOP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</FILE><LINE>66</LINE></DELAY_OUTER_LOOP>
+  <DELAY_INNER_LOOP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab1v2\lab1v2\main.asm</FILE><LINE>68</LINE></DELAY_INNER_LOOP>
+ </LABELS>
+</ASSEMBLER_INFO>

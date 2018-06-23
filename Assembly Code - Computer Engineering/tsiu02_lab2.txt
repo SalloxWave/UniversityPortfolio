@@ -1,0 +1,92 @@
+.def SIGNALBIT r21
+.equ FREQ = 100
+
+ldi XH, HIGH(MESSAGE)
+ldi XL, LOW(MESSAGE)
+ldi ZH, HIGH(BTAB)
+ldi ZL, LOW(BTAB)
+out DDRB, $80
+
+rcall GET_CHAR
+MORSE:
+  cpi r16, $00
+  breq END
+  rcall LOOKUP
+  rcall SEND
+  rcall NOBEEP
+  rcall NOBEEP
+  rcall GET_CHAR
+  rjmp MORSE
+
+GET_CHAR:
+  ld r16, X+
+  ret
+
+LOOKUP:
+  subi r16, $41
+  brmi SPACE
+  push ZH
+  push ZL
+  add ZL, r16
+  brcc HOPP
+  inc ZH
+HOPP:
+  lpm r16, Z
+  pop ZL
+  pop ZH
+SPACE:
+  ret
+
+SPACE2:
+  rcall NOBEEP ; Silent 4
+  rcall NOBEEP ; Silent 5
+  rjmp SLUT
+
+SEND:
+  brmi SPACE2
+  rcall GET_BIT
+LOOP:  
+  breq SLUT
+  brcc SKIP
+  rcall BEEP
+  rcall BEEP
+SKIP:
+  rcall BEEP
+  rcall NOBEEP
+  rcall GET_BIT
+  rjmp LOOP
+SLUT:
+  ret
+
+GET_BIT
+  lsl r16
+  ret
+  
+BEEP:
+  ldi SIGNALBIT 1
+  rcall DELAY
+  ret
+
+NOBEEP:
+  ldi SIGNALBIT 0
+  rcall DELAY
+  ret
+
+DELAY:
+  ldi     r18,5   ; Sätt bra värden här
+delayYttreLoop:
+  mov     PORTB, SIGNALBIT
+  ldi     r17, FREQ
+delayInreLoop:
+  dec     r17
+  brne    delayInreLoop
+  ldi     PORTB, $00
+  dec     r18
+  brne    delayYttreLoop
+  ret
+  
+MESSAGE: .db "DATORTEKNIK", $00
+BTAB: .db $60, $88, $A8, $90, $40, $28, $D0, $08, $20, $78, $B0, $48, $E0, $A0, $F0, $68, $D8, $50, $10, $C0, $30, $18, $70, $98, $B8, $C8
+    
+END:
+  ; avsluta stuff    

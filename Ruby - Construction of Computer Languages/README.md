@@ -14,7 +14,7 @@ Laborations in construction of computer languages using Ruby
 • Domain specific languages<br />
 ...
 
-Link to course website: https://www.ida.liu.se/~TDTS04/index.en.shtml
+Link to course website: https://www.ida.liu.se/~TDP007/index.sv.shtml
 
 
 ## Credits:

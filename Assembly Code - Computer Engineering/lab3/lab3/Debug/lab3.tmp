@@ -1,0 +1,37 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.7</VERSION>
+ <DEVICE>"ATmega16A"</DEVICE>
+ <WORKING_DIR>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.2.150\avrasm\inc\m16adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\Debug\lab3.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab3.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab3.map</FILE>
+  <FILE>lab3.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>18</LINE></MAIN>
+  <BCD><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>50</LINE></BCD>
+  <MUX><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>75</LINE></MUX>
+  <INIT><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>31</LINE></INIT>
+  <LOOP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>29</LINE></LOOP>
+  <NUMTAB><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>120</LINE></NUMTAB>
+  <INCR><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>56</LINE></INCR>
+  <CONTINUE><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>64</LINE></CONTINUE>
+  <MUX_CONTINUE><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>87</LINE></MUX_CONTINUE>
+  <NO_CARRY><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>93</LINE></NO_CARRY>
+  <JUMP><FILE>C:\Users\AlexanderJ\Desktop\Git\tsiu02\lab3\lab3\main.asm</FILE><LINE>106</LINE></JUMP>
+ </LABELS>
+</ASSEMBLER_INFO>
