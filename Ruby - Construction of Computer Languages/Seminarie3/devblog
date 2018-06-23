@@ -1,0 +1,55 @@
+Ruby som ett språk/Lära sig Ruby:
+---------------------------------
+Vi har lärt oss att använda eval funktionerna i Ruby vilket vi kände var kraftfulla verktyg men även farliga (se nedan). Ruby känns som ett väldigt flexibelt språk med olika sätt att skapa funktions-objekt, "Binding", "eval"-funktioner, Proc, lambda. Det går sedan skicka in funktionsobjekt till funktioner.
+
+Vi provade "==="-operatorn på ranges som ska fungera men det fungerade inte. 3 === (1..5) returnerar "false". Lösningen var att byta plats på båda vilket är intressant varför det fungerar så.
+
+Rubys möjlighet att skicka in block är väldigt kraftfullt vilket märks i rdparse. Rdparse tar in block i princip alla dess funktioner vilket inte är möjligt i många andra programmeringsspråk (Ruby är ända vi märkt som har det inbyggt i syntaxen).
+---------------------------------
+
+Reflektioner kring olika tekniker:
+---------------------------------
+"eval"-tekniken tillsammans med method_missing:
+	- Det kan vara farligt att överlagra "method_missing"-funktionen. Vi hade råkat göra "evaluate_policy"-funktionen privat vilket gjorde att vi inte kunde få tag på den och vår överlagrade funktion kördes istället. Detta gjorde det svårt att felsöka. Detsamma hände en gång när vi råkade ha "attr_writer" istället för "attr_accesssor". Då när vi körde object.var kallades method_missing istället vilket var lite förvirrande.
+	- Något jobbigt med att skapa ett internet DSL är att så fort det man skriver inte är en datatyp (t.ex. sträng, siffra) så tolkas det som en funktion. Detta gör det mindre bekvämt för användaren av koden. Det går såklart att lösa detta men det kräver mycket ansträngning av en programmerare.
+	- Eftersom intern DSL-kod måste använda sig av en redan befintlig syntax blir det mycket svårare att göra språket användarvänligt då många operatorer/nyckelord är krångliga för någon som inte kan programmering. Detta innebär att det finns två val: Ha enklare nyckelord för användaren och svårare parsning för programmeraren eller tvärtom.
+
+rdparse:
+	- Debuggningen är relativt lättläst och informativ men detta är förvirrande om man skriver "(set var true)": "'e' matched 'VAR' and generated '"var"'".
+	- Vi tycker den är lättanvänd. Det räckte att kolla på ett exempel av en implementation så kunde vi skriva korrekt syntax för parsern.
+---------------------------------
+
+Tankegång med våra lösningar:
+---------------------------------
+Uppgift 1:
+----------
+När vi designade språket funderade blev det så att vi försökte hitta en balans mellan svårighetsgrad att implementera och svårighetsgrad för användaren av språket:
+- Ska vi tvinga användaren av språket ha understreck mellan ord för att underlätta för oss eller inte? (car brand vs car_brand)
+- Ska vi tvinga användaren använda dubbelcitat för alla värden och enkla citattecken för alla värden inuti dubbelcitat ("value'othervalue'")?
+- Ska användaren kunna skriva decimaltal både med punkt och komma?  (1.5 vs 1,5)
+- Är det tillräckligt tydligt att ha en range med två punkter, eller borde användaren kunna skriva med bindestreck/pil eller annat (1..5 vs 1-5)
+
+Det fungerar faktiskt att skriva in poängen utan citattecken runt men vi säger inte detta till användaren för att vi ska kunna byta ut komma mot punkt om det skulle behövas. Därför tycker vi det är bättre att vara hård mot användaren.
+
+Jobbiga/Intressanta problem:
+- Vi hade ett jobbigt problem ett tag som berodde på att våra instansvariabler hette likadant som det evaluerade funktionsanroppet från filen vilket gjorde så Ruby klagade på att det var för några parametrar.
+#Försökte anropa funktionen car_brand vilket är samma namn som vår instansvariabel. 
+car_brand "BMW",5  #I "policy.rb"
+
+- Vi provade "==="-operatorn på ranges som ska fungera (enligt internet) men det fungerade inte. 3 === (1..5) returnerar "false". Lösningen var att byta plats på trean och rangen vilket är intressant varför det fungerar så?
+
+Uppgift 2:
+----------
+Att bestämma hur de syntaktiska reglerna för ":VAR" var intressant då det fick oss att tänka till angående vad som egentligen borde kunna vara med i en variabel. Vi bestämde oss för att en variabel ska kunna börja med stora eller små bokstäver följt av noll eller flera bokstäver/siffor/understräck.
+
+Vi trodde att rdparse fixade sparningen av variabler åt oss men vi hade fel. Detta gjorde så vi fick skapa en Hash table där variabelnamnet var kopplat till värdet av variabeln. Sedan returnerade vi värdet från Hash-tabellen när en variabel i programmet identifieras. Se nedan:
+match(String) {|v| variables[v] }
+Detta kommer returnera att en variabel är "nil" när den ska skapas eftersom den inte har lagts in i tabellen än. Detta löste vi på detta sätt (varför fungerar det?):
+match(String) {|v| v }
+match(String) {|v| variables[v] }
+
+Detta visade sig inte fungera i alla fall för den matchar första matchningen hela tiden. Detta löste vi genom att göra en check för att veta om vi ska returnera värdet på variabeln eller namnet. Se nedan:
+match(String) {|v| variables[v] != nil ? variables[v] : v }
+
+Eftersom programmeringsspråket inte har stöd för några datatyper med siffror och variabelnamn inte får börja med siffror valde vi att ignorera siffror. Om vi inte ignorerar siffror kommer de inte kunna tolkas på korrekt sätt. Detta kan ifrågasättas eftersom, vad är meningen att kunna ha massor siffror mitt i allt? Det kan endast försämra läsbarheten.
+---------------------------------

@@ -1,0 +1,109 @@
+___ Reflektioner om Ruby som ett språk:
+Nu i början är mycket av vårt lärande baserat på ‘trial & error’. Vi testade lite vad som fungerade, vilken syntax som fungerade. Vi märkte t.ex. att vid inskickning av block till en funktion gick det använda både måsvingar och "do-end". Detta fungerar inte på t.ex. if-satser troligen eftersom själva if-satsen i sig är som en "do".
+
+Som ett språk är Ruby mycket enklare att lära sig grunderna av än något som till exempel C++. Detta beror t.ex. på att Ruby är ett språk på relativt hög nivå. Till skillnad från C++/C tas allt allokerat minne automatiskt hand om av språket vilket leder till att man inte behöver tänka på minnesluckor i sitt program. Men språkets brist på ortogonalitet gör språket svårt att bemästra, men det blir väldigt kraftfullt och flexibelt samtidigt. När vi skulle göra iterationern i uppgift 1-4 märkte vi att det fanns massor olika sätt att göra det på. Sammanfattningsvis är känslan: “lätt att förstå, svårt att bemästra”.
+
+Syntaxen i språket påminner till viss del om Pythons pseudokod-stil, men till skillnad från Python behandlas variabler som objekt. Detta gör det möjligt att expandera de inbyggda klasserna (t.ex. Integer, String) enkelt, vilket inte skulle gått att göra om språket skulle haft datatyper istället (t.ex. Python, C++).
+Något som kändes ovant med Ruby var sättet Ruby kan hantera block. Till skillnad från andra språk vi provat (t.ex. C++, Python) kan Ruby ta in ett block till en funktion (blocket skrivs efter funktionen inkapslat av måsvingar). Detta tycker vi är smidigt eftersom det är möjligt att skriva funktioner som i princip tar in funktioner utan att behöva lägga till en extra parameter. Något annat som kändes ovant med Ruby var att funktioner kunde anropas utan några paranteser.
+
+Vi tyckte att något riktigt trevligt med Ruby hur enkelt det var att skapa "getters" och "setters". Däremot gillade vi inte att det inte gick att överlagra funktioner. Detta gjorde det svårt att skapa flexibla konstruktorer till en klass. I uppgift 6 tar konstruktorn in förnamn, efternamn och sen ålder. Men om man vill t.ex. bara skicka in förnamn och ålder skulle åldern skickas in och lagras som ett efternamn eftersom det då blir andra paramtern i parameterlistan (går att lösa med specialfall). 
+
+Exempel:
+--------------------------
+class Person
+	def initialize(name="Unknown", surname="Unknown", age=0)
+		...
+	end
+end
+Person.new("firstname", 5) #efternamnet blir åldern
+--------------------------
+def foo(bar)
+	bar.times do 
+		yield
+	end
+end
+
+foo(5) do puts "hello" end
+foo(5) { puts "hello" }
+--------------------------
+
+___ Reflektioner kring olika Tekniker:
+Vid implementation av funktionerna använda vi oss av Ruby biblioteket "Test::Unit"
+Positiva egenskaper med Test::Unit:
+- Det är lättanvänt vilket gör det snabbt att sätta sig in i
+- Visar enkelt var och vad som blev fel.
+- Är väldigt snabbt (än så länge, i alla fall på våra små test och små program)
+
+Negativa egenskaper med Test::Unit:
+- Svårt att testa funktioner som inte returnerar ett värde
+
+
+___ Dokumentation av våra lösningar:
+Uppgift 01:
+	Ovant att använda block, var tvungen att kolla upp hur man får fram block i funktionen. Kändes ovant att det räckte att skriva "@" framför en variabel så blev den global inuti klassen (medlemsvariabel).
+
+Uppgift 02:
+Lösning:
+    Våran lösning är att skapar en range från 1 till variabeln n och stoppar in * mellan varje nummer med hjälp av inbyggda funktionen "inject". 
+Övrigt:
+    Vi hittade en lösning som fungerade men vi tyckte det var svårt att komma fram till varför den fungerade trots att vi kollade dokumentationen på "inject".
+
+Uppgift 03:
+Lösning: 
+	Skapar en variabel current_longest som sätts till första posten i arrayen, och går sedan igenom varje post i arrayen och kollar om den är längre än current_longest. är den det, uppdateras current_longest. Slutligen returneras current_longest vilket då är längsta strängen i arrayen.    
+Övrigt:
+	Vi funderade på hur vi skulle göra när det fanns flera lika långa och kom fram till att vi returnerar den första som hittades.
+    
+Uppgift 04:
+Lösning:
+	Ändrar uppgift3s If-påstående till att komma från det block där användaren tillför det uttryck som ska undersökas. Använder "yield" för att kopiera användarens uttryck där de två parametrarna är de två tillnäraliggande posterna i arrayen.
+Övrigt:
+    Om vi ska vara ärliga förstår vi fortfarande inte exakt hur syntaxen fungerar angående "|"-tecknena i blocket.
+    
+Uppgift 05:
+Lösning:
+    Skapar en klass "PersonName" som innehåller "fullname", "name" och "surname". "fullname" tillförs av användaren och splittas upp till "name" och "surname". 
+Övrigt:
+	Ett problem vi tänkte på är att det inte fungerar om man lägger till mellannamn. För att få ordentlig förtåelse för vad ett "virtuellt attribut" var blev vi tvungna att söka upp det. Vi tänkte att ett namn alltid ska ha stor bokstav i början som innan vi lagrade namnet använda vi oss av den inbyggda funktionen på strängar "capitalize", vilket gör alla bokstäver små förutom första.
+    
+Uppgift 06:
+Lösning:
+	Utökar Uppgift 05 med ålder, som tillförs av användaren. Födelseår vår värde beroende på dagens årtal och åldern. Om födelseår eller ålder ändras uppdateras den andra automatiskt.
+Övrigt:
+	Ett problem med att endast lagra födelseår är att programmet automatiskt tar för givet att personen fyller år 01 Januari. Detta leder till att fel födelseår ofta kommer lagras.    
+    
+Uppgift 07:
+Lösning:
+	Utökar inbyggda klassen "Integer" med en function kallad "fib" (för Fibonacci). Användaren ger ett tal "n", och functionen räknar ut vad det n:e fibonacci-talet är.
+Övrigt:
+    Detta löste vi utan en rekursiv metod först vilket krävde 10 gånger mer rader jämfört med en rekursiv funktion. Däremot så tar det evigheter att använda den rekursiva metoden på höga tal. Detta beror på att för att räkna ut "20.fib" leder till 13529 stycken anropp på funktionen till skillnad från icke-rekursivt där det endast krävs 1 anropp och 20 iterationer (i loop). Detta testade vi genom att skapa en statisk klassvariabel som ökade varje gång funktionen anroppades, vilket ledde till att vi fick lära oss det också. 
+    
+Uppgift 08:
+Lösning:
+	Med hjälp av regex tog vi bort alla special-tecken. Sedan delade vi upp alla ord (separerade med mellanrum) i en array för att sedan hämta första bokstaven på varje ord och lagra in en sträng. Sedan gör vi alla bokstäver till stora bokstäver med den inbyggda funktionen på strängar "upcase". Slutligen returnerar vi strängen.
+Övrigt:
+	Det framgick inte i uppgiften om acronymen skulle kunna innehålla specialtecken eller inte men vi tyckte det kändes mer rimligt att ta bort alla specialtecken.
+    
+Uppgift 09:
+Lösning:
+	Räknar ut nya positionen beroende på index i arrayen och antal steg. Sätter in ett nytt tal på den positionen och tar bort alla unika tal. Om antal steg är större än storleken på arrayen räknar vi om antal steg för att slippa gå onödigt steg i arrayen. T.ex. fyra steg i arrayen [1,2,3] blir samma resultat som att gå ett steg.
+Övrigt:
+	Anledningen att vi valde just denna metod är för att slippa skapa temporära variabler. Vår metod extra jobbar dock om nya talet som läggs in i arrayen är på höger sida av gamla. Detta beror på att funktionen "uniq" sparar det första av alla unika tal.
+    
+Uppgift 10:
+Lösning:
+	Med hjälp av ett regex uttryck fångar vi all text efter "USERNAME: " som vi sedan returnerar.
+Övrigt:
+	Vi funderade på vad funktionen skulle returnera om inget användarnamn fanns och vi bestämde oss för att returnera en tom sträng.
+    
+Uppgift 11:
+Lösning:
+	Vi fångar upp alla taggar i strängen med ett Regex-uttryck. Sedan hämtar vi alla taggars namn från matchingarna, för att sedan returnera dem.
+Övrigt:
+	Regex uttrycket är dubbelt så stort bara pga specialfallet att sluttaggar har snedstreck efter starttaggen. Detta ledde till ett dubbelt så stort Regex uttryck, vilket borde kunna gå att lösas med ett kortare Regex-uttryck. Eftersom varje matchningsgrupp innehåller både start och sluttag men vi endast behövde en av matchingarna fick vi massor "nil"-värden i matchnings-resultaten. Detta kunde som tur är enkelt lösas med den inbyggda funktionen till Arrayer "compact" vilket helt enkelt tog bort alla "nil"-värden från en Array.
+    
+Uppgift 12:
+Lösning:
+	Vi hämtade ut registreringsnumret med hjälp av ett Regex-uttryck för att sedan returnerna matchingen. Om inget matchades (match datan var "nil") returnerade vi "false"
+Övrigt:
+	"[A-HJ-PR-UW-X]{3}\d{3}", detta Regex-uttryck borde gå att göra kortare utan att ange olika räckvidder av bokstäver i alfabetet. Vi funderade på vad funktionen skulle returnera om det fanns flera registreringsnummer. Vi bestämde oss för att returnera det första vi hittade.

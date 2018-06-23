@@ -1,0 +1,14 @@
+Ni ska använda er av en befintlig parser som ni hittar i filen rdparse.rb. Längst ner i filen hittar ni ett exempel på hur parsern kan instansieras med grammatiska regler och kod för att evaluera uttryck så att vi kan hantera ett språk för att rulla tärningar.
+Er uppgift blir att implementera ett språk för enkla logiska uttryck med hjälp av den befintliga parsern. Språket har följande grammatiska specifikation:
+
+VALID ::= ASSIGN
+VALID ::= EXPR
+ASSIGN ::= '(' 'set' VAR EXPR')'     <-- Tilldelning av variabel
+EXPR ::= '(' 'or' EXPR EXPR ')'
+EXPR ::= '(' 'and' EXPR EXPR ')'
+EXPR ::= '(' 'not' EXPR ')'
+EXPR ::= TERM
+TERM ::= VAR                         <-- Variabel
+TERM ::= 'true'
+TERM ::= 'false'
+VAR ska beteckna en variabel som ni själva får bestämma de syntaktiska reglerna för och VALID-reglerna beskriver vilka uttryck som ska vara tillåtna i språket. Resultatet av att läsa in ett uttryck ska motsvara det förväntade resultat ni fått om ni skrivit motsvarande uttryck direkt i Ruby. Ta gärna inspiration av hur DiceRoller-klassen fungerar för att se hur man kan implementera språket.

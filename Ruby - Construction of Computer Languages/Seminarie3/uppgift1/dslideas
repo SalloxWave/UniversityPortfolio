@@ -1,0 +1,55 @@
+begin "car brand"
+if "car brand" is "BMW" then add->5
+if "car brand" is "Fiat" then add->3
+end "car brand"
+
+begin "zip code"
+if "zip code" is "58937" then add->9
+if "zip code" is "58647" then add->3
+end "zip code"
+
+begin "driver license years"
+if "driver license years" is between "0" and "1" then add->3
+if "driver license years" is between "4" and "15" then add->4.5
+end "driver license years"
+
+begin "gender"
+if "gender" is "woman" then add->1
+if "gender" is "male" then add->1
+end "gender"
+
+begin "age"
+if "age" is between 18-20 then add->2.5
+if "age" is between 40-64 then add->5
+end "age"
+
+rules
+"gender" is "male" and "driver license years" is between 0-2 then multiply->0.9
+"car brand" is "Volvo" and "zip code" begins with "58" then multiply->1.2
+end
+
+When parsing: Take all properties in class and switch with begin "name"? Ordered
+
+Remove if "age"?
+add x or add->x
+between x-y or between x and y
+Have operator for less than?
+Newline as separator of new statement or other, maybe end?
+"=" instead of "is"?
+
+def method_missing(name, *args)
+	points[args[0]] = args[1]
+	"@#{name}" 
+	if (@name == args[0])
+		points+=args[1]
+	end
+end
+
+def evaluate_policy
+
+end
+
+car_brand "BMW", 5
+
+age (18..20), 2.5
+age (18..20), 5

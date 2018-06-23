@@ -1,0 +1,43 @@
+___ Reflektioner om Ruby som ett språk:
+Vi har återigen insett hur enkelt det är att lära sig Ruby. Det tog bara en kort titt i dokumentation för att lära sig hur en fil läses in. Eftersom i princip alla inbyggda Ruby funktioner kan ta in block istället för parametrar lyckades vi till och med sortera lagen utan att titta i dokumentationen.
+
+
+___ Dokumentation av våra lösningar:
+Uppgift 1 footbolldel:
+	Vi kunde gjort en Array med hash värden som representerade ett lag men valde istället en klass eftersom det var smidigare. Då kunde vi även skapa medlemsfunktioner till klassen som t.ex. kunde räkna ut skillnaden mellan gjorde mål och insläppta mål. Denna klass kan sedan utökas för att lagra mer fotbollsdata
+
+Uppgift 1 väderdel:
+	När vi gjorde väder-delen kopierade vi i princip all logik från fotbolls-delen och ändrade endast variabelnamn. Den ända skillnaden var att vi inte laddade namnet (numret) på dagen eftersom den definierades i iterationen. Vi KUNDE i detta fall ha skapat en generell klass och generella funktioner som fungerade till båda delarna. Det skulle dock bli problem vid utökning av klasserna, vilket är väldigt rimligt att vilja göra.
+
+Uppgift 2:
+	Tanken är att kunna använda sig av formatet utan att behöva gå in och kolla i HTML-filen men det kände vi att vi behövde göra flera gånger ändå.Vid testfallet slängde vi först med "The Bohemian" som en del av "location", då vi kopierade allt från "where" från eventet på hemsidan vilket resulterade i fel. Då var vi tvungna att ta en titta på nedanstående HTML-kod: 
+
+<!--
+<strong class='org fn'>The Bohemian</strong><br />
+<div class='adr'>
+<span class='street-address'>248 Front Street</span><br />
+<span class='locality'>Belleville</span>, <span class='region'>Ontario</span>
+-->
+Namnet på platsen the handlar om är inte en del av "location". 
+
+Vi trodde "Website" var en Microformats-"url" men i HTML-koden är den inte formaterad för att vara det. Detta är ett till exempel på att vi var tvungna att titta på HTML-koden för att göra testfall.
+<!--
+<td class='label'>Website:</td>
+<td><a href='http://www.cfrc.ca' target='_NEW'>http://www.cfrc.ca</a></td>
+-->
+
+___ Sätta sig in i tekniker (XML, SAX, DOM, XPath etc.):
+XPath kändes som Regex fast mer specificerat till just XML dokument. Vi märkte en skillnad på implementationen av REXML jämfört med hpricot. Detta var att XPath i hpricot matchar bara på elementet man står pås barn-element. Så var inte fallet i REXML. I REXML matchade den allting om man inte explicit markerade att man skulle kolla där man står ("."). Exempel:
+REXML: .//[@class="summary"]
+XPath: //[@class="summary"]
+
+SAX-metoden gillade vi inte för att den kändes mindre smidig att jobba med jämfört med DOM-metoden. Vi märkte att i många fall ville vi spara variabler mellan de olika funktionerna som tog upp taggar/namnen vilket vi var tvungna att lägga till i lyssnarklassen. Dessutom slipper vi med DOM-metoden utöka en Listener-klass och slipper även lägga logiken inuti en klassfunktion.
+
+För att få extra förståelse av hur DOM-metoden REXML fungerade skrev vi ut klassnamnen för att se om vi hade en REXML::Document eller REXML::Element.
+"puts element.class"
+
+För att använda XPath och räckte det med det vi hade lärt oss i föreläsningen. Däremot behövde vi titta lite på dokumentationen av REXML för att hitta vilka inbyggda funktioner det fanns och hur man använder dem (https://ruby-doc.org/stdlib-2.1.2/libdoc/rexml/rdoc/REXML/Document.html). På föreläsningen använde vi oss av elem.elements.each(XPath) för att iterarera igenom alla matchningar. Dock så var det flera fall som vi endast var intresserade av första matchingen (t.ex. då vi letade efter "summary" och "dtstart") så då använde vi oss av REXML::Element::get_elements(XPath) metoden (http://ruby-doc.org/stdlib-1.9.3/libdoc/rexml/rdoc/REXML/Element.html#method-i-get_elements). Denna metod returnerar en lista av element som matchar XPath-sökningen och kan vi ta ut första elementet i listan.
+
+Ett exempel för att få ut "summary" från XHTMl-dokumentet:
+
+"elem.get_elements('.//[@class="summary"]')[0].text"

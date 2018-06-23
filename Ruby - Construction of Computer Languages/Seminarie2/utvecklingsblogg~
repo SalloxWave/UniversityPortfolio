@@ -1,0 +1,14 @@
+___ Reflektioner om Ruby som ett språk:
+Vi har återigen insett hur enkelt det är att lära sig Ruby. Det tog bara en kort titt i dokumentation för att lära sig hur en fil läses in. Eftersom i princip alla inbyggda Ruby funktioner kan ta in block istället för parametrar lyckades vi till och med sortera lagen utan att titta i dokumentationen
+
+
+___ Reflektioner kring olika Tekniker:
+
+___ Dokumentation av våra lösningar:
+Uppgift 1 footboll del:
+	Vi kunde gjort en Array med hash värden som representerade ett lag men valde istället en klass eftersom det var smidigare. Då kunde vi även skapa medlemsfunktioner till klassen som t.ex. kunde räkna ut skillnaden mellan gjorde mål och insläppta mål. Denna klass kan sedan utökas för att lagra mer fotbollsdata
+
+Uppgift 1 footboll del:
+	Vi skapade
+
+När vi gjorde väder-delen kopierade vi i princip all logik från fotbolls-delen och ändrade endast variabelnamn. Den ända skillnaden var att vi inte laddade namnet (numret) på dagen eftersom den definierades i iterationen.

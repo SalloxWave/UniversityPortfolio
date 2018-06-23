@@ -1,0 +1,41 @@
+Avsnitt 1
+    uppgift 1:
+        onödig deklaration av variabeln "i". "times", "upto" istället.
+    uppgift 2:
+        kallade funktionen "factorial" istället för "faculty". och kallade funktionen med ett block. Vi kallade med parametrar. Blocket i deras fall är mer lättläst. Men parameter är det klassiska sättet, och känns mer säkert.
+
+Avsnitt 2:
+    uppgift 5:
+        det saknas tester för name och surname separat. intressant att splitten händer på en rad.
+    uppgift 6:
+        Mer rimliga default värden. Ha en getter till fullname/name/surname för enklare användning av klassen? Deras är mer kompakt men leder till ett krav att kalla på först name och sedan fullname/name/surname. De testar dessutom inte om default värdena fungerar som de ska.
+
+Avsnitt 3:
+    uppgift 7:
+        Som ni nämner i utvecklingsbloggen tyckte det var lite otydligt med automatiska returvärden. Detta visar sig i uppgift 7. Prata om rekursivitet leder till extremt många fler anrop :). "return" skulle ta bort onödiga "else".
+    uppgift 9:
+        Häftig rekursiv oneliner, svårläst dock. Lite kommentarer skulle vara trevligt. Två return skulle göra "else self" onödig.
+
+Avsnitt 4:
+    uppgift 10:
+        Fångar fel format ("USERNAME: xxx") Tar vilket ord som helst så länge det föregås av ett ord plus kolon (t.ex. "xxx: USERNAME").
+    uppgift 12:
+        De kan återigen strunta i else och returnera direkt. Intressant regex uttryck
+    
+Utvecklarbloggen:
+    Verkar rimlig. Goda insikter. 
+    "- Att försöka sätta sig in i Rubys klasstruktur när det gäller exempelvis klassvariabler och instansvariabler osv.". Håller med, detta minskar Rubys läsbarhet.
+    
+    "- Ruby verkar vara jäkligt snällt mot programmeraren. Det känns som att man kan skriva lite vad som helst och interpretatorn fattar vad man vill göra."
+    Håller med. Ruby är ett språk på hög nivå, interpretatorn tar t.ex. hand om pekare.
+    
+    
+
+Kodningsstil/Allmänt:
+    Ifrån den officiella kodningsstil guiden (https://github.com/github/rubocop-github/blob/master/STYLEGUIDE.md) står det "Use soft-tabs with a two space indent". Detta har ni absolut inte gjort.
+    
+    De har några fall där det är mer rimligt att skriva if/unless-sats på en rad (eftersom det endast är en sats). T.ex. 
+    "self.push(self.shift).rotate_left(n-1) unless n <= 0"
+    istället för:
+    "unless n <= 0
+			self.push(self.shift).rotate_left(n-1)"

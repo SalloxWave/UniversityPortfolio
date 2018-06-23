@@ -1,0 +1,46 @@
+Uppgift 1:
+--------------------------------------------------------------------
+*Intressant <=> operator vi inte sett innan, vi gillar den inte.
+
+*"file" borde heta "filename" eftersom annars kan man tro att man vill skicka in ett fil-objekt.
+
+*Varför har ni mode = "rb" istället för "rt"? read-binary/read-text?
+
+*Intressant "m"-tillägg på regexuttrycket för att läsa flera rader.
+
+Eran tolkning: Vi ser att ni har laddat in all data om fotbollslagen. Detta kan vara trevligt att ha men är inte nödvändigt för just denna uppgift. Om ni får en kravspecifikation av en beställare vill ni ju inte jobba mer än som behövs för den överenskomna summan av pengar. Det skulle kunna vara en extra överenskommelse att ladda in all data->mer pengar.
+
+Testfall:
+Ni kunde delat upp testerna i två klasser, en för väder och en för fotboll, för att sedan lägga alla funktioner som testar en klass i samma testklass. Annars bra test för att kolla om hash-tabellen är sorterad. 
+
+*Dock skulle det vara trevligt med att testa på fler element än 2 som ni gör nu.
+--------------------------------------------------------------------
+Uppgift 2:
+--------------------------------------------------------------------
+*Ni har inte mellanrum mellan funktioner vilket är standard enligt den relativt officiella (https://github.com/bbatsov/ruby-style-guide).
+
+*När ni söker efter diverese microformats-värden skriver ni "span.value" för att matcha alla "span"-taggar som har attributet "value". Enligt http://www.w3schools.com/xml/xpath_syntax.asp så hittar vi ingen syntax för att använda punkt på detta sätt. Är detta ett tillägg som finns i hpricot? Kommer den endast matcha "class"-attribut eller kommer den matcha andra attribut så som "width" eller "id" = "value". Microformats kräver att attrubutnamnet skall vara "class", så class"value"
+
+**Vi tycker att "read"-funktionen i "Event_Reader"-klassen ska vara privat. När skulle man initiera ett objekt utan url för att sedan köra read med en url?
+
+*Ni hämtar inte description enligt Microformats som uppgiften säger. Ni har också missat att ta med location ifrån Microformats.
+
+*Vi märkte en fördel med hpricot: "search"-funktionen returnerar ett elememt eftersom ni kan köra "text" direkt på den. Vi lyckades endast returnera en lista med matchningar (element).
+
+*Vi gillar er överlagring av "to_s"-funktionen på Event klassen. Eftersom "puts"-funktionen automatiskt kallas på to_s metoden på objektet behövs inte "puts event.to_s", utan ni skulle kunna ha endast "puts event".
+
+Testfall:
+
+Ni har en rad p 309 karaktärer. Ni kunde tagit en kortare sträng som tesfall eller delat ut den på flera rader.
+
+Allmänt:
+Saknar kommentarer på era avancerade satser.
+Vi har lagt klasserna externt till skillnad från er. I detta fall var det inte så mycket kod i klasserna att gömma undan men det skulle kunna vara det.
+
+Utvecklingsblogg:
+Lättläst några intressanta poänger
+\K i Regex borde vi använda oftare, bra att ni förklarade den.
+
+
+
+

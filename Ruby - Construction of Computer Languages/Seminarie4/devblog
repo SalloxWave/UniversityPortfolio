@@ -1,0 +1,44 @@
+Ruby som ett språk/Lära sig Ruby:
+---------------------------------
+Vi gillar simpelheten med moduler i Ruby vilket är en samling metoder eller klasser, som en namnrymd. Ett exempel på detta är att i "constraint_networks.rb" inkluderar klassen "ArithmeticConstraint" "PrettyPrint", där "PrettyPrint" är en modul.
+
+Nya lärdomar som diskuteras nedan i våra lösningar:
+||= operatorn
+Subtrahering av arrayer.
+Klasser i klasser.
+
+Reflektioner kring olika tekniker:
+---------------------------------
+Contraint networks:
+Intressant sätt att implementera en formel i programmering. Vi känner dock att det krävs mycket dedikation för att få ett bra generellt implementerat contraint network. Men om man lyckas blir det väldigt kraftfullt verktyg för att implementera formler i sitt program. I fall då inte många olika formler skulle krävas tror vi att vi skulle föredra att implementera formeln som en klass med olika hjälpfunktioner istället.
+
+
+Tankegång med våra lösningar:
+---------------------------------
+Uppgift 1:
+
+När vi gjorde testfall dök detta upp: "TypeError: PrettyPrint is not a class". Detta fick oss att inse att
+detta Constraint-network inte går åt andra hållet. kan inte få ut A i "A+5=17". Då fick vi implementera detta i klassen "ArithmeticConstraint"s "new_value"-funktion. För att lösa så att "adder" och "multiplier" kunde gå baklänges:
+Vi la till en if-sats som gällde när vi hade ändrat på "out"/output/högersidan och inte vet om en av variablerna på vänster sidan (i detta fall a,b).
+
+I flera fall i koden subtraheras två arrayer vilket är intressant. Vi kollade upp vad det gjorde och såg att den tar bort alla värden som är lika (som i många andra programmeringsspråk).
+
+Vi tyckte det var luddigt hur vi skulle göra med konstanter, t.ex. ljusets hastighet eller siffrorna i celsius till fahrenheit. Detta ledde till att vi hårdkodade in dessa konstanter.
+
+
+Uppgift 2:
+
+Intressant att det i Ruby går att deklarera en klass i en klass. I "Parser"-klassen finns det tex. "class ParseError < RuntimeError; end". Detta gör så att klassen i klassen blir tillgänglig genom i detta fall: Parser::ParseError. Så det är ett sätt att skapa en namnrymd. I detta fall är det rimligt då inte "ParseError" behövs utan att ha en "Parser"-klass
+
+Rubys ||= operator var intressant. Vi läste att den betydde att om vänstersidan inte är tilldelat ett värde får den högersidans värde, annars ändras den inte.
+
+Vi provade att köra programmet och såg att funktionen "name" inte var tillgänglig till klassen "Adder". Det fick oss inse att på något viss kommer det in en "Adder"-klass istället för en "Connector"-klass.
+
+Vår lösning:
+"get_connectors" kollar nu om ett "Adder"-objekt försöker imitera ett "Connector"-objekt. Om så, kollar den också om det finns ett minus-tecken i "Adder"-objektet. Om båda saker stämmer ändrar den värdet till "Adder"-formelns a-värde, annars till svaret (out). get_connector(side) returnerar svaret (out) på Connectorn som skickas in.
+
+(2017-03-02 : Det finns ett problem med negativa nummer, annars fungerar parsern utan errors nu.
+
+2017-03-03 : vi kan nu parsa 9*c=5*(f-32) utan problem.
+koden är däremot inte jätte-generell.
+så andra formler kommer not antagligen ge errors.)   

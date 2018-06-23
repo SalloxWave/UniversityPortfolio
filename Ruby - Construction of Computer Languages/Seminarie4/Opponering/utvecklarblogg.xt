@@ -1,0 +1,16 @@
+***U1***
+Denna uppgift har varit väldigt utmanande att sätta sig in i, speciellt svårt har det varit att se framför sig hur allt hänger ihop.
+Sättet att lösa första delen av uppgift ett med adder och multiplier vet vi kanske inte var den mest graciösa lösningen men vi valde att prioritera annat arbete framför finare kodstil.
+
+Gällande temperaturkonverteringen döpte vi om funktionen till c2f för enkelhetens skull.
+Uppgiften i sig blev rätt mycket testande fram och tillbaka med att ange värden till connectors och printa ut resultat och variabler steg för steg. Detta för att försäkra oss om att varje del var i rätt riktning. Vi försökte göra det svårare än vad det behövde vara en stund vilket vilseledde oss lite, men när vi gick tillbaka till vår ursprungliga tanke så blev det tydligare och betydligt lättare att lösa uppgiften.
+
+Våran funktion fungerar som exemplet längst ner i filen.
+
+
+***U2***
+Denna uppgift var lurig. Det tog lång tid att förstå vad som skulle göras. Vi har ännu inte full förståelse för den, därav är den inte fullt komplett. Resultatmässigt lyckades vi ta oss fram till att få positiva värdet istället för negativa samt att den sista divisionen inte utfördes. Det skumma är att uppgift ett fungerar som den ska. Visserligen använde vi oss av "T(°C) = (T(°F) - 32) / 1.8" istället för "T(°C) = (T(°F) - 32) × 5/9" för att räkna ut.
+Dock provade vi även att använda oss av den andra formeln för att försäkra oss om att det inte var något med det som ställde till det. Det var det inte. Vi fick precis samma resultat oberoende av vilken formel vi använde. Felet är fortfarande ett mysterium både för oss och labassistenter.
+Eftersom vi inte fullständigt löst uppgiften har vi heller inte gjort några enhetstester.
+
+De ändringar vi gjorde i koden för uppgift 2 var att skapa en funktion "get_connector" och returnera conn_c som connector från varje Adder-matching.
