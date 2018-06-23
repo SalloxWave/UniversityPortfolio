@@ -1,0 +1,23 @@
+evaluate("""(program
+(set six 6)
+(set nine 7)
+(print what do you get if you multiply six by nine?)
+(print -> (* six nine))
+)""")
+evaluate("( print test )")
+
+-evaluate får en string parameter.
+-parse funktionen anropas som kollar om första tecknet är en parantes vilket stämmer i detta fall. Därför hoppar
+programmet in i funktionen parse_call
+- I denna funktion skapar vi en lista med hjälp av våran sträng som skickas in i metoden parse_list.
+- I parse_list kollar den varje tecken i våran sträng tills slutparantesen kommer med hjälp av en while-loop.
+- I while loopen får vi värde från funktionen parse igen men denna gång kommer vi gå in i parse_symbol funktionen
+- I funktionen parse_symbol så kollar den om delen av strängen är en symbol/nummer/ord och returnerar index positionen
+samt symbolen/nummer/ord.
+- Sedan i parse_list läggs denna item in i listan som sedan returneras till parse_call
+- Ur denna lista kommer det plockas ut funktionsnamnet och argumenten och (list[0], list[1:])
+- Nu letar vi efter vilken funktion vi skall använda beroende på vilket funktionsnamn vi fick ifrån listan.
+- parse_call kommer sedan returnera funktionen och argumenten i en tuple samt positionen våran position i strängen.
+... Se kod
+
+Onödig text som endast kommer förvirra läsaren och kanske också irritera smått
