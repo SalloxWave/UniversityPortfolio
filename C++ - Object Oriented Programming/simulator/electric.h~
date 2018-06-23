@@ -1,0 +1,22 @@
+#ifndef ELECTRIC_H
+#define ELECTRIC_H
+
+//Base (Component)
+	//get_voltage
+	//get_charge
+	//
+
+//Resistor
+	//resistance
+	//time_step
+//Condenser
+	//capacitance
+	//current_charge
+	//side1
+	//side2
+//Battery
+	//voltage
+	//minus_charge
+	//positive_charge
+
+#endif

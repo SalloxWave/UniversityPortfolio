@@ -1,0 +1,155 @@
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <string>
+#include <map>
+#include <utility>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+using word_list = map<string, int>;
+
+enum class Sort_Type
+{
+	Alphabetical,
+	Frequence,
+	Ordered
+};
+
+bool is_valid_char(char c)
+{
+	/*Returns if the specified character 
+	is a letter or a hyphen*/
+
+	//A-Z = 65-90
+	//a-z = 97-122
+	//- = 45
+	int ascii_num = static_cast<int>(c);
+	return ( (ascii_num >= 65 && ascii_num <= 90)
+	  	  || (ascii_num >= 97 && ascii_num <= 122)
+	  	  ||  ascii_num == 45);
+}
+
+bool valid_word(string const &word)
+{
+	cout << word << endl;
+	//Word must contain at least three letters
+	if (word.length() < 3)
+	{
+		return false;
+	}
+	for (int i {0}; i < word.length(); ++i)
+	{
+		cout << word.at(i) << endl;
+		if (!is_valid_char(word.at(i)))
+		{
+			return false;
+		}
+	}
+	/*for (string::const_iterator it; it != end(word)-1; ++it)
+	{
+		if (!is_valid_char(word.at(it)))
+		{
+			return false;
+		}
+	}*/
+	
+	return true;
+}
+
+void clean_word(string &word)
+{
+	//Characters that should be cleaned before the word
+	char initial_junk[] {'"', '\'', '('};
+	//Character that should be cleaned after the word
+	char terminative_junk[] {'!', '?', ';', ',', ':', '.', '\"', '\'', ')'};
+
+	//Look for an invalid character before the word
+	size_t pos = word.find_first_of(initial_junk, 0, sizeof(initial_junk));
+	//Invalid character was found
+	if (pos != string::npos)
+	{
+		//Erase invalid character
+		word.erase(pos, 1);	
+	}
+	//Look for an invalid character after the word
+	pos = word.find_last_of(terminative_junk, sizeof(terminative_junk)-1, sizeof(terminative_junk));
+	//cout << word << ": " << pos;
+	//Invalid character was found
+	if (pos != string::npos)
+	{
+		//cout << word << "-> ";
+		//Erase invalid character
+		word.erase(pos, 1);
+		//cout << word << " (" << pos << ")" << endl;
+	}
+	//cout << " " << word << endl;
+	
+	//pos = word.find_last_of(initial_junk, 0, sizeof(initial_junk));
+	//word.erase(pos);
+}
+
+void sort_word_list(word_list &word_lst, Sort_Type sort_type)
+{
+
+}
+
+void print_word_list(word_list const &word_lst)//, Sort_Type sort_type) 
+{
+	//Decide length of column in table based on longest word
+	int col_length = (max_element
+	(
+		cbegin(word_lst), cend(word_lst),
+		[](pair<string, int> const &p1, pair<string, int> const &p2)
+		{ return p1.first.length() < p2.first.length(); }
+	)->first).length();
+
+	cout << right << fixed
+		 << setw(col_length) << "Word"
+		 << setw(10) << "Count" << endl;
+	for ( map<string, int>::const_iterator it = cbegin(word_lst); it != cend(word_lst); ++it )
+	{
+		cout << setw(col_length) << it->first;
+		cout << setw(10) << it->second << "\n";
+	}
+	cout << flush;
+}
+
+int main(int argc, char *argv[])
+{
+	//Convert arguments to string
+	vector<string> args { argv+1, argv+argc };
+
+	//Open file with words
+	string filename { args[0] };
+	fstream file { filename };
+
+	word_list word_lst;
+
+	string word;
+	//Go through every word in file separated with whitespace or new line
+	for (; file >> word;)
+	{
+		//Make word lowercase
+		transform(begin(word), end(word), begin(word), ::tolower);
+		//Clean words of none-wanted characters
+		clean_word(word);
+		//Check if word is a valid word
+		if( valid_word(word) )
+		{
+			//Increase word count of valid word
+			word_lst[word]++;
+		}
+	}
+
+
+	//sort_word_list(word_lst);
+
+	//Print word from word list
+	print_word_list(word_lst);
+
+
+	return 0;
+}

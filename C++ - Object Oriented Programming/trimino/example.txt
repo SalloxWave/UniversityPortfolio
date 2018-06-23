@@ -1,0 +1,6 @@
+  2 5 3  mosaic.png
+  1 4
+  8 2 5  C:\Application Data\Images\swirl.png
+      7  12 53
+  6 9 4
+  flower.jpg

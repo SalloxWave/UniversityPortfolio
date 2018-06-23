@@ -1,0 +1,41 @@
+#########################################################
+# simple tests if a dot is inside or outside rect
+# line specified as: contain  x y w h  x y  bool
+
+# NOTE: the dot is drawn 2x2 to be visible and may thus
+#       appear partly outside the rect in some tests
+
+# a dot in middle of rect
+#contain  200 200 200 200  300 300  t
+
+# a dot far right of rect
+#contain  200 200 200 200  600 300  f
+
+# a dot at each corner of rect
+#contain  200 200 200 200  200 200  t
+#contain  200 200 200 200  399 399  t
+#contain  200 200 200 200  200 399  t
+#contain  200 200 200 200  399 200  t
+
+# a dot just outside each rect side
+#contain  200 200 200 200  199 300  f
+#contain  200 200 200 200  400 300  f
+#contain  200 200 200 200  300 199  f
+#contain  200 200 200 200  300 400  f
+
+
+#########################################################
+# slow calculation where (if) a move *WILL* collide with a rect
+# line specified as: will_not_collide  x y w h  x y  x y w h  bool
+
+collision_point  300 20 40 400   13  50  500 237 30 30  t
+collision_point  300 20 40 400  500 237   13  50 30 30  t
+
+collision_point  30 200 400 40   13  50  500 237 30 30  t
+collision_point  30 200 400 40  500 237   13  50 30 30  t
+
+collision_point  30 200 298 40   13  50  500 237 30 30  t
+collision_point  30 200 298 40  500 237   13  50 30 30  t
+
+collision_point  30 200 297 40   13  50  500 237 30 30  f
+collision_point  30 200 297 40  500 237   13  50 30 30  f

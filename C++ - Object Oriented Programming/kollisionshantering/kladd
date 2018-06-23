@@ -1,0 +1,53 @@
+enum class Corner{TopLeft, TopRight, BottomLeft, BottomRight}
+
+class AABB
+
+private:
+	int top;
+	int left;
+	int bottom;
+	int right;
+
+	//If point exists in AABB
+	bool contain(int x, int y)
+		return True/False
+	bool contain(Point point)
+		return True/False
+
+	//If AABB intersects with AABB
+	bool intersect(AABB a)
+		return True/False
+
+	//Ny box där båda lådorna får plats
+	AABB min_bounding_box (AABB a)
+		return new AABB
+
+	//Check if "from" will collide with this AABB while traveling to point
+	bool will_not_collide(AABB from, Point to)
+		return true/false
+public:
+	AABB(int t, int l, int b...): 
+
+	AABB(Point corner1, Point corner2): ...	
+
+	//Calculates if and in that case where "from" collided with "this AABB" while traveling to point
+	bool collision_point(AABB & from, Point to, Point & where)
+		where = Topleft corner point of "from" before collision
+		return true/false
+
+	int get_height()
+		return int
+
+	int get_width()
+		return int
+
+
+
+
+
+AABB aabb {1,2,3,4};
+AABB aabb2 {1,2,3,4};
+
+aabb.will_not_collide(aabb, new Point(1,2));
+
+AABB::will_not_collide(aabb, new Point(1,2));

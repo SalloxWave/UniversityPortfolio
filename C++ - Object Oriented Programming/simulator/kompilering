@@ -1,0 +1,1 @@
+g++ main.cc component.cc connection.cc battery.cc resistor.cc condenser.cc

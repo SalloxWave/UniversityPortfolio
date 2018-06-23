@@ -1,6 +1,6 @@
 
 
-# TDP005 Projekt: Objektorienterat system
+# TDP005 Project: Object Oriented System
 
 
 ## Course contents
