@@ -1,0 +1,15 @@
+Symbol: ϴ
+
+Max heap: 
+- All nodes stores a value greater than or equal to all its children
+- Root stores maximum of all values in tree
+
+Min heap: 
+- All nodes stores a value less than or equal to all its children
+- Root stores minimum of all values in tree
+
+A heap is a natural implementation for the priority queue:
+• Jobs can efficiently be ordered according their priority value
+• An insert takes only ϴ(log n) time in the worse case. This is because the value being inserted at most will be moves from the bottom to the top.
+• The cost to "build heap" is ϴ(n). Building kinda means converting an uncorrect heap into a correct min/max heap.
+• Since the tree is log n levels deep, the cost for removing an element is ϴ(log n) in the average and worst case. To remove a node, you switch the node to remove with the last index, delete the last index and move previously swapped node in the tree accordingly.

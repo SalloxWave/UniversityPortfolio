@@ -1,0 +1,8 @@
+./brute < inputN.txt
+./fast < inputN.txt
+
+komilering
+
+make Brute
+make Fast
+

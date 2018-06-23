@@ -1,0 +1,32 @@
+• Hur tar ni/du hand om ett AVL-träd med flera obalanser?
+Vi "trappar" alltid uppåt tillbaks efter vi har trappat neråt genom rekursion
+På varje steg vägen tillbaks kollas det om det behövs en balansjustering.
+Dock är frågan lite oklar eftersom ett AVL-träd inte kan ha några obalanser.
+---------------------------------------------------------------------------
+• Vad är maximala antalet rotationer man kan behöva göra i ett AVL-träd?
+Insert: Alltid 1
+Delete: Trädets nuvarande höjd * 2 (endast dubbelrotationer), O(n) (2n)
+---------------------------------------------------------------------------
+• Hur kan ni/du garantera att AVL-trädet är balanserat efter att ert/ditt program körts?
+Trädet är antingen tomt eller...
+"Specification: A well-formed binary tree is said to be "height-balanced" if 
+(1) it is empty, or 
+(2) its left and right children are height-balanced and the height of the left tree is within 1 of the height of the right tree."
+---------------------------------------------------------------------------
+• Beskriv och dema ett extra trixigt fall av oblanserat AVL-träd som ni/du kan hantera förutom
+de enkla exempel som anges i dessa labbinstruktioner.
+---------------------------------------------------------------------------
+• Beskriv hur en rekursiv algoritm fungerar. Vad är det som gör att den är rekursiv?
+Kallar på sig själv. Beroende av föregående värde
+---------------------------------------------------------------------------
+• Vad är ett ’basfall’ för något? Ge exempel!
+Ett basfall i en rekursiv funktion gör att den inte håller på i onändlighet.
+def fact(n):
+    x = 5
+    if n == 1
+        return 1
+    else
+        n* fact(n-1);fact(n-1)
+---------------------------------------------------------------------------
+• Hur beräknas höjden av ett träd? Vad har t.ex. nod 6 i figur 2a ovan för höjd?
+Ta den nod med högsta höjd till vänster eller höger och addera med 1.

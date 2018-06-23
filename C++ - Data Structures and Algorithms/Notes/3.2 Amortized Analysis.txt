@@ -1,0 +1,22 @@
+Videos:
+https://www.youtube.com/watch?v=T7W5E-5mljc
+
+Amortized analysis: Used to decide cost when the cost of single operations varies
+
+"An algorithm analysis techique that looks at the total cost for a series of operations and amortizes this total cost over the full series. This is as opposed to considering every individual operation to independently have the worst case cost, which might lead to an overestimate for the total cost of the series."
+
+• Aggregate analysis: Avarage cost:
+O(Total Cost) / Number of operations
+
+• Accounting method: Look at every single operation
+Need to overcharge for simpler operations to build up savings to afford more expensive operations later
+
+• Potential Method, similar to accounting method
+Differences: Bank balance of a particular state is dependent on previous state
+
+Difference between Potential and Accounting method:
+Accounting method defines operation-dependant costs
+Potential method defines operation-independent costs (can use to check whatever n is, wherever you are in the array)
+
+
+

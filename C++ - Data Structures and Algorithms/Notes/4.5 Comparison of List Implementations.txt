@@ -1,0 +1,48 @@
+4.5 Comparison of List Implementations
+
+In general, use Linked lists when the number of elements are unknown, otherwise array lists.
+
+Overhead: Additional space needed for a list to organize the elements
+
+Array list overhead:
+• Possible space not used due to predetermined size
+
+Linked list  overhead:
+• Extra pointer for individual element
+
+n = number of current elements
+P = Size of the pointer
+E = Size of a data element
+D = Maximum number of list elements that can be stored
+
+Array list space = D*E
+Linked list space = n(P + E)
+
+break-event point: when the array is more space efficient: n > D*E/(P+E)
+since P and E is typically the same size, this gives: n > D/2 which means in most cases an array is more space efficient when the array is more than half full.
+
+
+Array list:
+Space:
+-: Size must be predetermined and can't grow outside of size. Because of this there might be large amount of space not used.
+-: Space require = Big-omega(n) or greater
++: No extra pointer for individual element
+Time:
++: Access by position is faster, ϴ(1)
+-: Inserting and removing is slower, ϴ(n) (needs to shift the remainder up or down)
+Can use dynamic array:
++: No or less extra space
++: Doesn't need to set size when initializing
+-: Takes time to adjust when full, double size and copy elements
+
+Linked list:
+Space:
++: Space is equal to size of list
++: Memory space determines the size limit
++: Space required = Big-theta(n)
+-: Extra pointer for individual element
+Time:
+-: Access by position is slow, ϴ(n)
++: Inserting and removing is faster, ϴ(1)
+
+

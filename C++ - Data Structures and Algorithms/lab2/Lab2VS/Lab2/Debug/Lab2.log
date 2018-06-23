@@ -1,0 +1,7 @@
+﻿  Key.cpp
+  Lab2.cpp
+c:\users\benjamin\documents\visual studio 2017\projects\lab2\lab2\lab2.cpp(52): warning C4018: '<': signed/unsigned mismatch
+c:\users\benjamin\documents\visual studio 2017\projects\lab2\lab2\lab2.cpp(59): warning C4018: '<': signed/unsigned mismatch
+c:\users\benjamin\documents\visual studio 2017\projects\lab2\lab2\lab2.cpp(66): warning C4018: '<': signed/unsigned mismatch
+  Lab2.vcxproj -> C:\Users\Benjamin\documents\visual studio 2017\Projects\Lab2\Debug\Lab2.exe
+  Lab2.vcxproj -> C:\Users\Benjamin\documents\visual studio 2017\Projects\Lab2\Debug\Lab2.pdb (Partial PDB)

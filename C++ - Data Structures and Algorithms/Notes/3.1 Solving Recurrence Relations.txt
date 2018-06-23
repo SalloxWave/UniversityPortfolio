@@ -1,0 +1,14 @@
+Videos:
+https://www.youtube.com/watch?v=eAaP4XaB8hM
+
+• Recurrence relations = model copst of recursive functions
+
+- 3 Approaches solving reccurce relations:
+• Estimation technique:
+Guess the upper and lower bounds for the recurrence, use induction to prove. Tighten proof if required
+
+• Summation: Expand reccurence to a summation and use summation techniques.
+
+• Using already proven theorems of recurrence. 
+
+

@@ -1,0 +1,27 @@
+Big-oh notation: Maximum possible growth rate for an algoritm
+Big-omega: Mininum growth rate for an algorithm
+Big-theta: Big-oh and big-omega is same
+====================================================================================
+Hashing:
+• Hash function: A function deciding where in table to insert items. With the hash function you can also find values quickly
+How to write a good hash function:
+1. Easy to compute: simple calculations.
+2. Even distribution in table: as few unused cells in table as possible. If using mod (%), a good way is to have the denominator be a prime number
+3. Less collision: Lambda(Load factor) = Number of elements / Table size, higher number gives more collisions
+• Collision: The hash function gives multiple values in same table cell.
+For example: H(x) = x mod 10 -> H(5)/H(25)/H(35) = 5
+How to handle collisions: 
+• Use a linked list to store multiple items. 
+Advantages:
+- Better space utilization for large items
+- Simple collision handling: searching linked list. Easy operations on linked list
+- Overflow: We can store more items than the hash table size.
+- Negative: Deletion and finding is Theta(length of list)
+• Open addressing hashing system requires the number of elements to be less than the table size. If a collision occurs use other non-occupied cells.
+Three common collision resolution:
+Definition: Cells h0(x), h1(x), h2(x),... are tried in succession until empty cell is found where hi(x) = "(hash(x) + f(i)) mod TableSize", f(0) = 0.
+• Linear Probing, f(i) = i
+• Quadratic Probing, f(i) = i^2
+• Double Hashing, f(i) = primtal - (x mod primtal)
+
+
