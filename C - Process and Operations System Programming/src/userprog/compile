@@ -1,0 +1,30 @@
+make -j8 -C ../examples && make -j8 && make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run sumargv
+
+make -j8 -C ../examples && make -j8 && pintos -v -k --fs-disk=2 -p ../examples/file_syscall_tests -a fst -- -f -q run 'fst testing one two three'
+
+
+//Working
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv 1 2 3 4'
+
+//Working
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv 1000 200 30 4'
+
+//Working
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv 36 64 100'
+
+//Working
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv 2 3 5 7 11'
+
+//Working
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv'
+
+//Working
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv 0'
+
+Lab 10:
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumargv 1 2 3 4'
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q run 'sumsum 1 2 3 4'
+make -j8 -C ../examples && make -j8 && pintos -p ../examples/sumargv -a sumargv -v -k --fs-disk=2 -- -f -q -tcl=2 run 'sumargv 1 2 3'
+
+Lab 17:
+make -j8 -C ../examples && make -j8 && pintos -v -k --fs-disk=2 --qemu -p ../examples/longrun_nowait -a nowait -p ../examples/generic_parent -a generic_parent -p ../examples/busy -a dummy -- -f -q run 'nowait 10 50'

@@ -1,0 +1,22 @@
+1) Vilka funktioner är involverade i att avsluta en tråd? En process?
+    process_exit
+    thread_exit
+2) Vilken uppgift har respektive funktion?
+    Process_exit för att ta emot statuskod och avsluta processen
+    Thread_exit för att döda tråden
+
+3) I vilken ordning exekveras de?
+    Process_exit borde exekveras först, eftersom det inte finns möjlighet att göra saker med processen efter att tråden avslutats
+
+4) I vilken fil är parametrarna till varje systemanrop specificerad?
+    lib/user/syscall.c
+
+5) Var i Pintos minne kan du hitta parametrarna?
+    esp (pekare till user-stacken) som finns i structen "intr_frame" (pekare till kernel-stacken) som skickas med som parameter till system callet
+
+6) Vad skall operativsystemet göra med parametern till exit (exit status)?
+    ---
+
+7) Vad händer när main returnerar?
+    Returvärdet från "main" returneras till systemanroppet "exit" som avslutar tråden "main" kör på.
+    Denna tråd startas när pintOS startas då pintOS kallar på c-funktionen _start.

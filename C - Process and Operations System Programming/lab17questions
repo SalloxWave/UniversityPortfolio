@@ -1,0 +1,30 @@
+• Kommer den nya tråden att lägga till sin egen process i processlistan?
+(Ja / Nej, det gör förälder-tråden)
+3: Ja, thread_current() är nya tråden
+4: Nej, har bara tillgång till den nya processens id.
+
+• Är förälderns process-id tillgängligt när informationen om den nya processen skall läggas till i
+processlistan?
+(Ja, direkt / Ja, det kan lätt ordnas / Nej, det går absolut inte att få tag på)
+3: Ja, det kan lätt ordnas (parameters_start_process)
+4: Ja (thread_current)
+
+• Är den nya processens process-id tillgängligt vid den placeringen?
+(Ja, direkt / Ja, det kan lätt ordnas / Nej, det går absolut inte att få tag på)
+3: Ja (thread_current)
+4: Ja (thread_create returnerar thread_id)
+
+• Processens id kommer att användas senare, när barnprocessen når process_cleanup, för
+att kunna ta bort processen ur processlistan. Är det garanterat att koden som lägger till den nya
+processen i processlistan alltid kommer exekveras innan den nya tråden exekverar
+process_cleanup? Detta är en viktig punkt.
+(Ja / Nej, den nya processen kan hinna avsluta innan den läggs till i listan)
+3: Ja, om man väntar tills processen har lagts till. (innan thread_exit i start_process)
+4: Nej, thread_exit i start_process kan ha aktiverat process_cleanup innan man fått thread_id
+
+• Överensstämmer uppgiften att lägga till en ny process i processlistan med intentionen av den
+funktionen du utför det? (Se uppgift 10 för intentionen och ansvarsfördelningen mellan de olika 
+tråd- och processfunktionerna, kort sammanfattat nedan.)
+(Ja, absolut / Ja, ganska bra / Nej, inte alls)
+3: Ja, absolut!
+4: Nej, ###en process exekveras bara här, inte läggs till i någon processlista

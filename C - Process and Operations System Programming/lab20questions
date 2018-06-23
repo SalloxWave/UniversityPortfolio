@@ -1,0 +1,54 @@
+1) Katalogen är tom. Två processer lägger till filen “kalle.txt” samtidigt. Är det efteråt garanterat
+att katalogen innehåller endast en fil “kalle.txt”?
+
+- Nej, eftersom en process kan avbrytas efter checken om filnamnet finns och innan den hittar en ledig directory entry i dir_add. Då går nästa process också igenom lookup i dir_add, hittar en ledig plats. Sedan kommer den avbrytna processen hitta en annan ledig plats och två filer med samma namn men på olika platser i sektorn är skapade.
+
+2) Katalogen innehåller en fil “kalle.txt”. Två processer tar bort “kalle.txt”, och en process lägger
+samtidigt till “nisse.txt”. Är det efteråt garanterat att katalogen innehåller endast fil “nisse.txt”?
+
+- Nej
+Första processen avbryts direkt efter lookup (har "verifierat" att kalle finns)
+Andra processen tar bort "kalle.txt".
+Tredje processen som skapar "nisse.txt" på första lediga sektorn som är där "kalle.txt" nyss togs bort.
+Andra processen pekar nu på "nisse.txt" och tar bort stackars "nisse.txt".
+
+
+3) Systemets globala inode-lista är tom. Tre processer öppnar samtidigt filen “kalle.txt”. Är det
+garanterat att inode-listan sedan innehåller endast en cachad referens till filen, med
+open_cnt lika med 3?
+
+- Nej
+Ända gången open count kan bli mer än 1 är om en inode redan redan finns i den globala inode-listan.
+
+Om process 1 iterarar genom inode-listan, "verifierar" att inoden inte är öppen, samtidigt som process 2 och 3 gör detsamma kommer sedan tre olika mallocs att ske samt tre olika list_push_front. Inode-listan kommer då innehålla tre cachade-inodes som refererar till samma sektion på disken men alla med en open_cnt = 1.
+
+
+4) Systemets globala inode-lista innehåller en referens till “kalle.txt” med open_cnt lika med
+1. En process stänger filen samtidigt som en annan process öppnar filen. Är det garanterat att
+inode-listan efteråt innehåller samma information?
+
+- Nej
+Efter --inode->open_cnt == 0 och innan list_remove(&inode->elem) i stängande processen kan den öppnande processen söka igenom inode-listan, finna att inoden är öppen och returnera tidigt (lägger inte till någonting till inode-listan) efter att ha increaseat dess open_cnt. När den stängande processen sedan exekverar list_remove(&inode->elem) och tillslut free_map_release(...) kommer inoden att tas bort ur inode-listan av deallokeras. Alltså är det INTE garanterat att inode-listan innehåller samma information efteråt.
+
+5) Free-map innehåller två sekvenser med 5 lediga block. Två processer efterskapar samtidigt två filer
+som behöver 5 lediga block. Är det efteråt garanterat att filerna har fått var sin sekvens lediga block?
+
+När en fil skapas allokeras sekvenser i funktionen "free_map_allocate". Denna kallar på "bitmap_scan_and_flip" som skannar efter lediga bitar och flippar (sätter) bitarna. Om två processer kommer till "bitmap_scan_and_flip" samtidigt är det möjligt att lediga bitar har hittats innan de har satts (båda exekverar bitmap_contains(...)-checken innan bitmap_set_multiple). Därför kan den båda processerna också hitta samma lediga bitar och båda processerna får samma sekvens lediga block.
+
+6) Katalogen innehåller en fil “kalle.txt”. Systemets globala inode-lista innehåller en referens till
+samma fil med open_cnt lika med 1. Free-map har 5 block markerade som upptagna. En
+process tar bort filen “kalle.txt” samtidigt som en annan process stänger filen “kalle.txt”. Är det
+efteråt garanterat att inode-listan är tom, att free-map har 5 nya lediga block, och att katalogen är tom?
+
+Close-processen avbryts efter uträkningen av inode->open_cnt - 1(1 - 1 = 0) men innan tilldelningen. Sedan kör remove-processen en inode_open vilket ökar open_cnt till 2. Sedan fortsätter close-processen och sätter open_cnt till det undansparade värdet vilket är 0. Sedan går remove-processen in i inode_close och drar bort 1 från open_cnt så den blir -1. Då kommer ingen av processerna in i if-satsen "if(inode->open_cnt == 0)" vilket leder till att ingen inode tas bort eller att blocken frigörs ("free_map_release").
+
+inode_write_at är raden som tar bort inoden ur katalogen. Denna körs alltid och påverkas inget av det andra problemet som kommer senare.
+
+???????????????????????????????????????????????????
+??? This is the correct answer. Give us points. ???
+???????????????????????????????????????????????????
+
+
+7) Liknande frågor skall du själv ställa dig i relation till din process-lista och till din(a) fil-list(or)
+
+OK!
