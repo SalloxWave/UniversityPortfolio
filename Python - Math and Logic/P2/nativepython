@@ -1,0 +1,10 @@
+# How are these functions called in native Python?
+#- "forall": all(map(lambda x: x in B, A)). We apply a condition to elements in A that they should be in element B. "map"-function then returns a value of the result which in this case is either True or False. "all"-function only returns True if all values in an iterable is True 
+all: (https://docs.python.org/3/library/functions.html#all) 
+map: (https://docs.python.org/3/library/functions.html#map)
+
+#- "subset" is same as "issubset"-function in native Python (https://docs.python.org/2/library/stdtypes.html#set.issubset)
+
+#- "equals" is basically the same as converting the iterable to a set using function "set" which then makes it possible to compare like this set(A) == set(B) (http://stackoverflow.com/questions/9623114/check-if-two-unordered-lists-are-equal)
+
+#- "disjoint": Use "issubset"-function' with negation in front: not A.issubset(B)
