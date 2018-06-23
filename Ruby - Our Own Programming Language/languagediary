@@ -1,0 +1,89 @@
+Considerations:
+- Should you be able to call function on non-variables
+- Variables in Ruby are not automatically being copied which we want to do.
+-----------------------------------------------------
+2017-03-08:
+Blandade ibland ihop datahanteringen med grammatiken. T.ex. råkade jag lägga in i grammatiken att matcha strängar med "" eller arrayer med [], när detta egentligen inte ska göras i grammatiken.
+-----------------------------------------------------
+2017-04-04:
+- Känns skumt och därmed lätt att glömma semikolon i vårt språk då jag är van att använda semikolon endast i typsäkra språk.
+- I Ruby finns det inga 'char' vilket blir intressant hur detta ska hanteras i vårat språk.
+-----------------------------------------------------
+2017-04-26:
+- Jag fundera på om expression ska räknas som en condition eller om condition endast skulle använda sig av expression och då condition finnd i expression, så blir det rekursivt med flera conditions.
+<expression>::=<condition>
+<condition>::=<condition> <operator> <condition>
+ELLER
+<expression>::=<condition>
+<condition>::=<expression> <operator> <expression>
+Översta fallet skapar oändlig rekursion, så det fungerade inte.
+- En annan sak jag funderade på var att variabler måste finnas innan "++" och "--" annars går det ju inte skriva "100--10" (vilket blir 110).
+- När jag fastnade gick jag ofta vidare på andra delar i språket som gick att lösa. Denna arbetsmetodik är inte direkt så bra eftersom det kan bli svårare att lösa problemen ju rörigare koden är. Dessutom kanske ett gammalt problem påverkar en ny implementation.
+-----------------------------------------------------
+2017-04-27:
+- Lösningen angående expressions och conditions löste vi genom att ha condition som vi tänkt men att flytta så condition inte finns i expression utan att condition är en simple_statement isället. 
+- Vi har problem med att användarinmatning(input) inte fungerar då koden körs från en fil.
+- Vi har också problem just nu att det inte går att ha flera elseif-satser efter varandra.
+- I allmänhet blir det väldigt jobbigt att felsöka i rdparse vid mer än en rad kod. Detta ledde till att vi ibland får stänga av debuggnigen och göra egna utskrifter.
+- På vissa ställen i koden gör vi om objekt till listor, även om det bara är ett objekt. Detta kanske inte är så jättesnyggt och svårt att förstå för någon som inte kollat koden.
+- Vi har också märkt flera fall där vi blandat ihop syntax från flera olika språk vilket visar hur jobbigt det kan vara att programmera flera språk samtidigt.
+- Eftersom många saker i vårt språk är likt från andra språk får vi mycket "på köpet" då vi programmerar. T.ex. att vi har många likadana operatorer och att uttryck räknas nästan samma sätt så det går att använda eval direkt.
+-----------------------------------------------------
+2017-04-28:
+- Lösningen på input var att skriva $stdin.gets för att specificera att läsa från terminalen.
+- Lösningen på flera if elseif-satser var att ändra ordningen på en elseif. Vi hade den rekursiva matchningen under vanliga matchningen vilket gjorde att den matchade endast en elseif innan den tittade efter flera elseifs.
+<elseif_statement>::=elseif ( <condition> ) <block>
+<elseif_statement>::=elseif ( <condition> ) <block> <elseif_statement>
+------>
+<elseif_statement>::=elseif ( <condition> ) <block> <elseif_statement>
+<elseif_statement>::=elseif ( <condition> ) <block>
+- Vi har hittat att om man har if-satser så minskas hastigheten på parsning exponentiellt. Detta har något med parsningen att göra för att när vi endast har 3 if-satser så skapas 146 st. ConditionStatement objekt då endast 3 borde skapas. Dock fungerar syntaxen.
+- Jag funderade på om vi vill lagra alla variabler från de yttre scopen som är mindre då vi skapar ett nytt scope. Eftersom det blir onödig datalagring valde jag att inte göra så.
+- Eftersom en if-sats i ett start-stop block kan innehålla en restart var vi tvungna att göra så att en "ConditionStatement" returnerar en return och blocket i "ConditionStatement" returnerade en restart om "Restart"-noden returnar i blocket returnerar en return. Detta kan man fungera på om det går att göra på ett snyggare sätt. Dessutom måste vi också slänga in "restart" som en möjlig statement istället för bara i start-stop block. Detta leder dock till att man inte behöver ett specifikt start-block utan kan använda den allmänna regeln för block.
+-----------------------------------------------------
+2017-05-02
+- Eftersom vi har olika klasser för olika loopar med olika parametrar blir det svårt att få matchningen snygg. Att ha ha flera loop parameter matchningar med olika namn blir inte snyggt eller logiskt. Att loop_parameter matchningar returnerar en lista av parameter blir också jobbigt då man inte vet vilken av klasserna som ska användas. En lösning är att göra alla loop-matchningar separat, det blir dock mycket upprepning men det får duga.
+-----------------------------------------------------
+2017-05-03
+- When declaring a function, do we want to initialize declaration with default value nil in 
+a hash or do we only want to store as list.
+- Save default assignment as an object of class assignment which then 
+evaluate when calling to function?
+- Should you have functions scopes? Should function be a variable whoose name is connected to
+the function object?
+- Tanken var att jag skulle göra det enkelt genom att öka scope när ett block evalueras.
+Det visade sig dock att det inte blir så enkelt eftersom i fall med loopar och functioner
+vill ett scope skapas innan blocket evalueras eftersom man vill deklarera en variabel i 
+ett nytt scope innan man går in i blocket.
+- Vill vi ha separata klasser för increment och vanlig assignment? Det går i matchningen
+skapa en assignment med +1 eller -1 som expression istället
+- Borde vi ha att man kan tilldela en variabel endast en expression istället för både expression och assignment.
+Och istället ha så att en expression kan vara en condition. En if-sats har då både condition och expression som matchingar?
+-----------------------------------------------------
+2017-05-10
+- Had a problem where "null" was counted as a variable even though we matched string "null" before variable. Interestingly, this was
+caused due to the returning of "nil" in the matching. This made rdparse believed it wasn't a valid match since the match returned nil.
+This was solved by returning our own "Null"-class and then when evaluating it, returning "nil"
+- I was thinking were the array call should be (arr[0], arr[5+5] etc.). Should it be considered as a variable or should it stand
+alone? It should be stand alone since the rule for variables is used in function declarations, loops etc. And those should be not 
+be able to array calls
+
+-----------------------------------------------------
+2017-05-15 (?)
+- Interesting problem:
+    @@x = [{}, {a:1, b:2, c:3, d:4}]
+    @@x2 = [{}, {a:100, b:200, c:300, d:400}]
+    def test
+      @@x = @@x2.map(&:clone)
+      return 1000
+    end
+
+    test
+    puts @@x
+
+    @@x[1][:b] = test
+
+    puts @@x
+
+- Jag känner att det skulle underlättat om vi skulle löst prioriteringen i vår
+grammatik istället för medan vi implementerade språket.

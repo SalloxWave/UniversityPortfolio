@@ -1,0 +1,13 @@
+word = "hej"
+
+fun start_game()
+{
+  start
+    if(input("Guess the word: ") != word)
+    {
+      output("Wrong you bastard!");
+      restart
+    }
+  stop
+  output("Congratz" :D");
+}

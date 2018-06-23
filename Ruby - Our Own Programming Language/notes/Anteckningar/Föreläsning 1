@@ -1,0 +1,49 @@
+Definiera implementera, dokumentera, presentera 
+ett eget programspråk (eller linkande)
+
+- Föreläsningar (lektioner) programspråk: Lärare
+- Handledningar programspråk: Lärare, Maximilian (IP-student)
+- Föreläsningar, seminarier presentation: Gunilla (Tena?)
+- Presentation (konferens): Alla
+
+Två moment:
+- Språkets definition och implementation
+- Muntilig och skriftlig presentation
+
+Idéer:
+
+- Vilken typ?
+Imperativt (t.ex. C)
+Funktionellt (t.ex. Lisp, Scheme, Haskell)
+Objektorienterat (t.ex. Smalltalk, C++)
+Paralellt
+Stackorienterat (Forth)
+	.
+	.
+	.
+Kombinationer
+Eller liknande: ex. Språk för ritningar
+
+- Allmänt användbara?
+
+- Speciellt syfte?
+
+
+- Idé: 
+Hitta lämplig inspiration
+Spåna
+Skissa
+Skriv programexempel
+
+- Definition:
+Lexikalisk - ord, operatorer (reguljära uttryck)
+Syntaktisk - satser, funktioner (grammatik)
+Semantisk - vad betyder det? (text)
+
+- Implementation
+rdparse, grammatik i Ruby
+Interoretatior eller kompilator?
+
+OBS! Inte bara enkel substitution
+1p2g3 = 1+2+3
+Strukturen måste analyseras

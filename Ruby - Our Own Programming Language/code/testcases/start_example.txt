@@ -1,0 +1,36 @@
+user_count = 0;
+users = [];
+fun is_valid(username)
+{
+    output("entering isvalid");
+    loop(users, user)
+    {
+        output("inuti loopen");
+        //User is already registered
+        if (username == user)
+        {
+            return false;
+        }
+    }    
+    output("going out isvalid");
+    return true;
+}
+
+fun register()
+{
+    start
+        output("Welcome to register");
+        username = input("Username: ");
+        if ( is_valid(username) != true )
+        {
+            output("Username is not valid! Please try again");
+            restart
+        }   
+        output("register finished");     
+        users[user_count] = username;
+        user_count++;
+    stop
+}
+
+register();
+output(users);

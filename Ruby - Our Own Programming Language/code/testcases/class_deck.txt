@@ -1,0 +1,61 @@
+class Card
+{
+	setter
+	{
+		suit;
+		value;
+	}
+
+	static fun
+	{
+		GetSuit(n)
+		{
+			if (n == 1){return "HEARTS";}
+			elseif (n == 2){return "DIAMONDS";}
+			elseif (n == 3){return "SPADES";}
+			elseif (n == 4){return "CLUBS";}
+			else {return "NONE";}
+		}
+	}
+}
+
+class Deck
+{
+	private
+	{
+		cards = [];
+	}
+	constructor(numOfCards)
+	{
+		index = 0;
+		loop (numOfCards/4, val)
+		{
+			loop(numOfCards/13, suit)
+			{
+				card = new Card();
+				card.suit = Card.GetSuit(suit+1)
+				card.value = val;
+				cards[index] = card;
+				index++;
+			}
+		}
+	}
+	public fun
+	{
+		GetCard(index)
+		{
+			return cards[index];
+		}
+	}
+}
+
+output(Card.GetSuit(1) . "=HEARTS");
+output(Card.GetSuit(2) . "=DIAMONDS");
+output(Card.GetSuit(3) . "=SPADES");
+output(Card.GetSuit(4) . "=CLUBS");
+deck = new Deck(52);
+output(deck.GetCard(0).suit . "=HEARTS");
+output(deck.GetCard(0).value . "=1");
+
+output(deck.GetCard(14).suit . "=DIAMONDS");
+output(deck.GetCard(14).value . "=2");

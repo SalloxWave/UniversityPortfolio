@@ -1,0 +1,69 @@
+OLD FROM "termer.rb"
+Fixed:
+Sometimes you want variable name and sometimes, the value
+
+Probably fixed:
+Make it possible with paranthesis around expressions
+
+TOFIX:
+Priority in conditions and expressions
+100-10 tokenizes two integers without operator in middle, we need better regular expression
+Only match negative number if not a number before
+Condition with multiple conditions doesnt work
+Need paranthesis for condition to work
+Better array regex expression
+
+match(:assignments) needs to be above match(:expression)?
+Store keywords such as if and output as symbol or as string. Storing as string makes it believe it's a variable
+
+
+Done:
+- Allt i en funktion körs samtidigt som den definieras
+- därför behövs ett nodesystem med statements. Statements sparas i en lista 
+- z = y + y *-1 + 25; Detta uttryck fungerar inte pga prioriteringsordning.
+för att sedan evalueras statement för statement. T.ex. If_statement.new, Expr.new.
+- Match variables i t.ex. en loop?
+- When trying to call variables that doesn't exist, you should not return a string of the name
+- Function calls should not have expression since we want an expression to be able to have a function_call.
+- Fix better array matching \[.*\]
+- Fix our unique conditions, for example 0 is false
+- Fix functions
+- Found solution to priority, lowest priority needs to be matched first. 
+See Nibla_Parser row 117.
+- When declaring a function, do we want to initialize declaration with default value nil in 
+a hash or do we only want to store as list.
+- Save default assignment as an object of class assignment which then 
+evaluate when calling to function?
+- Calling a function inside a block means the function should not have access to the block's variables
+- To fix negative numbers: Tokenize only positive numbers and convert negative numbers in match instead.
+- Functions inside functions have some issues. Problem is that new scope is opened for each evaluated function
+- loop arrays
+- condition priority
+- "get_level_by_fun_name" should look from global down to current level
+TODO:
+- Can't calculate expression with multiple functioncalls
+- Can't use more than one expression with function calls in program
+- Below doesn't work 
+fun greet(name)
+{
+	output("Hello " . name . "!");
+}
+greet("Alexander");
+greet("Gustav");
+
+x = 10;
+fun test()
+{
+    return x;
+}
+output(test());
+
+TODO (low priority):
+- "stop" missledande namn?
+- break / continue ( BÖR )
+- Help function to make class Expression/Condition class better?
+- Redirect output to be able to create comparable test cases
+- Create custom exceptions
+- All functions defined inside a function is defined on scope 1.
+This is though needed since scope should be 1 when going inside a function
+- Name identifier instead of var

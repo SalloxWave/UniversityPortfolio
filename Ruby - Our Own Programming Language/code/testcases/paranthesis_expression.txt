@@ -1,0 +1,37 @@
+fun sum(a,b)
+{
+    return a+b;
+}
+
+x = (5+5);
+output(x . "=10?");
+
+x = (5+5) + (5+5);
+output(x . "=20?");
+
+x = (x + x);
+output(x . "=40?");
+
+x = (5+5)*10;
+output(x . "=100?");
+
+x = 5^2*4;
+output(x . "=100?");
+
+x = 10/2*2;
+output(x . "=10?");
+
+x = 10%3*10;
+output(x . "=10?");
+
+x = 38^(10%3);
+output(x . "=38?");
+
+x = 10-1;
+output(x);
+
+//x = (sum(5,5) + sum(5,5))*10; //This doesn't work
+//output(x . "=200?");
+
+//x = sum(5,5) * 10 + sum(10,10); //This doens't work
+//output(sum(5,5) + sum(5,5));

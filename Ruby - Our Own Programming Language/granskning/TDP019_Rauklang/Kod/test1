@@ -1,0 +1,24 @@
+
+func foo(a,b):
+     print(a);
+     if(a > b):
+          a = a + 30;
+          a = a + 30;
+     end_if;
+     c = 0;
+     print("här ska a vara 80, a =" + a);
+     while(a > c):
+                 c = c + 1;
+                 print("här är c =" + c);
+
+     end_while;
+end_func;
+
+func bar(b):
+     for(i = 0; i < b || i < a; i = i + 1):
+           print(i);
+           end_for;
+           b = b + 1;
+end_func;
+foo(50, 30);
+

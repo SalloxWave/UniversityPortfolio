@@ -1,0 +1,157 @@
+Questions:
+- How to make start recursive with multiple statements?
+- Where does ++ and -- fit in, in its own?
+- How to do with variable names?
+- How to force type of datatype (example loop INTEGER)?
+- Separate for assignment and default value?
+2017-03-08:
+- How to avoid declaring class/functions inside specific block. Is this the semantical analysis?
+- How to parse STRING . data . STRING? Ignore all whitespaces except matching /"\s\."/?
+- How to do with multiple logical operators connected to same variable?
+- How to separate name and data?
+- How to call free methods? With <fun_name>? With <name>? Create rule for function name and parameters, without "fun" in the beginning?
+
+Notes:
+Data types written with capital letters
+
+TODO:
+- Priority
+- Multiple logical operators connected to same variable
+- Create new classes with "new".
+
+Old TODO:
+Where should you be able to start?
+How to do with multiple expressions with logical operators?
+- Function calls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Main:
+<program>::=<statements>
+<program>::=empty
+
+<statements>::=<simple_statement> ;
+<statements>::=<simple_statement> ; <statements>
+<statements>::=<compound_statement>
+<statements>::=<compound_statement> <statements>
+<statements>::=<class>
+<statements>::=<class> <statements>
+<statements>::=<fun_declaration>
+<statements>::=<fun_declaration> <statements>
+
+<statement>::=<simple_statement>
+<statement>::=<compound_statement>
+
+//Essentially the statements requiring semicolon
+<simple_statement>::=<expression>
+<simple_statement>::=<assignment>
+<simple_statement>::=<IO>
+
+//Basically the statements with blocks that does not require semicolon
+<compound_statement>::=<condition_statement>
+<compound_statement>::=<loop_statement>
+<compound_statement>::=<start_statement>
+
+<expression>::=<data>
+<expression>::=<name>
+<expression>::=<function_call>
+<expression>::=<expression> <arithmetic_operator> <expression>
+<expression>::=<condition>
+//???String concatenation???
+<expression>::=<data> . <expression>
+
+<function_call>::=<name>.<function_call>
+<function_call>::=<name>.<name>
+
+<assignment>::= <name> <assignment_operator> <expression>
+<assignment>::= <name> <increment_operator>
+
+<condition_statement>::= <if_statement>
+<condition_statement>::= <if_statement> <else_statement>
+<condition_statement>::= <if_statement> <elseif_statement> <else_statement>
+
+<if_statement>::=if ( <condition> ) <block>
+<elseif_statement>::=elseif ( <condition> ) <block>
+<elseif_statement>::=elseif ( <condition> ) <block> <elseif_statement>
+<else_statement>::=else <block>
+
+<condition>::= <expression>
+<condition>::= <condition> <logical_operator> <condition>
+<condition>::= <expression> <condition_operator> <expression>
+
+<fun_declaration>::=fun <name> ( ) <fun_block>
+<fun_declaration>::=fun <name> ( <parameter_list> ) <fun_block>
+
+<fun_block>::=<block>
+<fun_block>::={ <statements> <return_statement> }
+
+<return_statement>::=return <name>
+<return_statement>::=return <data>
+
+<parameter_list>::=<name>
+<parameter_list>::=<default_assignment>
+<parameter_list>::=<name> , <parameter_list>
+
+<default_assignment>::= <name> = <data>
+
+<block>::={ <statements> }
+
+<loop_statement>::=loop <block>
+<loop_statement>::=loop ( <loop_parameters> ) <block>
+
+<loop_parameters>::=INTEGER
+<loop_parameters>::=INTEGER , <name>
+<loop_parameters>::=INTEGER , <name> , <assignment>
+<loop_parameters>::=INTEGER , <condition> , <assignment>
+<loop_parameters>::=<condition>
+<loop_parameters>::=ARRAY , <name>
+
+<IO>::=<name> <assignment_operator> input ( STRING )
+<IO>::=output ( <data> (STRING) )
+
+<start_statement>::=start <start_block> stop
+<start_block>::=<statements>
+<start_block>::=<statements> restart
+<start_block>::=<statements> restart <statements>
+
+<class>::=class <name> <class_block>
+
+<class_block>::={ <class_statements> }
+
+<class_statements>::=<class_statement>
+<class_statements>::=<class_statement> <class_statements>
+
+<class_statement>::=<class_constructor>
+<class_statement>::=<access_modifier> <class_attr_block>
+<class_statement>::=<access_modifier> <class_fun_block>
+
+<class_constructor>::=constructor ( <parameter_list> ) <block>
+<class_constructor>::= auto constructor ( <parameter_list> )
+
+<class_attr_block>::={ <class_attr_statements> }
+<class_attr_statements>::=<class_attr_statement> ; <class_attr_statements>
+<class_attr_statements>::=<class_attr_statement> ;
+<class_attr_statement>::=<default_assignment> ;
+<class_attr_statement>::=<name> ;
+
+<class_fun_block>::=fun { <class_fun_statements> }
+<class_fun_statements>::=<class_fun> <class_fun_statements>
+<class_fun_statements>::=<class_fun>
+<class_fun>::=<name> ( ) <fun_block>
+<class_fun>::=<name> ( <parameter_list> ) <fun_block>
+
+<access_modifier>::=getter|setter|private|public|static
+
+Extra:
+------------------------------------------------------------
+<arithmetic_operator>::=+|-|*|/|%|^
+
+<assignment_operator>::==|+=|-=|*=|/=|%=
+
+<increment_operator>::=--|++
+
+<condition_operator>::=|!=|not equals|<|>|<=|>=|==|equals
+
+<logical_operator>::=&|and|"|"|or|!|not
+
+<data>::=STRING|INTEGER|BOOL|DECIMAL|CHAR|NULL|ARRAY
+
+<name>::=IDENTIFIER

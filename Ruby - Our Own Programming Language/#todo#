@@ -1,0 +1,24 @@
+Done:
+- Allt i en funktion körs samtidigt som den definieras
+- därför behövs ett nodesystem med statements. Statements sparas i en lista 
+- z = y + y *-1 + 25; Detta uttryck fungerar inte pga prioriteringsordning.
+- Found solution to priority, lowest priority needs to be matched first. 
+See Nibla_Parser row 117.
+
+för att sedan evalueras statement för statement. T.ex. If_statement.new, Expr.new.
+- Kunna matcha variabler och data i t.ex. en loop?
+- When trying to call variables that doesn't exist, you should not return a string of the name
+- Function calls should not have expression since we want an expression to be able to have a function_call.
+TODO:
+- Fixa bättre array matchning än nyvarande \[.*\]
+- "stop" missledande namn?
+- fix our unique conditions, for example 0 is false
+- Fix functions
+- breake / continue ( BÖR )
+- When declaring a function, do we want to initialize declaration with default value nil in 
+a hash or do we only want to store as list.
+- Save default assignment as an object of class assignment which then 
+evaluate when calling to function?
+- Calling a function inside a block means the function should not have access to the block's variables
+- To fix negative numbers: Tokenize only positive numbers and convert negative numbers in match instead.
+- Functions inside functions have some issues. Problem is that new scope i opened for each evaluated function

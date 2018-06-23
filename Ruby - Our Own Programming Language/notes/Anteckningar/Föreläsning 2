@@ -1,0 +1,92 @@
+Föreläsning 2 - TDP019 - Project: Datorspråk
+
+Källkod (if x == 4711)
+	I
+	V
+Lexikalisk analys/scanner (reguljära uttryck) del av rdparse
+	I
+	V
+Token (if x == 4711) gruppera täcken
+	I
+	V
+Syntaktiskt analys Parse (Grammatik (BNF)) del av rdparse
+	I
+	V
+Trädstruktur
+	I
+	V
+Traversering (besöka alla noder på ett systematiskt sätt)
+Exekvering
+
+Traversering&Kodgenerering -> Assemble/maskinkod
+
+BNF (Backus normalform/Backus-naur form)
+
+Hel-> Del Del Del
+Hel::=Del Del Del
+
+Uttryck::=Tal
+Uttryck::=Uttryck plus Uttryck
+
+<uttryck>::=<tal>
+<uttryck>::=<uttryck> + <uttryck>
+	I                 I
+	V				  V
+Icketerminal	   Terminal
+
+E->N
+E->E+E
+
+<program>::=begin <satser> end;
+
+Parseträd
+
+E (experssion)
+E->E+E }
+E->E*E  } E->E+E|E*E|V
+E->V   }
+
+<program>::= program <satser> slutprogram
+<satser>::=<sats>
+		  |<sats> <satser>
+<sats>::=<tilldelning>|<utmatning>|<inmatning>
+		|<villkor><repetition>
+		
+<tilldelning>::=tilldela <variabel> <uttryck>
+
+<villkor>::=om <predikatuttrck>
+			så <sats>
+			annars <sats>
+			
+<repetition>::=repetera-tills <predikatuttryck>
+			   <satser>
+			   slut-repetera
+			   
+foo(x,y,z) bar
+<call>::=<name>(<params>)
+		|<name>		
+<params>::=<param>,<params>
+		  |<param>
+
+foo(x,y,z) bar()
+<call>::=<name>(<params>)
+<params>::=<param>,<params>
+		  |<param>
+<params>::=<param>,<params>
+		  |<empty>
+		  
+
+Resultat av parsning (parseträd) är syntaxträd där noderna är objekt.
+if-klass             |
+while-klass			 | Skrivs i Ruby
+plusklass, minusklass|
+
+Varje nod har en eval/execute-metod som ser till att treversera hela trädet.
+
+Problem:
+---------
+E->E+E
+  |E*E
+  |V
+		  
+

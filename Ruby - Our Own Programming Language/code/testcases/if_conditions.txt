@@ -1,0 +1,142 @@
+if (0)
+{
+	output("ERROR: 0 is not true");
+}
+
+if(1)
+{
+	output("CORRECT: 1 is true");
+}
+
+if (5)
+{
+	output("CORRECT: 5 is true");
+}
+
+if(true)
+{
+	output("CORRECT: true is true");
+}
+
+if (false)
+{
+	output("ERROR: false is not true");
+}
+
+if(true and true or false)
+{
+    output("CORRECT: true and true or false is true");
+}
+else
+{
+    output("Wrong");
+}
+
+if(false or true and false)
+{
+    output("Wrong");
+}
+else
+{
+    output("CORRECT: false or true and false is false");
+}
+
+if(5 equals 5 and 4 equals 4)
+{
+    output("CORRECT: 5 equals 5 and 4 equals 4 is true");
+}
+else
+{
+    output("Wrong");
+}
+
+if(!(true or true))
+{
+    output("Wrong");
+}
+else
+{
+    output("CORRECT: !(true or true) is false");
+}
+
+
+if(true and true)
+{
+	output("CORRECT: true and true is true");
+}
+
+if (5 > 5)
+{
+	output("ERROR: 5 > 5 is not true");
+}
+else
+{
+	output("CORRECT: 5 > 5 is false (else)");
+}
+
+if (false)
+{
+	output("ERROR: false is not false");
+}
+elseif(true | false)
+{
+	output("CORRECT: true | false is true (elseif)");
+}
+
+if ("hello" == "world")
+{
+	output("ERROR: hello == world is not true");
+}
+elseif (4 < 2)
+{
+	output("ERROR: 4 < 2 is not true (elseif)");
+}
+else
+{
+	output("CORRECT: hello == world, 4 < 2 are both false(else)");
+}
+
+x = 5;
+if (x % 2 == 0){output("ERROR: " . x . " is not even");}
+else{output("CORRECT: " . x . " is odd");}
+
+x = 8;
+if (x % 2 == 0){output("CORRECT: " . x . " is even");}
+else{output("ERROR:: " . x . " is not odd");}
+
+
+alfa = input("Input letter a-f, I'll convert it to number");
+if(alfa == "a"){output(alfa . "=" . 1);}
+elseif(alfa == "b"){output(alfa . "=" . 2);}
+elseif(alfa == "c"){output(alfa . "=" . 3);}
+elseif(alfa == "d"){output(alfa . "=" . 4);}
+elseif(alfa == "e"){output(alfa . "=" . 5);}
+elseif(alfa == "f"){output(alfa . "=" . 6);}
+else{output(alfa . " is not between a-f");}
+
+
+if (true)
+{
+	if(true)
+	{
+		output("CORRECT: second if-statement");
+	}
+}
+
+
+//Below parses but doesnt work logically with the conditions
+name = input("Please input name: ");
+age = input("Please input age: ");
+secret_password = input("Please input secret password: ");
+if (age == "18" & name != "Annoying name" | secret_password == "abc")
+{
+	output("Welcome to our club!");
+}
+elseif(age == "18" & name == "Annoying name" | secret_password == "abc")
+{
+	output("Go to the annoying club nextdoors");
+}
+else
+{
+	output("You are not allowed to join a club!");
+}

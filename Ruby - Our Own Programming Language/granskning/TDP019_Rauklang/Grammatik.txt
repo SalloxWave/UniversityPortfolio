@@ -1,0 +1,94 @@
+<begin>
+	::= 	<stmt_list>
+
+<stmt_list>
+	::= 	<stmt_list> <stmt>
+		| <stmt>
+
+<stmt>
+	::=	<for_stmt>
+		| <while_stmt>
+		| <if_stmt>
+		| <return_stmt>
+		| <func_call> #lägg till alla senare tillkomna statements här#
+
+<for_stmt>
+	::= 	'for' '(' <name> '=' <add_expr> ';' <bool_expr> ';' <name> '=' 			<add_expr> ')' ';' <stmt_list> 'end for;'
+
+<while_stmt>
+	::= 	'while' '(' <bool_expr> ')' ';' <stmt_list> ';' 'end while;'
+
+<if_stmt>
+	::= 	'if' '(' <bool_expr> ')' ';' <stmt_list> ';' 'end while;'
+
+<print_stmt>
+	::= 	'print' '(' <expr> ')' ';' #Ska troligen byta ut <expr> till något bättre#
+
+<return_stmt>
+	::= 	'return' '(' <expr> ')' ';' #byta ut <expr> till någon slags lista?#
+
+<begin>
+	::= 	<stmt_list>
+
+<func_def>
+	::=	'func' <name> '(' <expr> ')' ';' <stmt_list> 'end func;'
+
+<func_call>
+	::= 	<name> '(' <expr> ')' ';'
+		| <name> '('')' ';'
+
+<name> 
+	::=	[A-Za-z]+
+
+<comp_op>
+	::=	'<'
+		| '>'
+		| '<='
+		| '>='
+		| '=='
+		| '!='
+
+<bool_expr>
+	::=	<add_expr> <comp_op> <add_expr>
+
+<add_expr>
+	::=	<add_expr> <add_op> <mult_expr>
+		| <mult_expr>
+
+<add_op>
+	::=	'+'
+		| '-'
+
+<mult_expr>
+	::=	<mult_expr> <mult_op> <factor>
+		| <factor>
+
+<mult_op>
+	::=	'*'
+		| '/'
+
+<factor>
+	::=	<int>
+		| <name>
+		| <func_call>
+		| <expr>
+
+<aritm_expr>
+	::=		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+fun greet(name)
+{
+	output("Hello " . name . "!");
+}
+greet("Alexander");
+greet("Gustav");
+
+fun sum(arr)
+{
+	sum = 0;
+	loop (arr, item)
+	{
+		sum+=item;
+	}
+	return sum;
+}
+output(sum([1,2,3]) . "=6");
+output(sum([1,10,27]) . "=38");
+
+fun eat(kilos = 1, food = "Pizza")
+{
+	output("You just ate " . kilos . " of " . food);
+}
+eat();
+eat(10);
+eat(100, "Carrot");  //Are you some kind of horse?
+
+fun sleep(time, location = "Bed")
+{
+	output("You will now sleep for " . time . " minutes in the " . location);
+}
+
+sleep(30);
+sleep(120, "train");
+sleep(300, "couch");
+
+//Recursive function calculating factorial numbers
+fun fact(n)
+{
+	if (n <= 1)
+	{
+		return 1;
+	}
+	return n * fact(n-1);  //Here's a problem with negative numbers
+}
+
+output(fact(1) . "=1?");
+output(fact(2) . "=2?");
+output(fact(5) . "=120?");
+output(fact(7) . "=5040?");

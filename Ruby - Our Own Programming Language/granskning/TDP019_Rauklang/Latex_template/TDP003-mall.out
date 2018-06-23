@@ -1,0 +1,26 @@
+\BOOKMARK [1][-]{section.1}{Revisionshistorik}{}% 1
+\BOOKMARK [1][-]{section.2}{Inledning}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Bakgrund}{section.2}% 3
+\BOOKMARK [1][-]{section.3}{Användarhandledning}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{För att köra RaukLang}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Kommentarer}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.3}{Datatyper}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.4}{Matematiska\040uttryck}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.5}{Villkorssatser}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.6}{Jämförelseoperatorer}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.7}{Repetitionssatser}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.7.1}{For-loop}{subsection.3.7}% 12
+\BOOKMARK [3][-]{subsubsection.3.7.2}{While-loop}{subsection.3.7}% 13
+\BOOKMARK [2][-]{subsection.3.8}{Print}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.9}{Deklaration}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.10}{Funktioner}{section.3}% 16
+\BOOKMARK [3][-]{subsubsection.3.10.1}{Deklarera\040funktioner}{subsection.3.10}% 17
+\BOOKMARK [3][-]{subsubsection.3.10.2}{Använda funktioner}{subsection.3.10}% 18
+\BOOKMARK [1][-]{section.4}{Systemdokumentation}{}% 19
+\BOOKMARK [2][-]{subsection.4.1}{Grammatik}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.2}{Kodstandard}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.3}{När RaukLang körs}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Tokens}{subsection.4.3}% 23
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Regler}{subsection.4.3}% 24
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Klasser}{subsection.4.3}% 25
+\BOOKMARK [1][-]{section.5}{Erfarenheter\040och\040reflektioner}{}% 26

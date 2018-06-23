@@ -1,0 +1,5 @@
+Inspiration for grammar:
+https://docs.python.org/3/reference/grammar.html
+
+Left-right associative:
+http://stackoverflow.com/questions/28592300/precedence-of-operators-in-bnf-grammar

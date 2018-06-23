@@ -1,0 +1,22 @@
+2017-03-08:
+Considerations:
+- Should you be able to call function on non-variables
+- Variables in Ruby are not automatically being copied which we want to do.
+- Should input/output have semantic meaning in the programming language or should they be built-in functions.
+- Should we require semicolon after "restart" in start_statement?
+- Should we really have multiple logical operators connected to same value?
+- Should we separate <data> and <name> since sometimes you should only need data and sometimes only name? Also, should we directly use IDENTIFIER instead of data?
+- Should setter be public accessor instead
+
+2017-04-04:
+Considerations:
+- Should you be able to multiply strings and chars?
+
+2017-04-25:
+- Do we want to be able to declare variable with same name if inside deeper scope
+x = 0;
+fun test()
+{
+    x = 10;
+}
+

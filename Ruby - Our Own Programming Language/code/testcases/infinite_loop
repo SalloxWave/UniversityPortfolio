@@ -1,0 +1,4 @@
+loop
+{
+	output("This message will never end and hunt you forever");
+}

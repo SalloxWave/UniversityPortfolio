@@ -1,0 +1,349 @@
+//Data types:
+a = 5;  //an integer (32 bit)
+b = 5.5;  //a decimal
+b = 5.5555555555555;  //a decimal
+c = 'a';  //a char
+d = "hello";  //a string
+e = true;  //a bool(ean)
+e = false;  //a bool(ean)
+a;  //null value
+arr = [1,2,3,4,5,6];
+arr = ["hej", "cool", "nice"];
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Operators
+x = 1;
+y = 2;
+z = x + y;  //z = 3
+z+=2;  //z = 5
+z++;  //z = 6
+z--;  //z = 5
+z = z - 3;  //z = 2
+z-=2;  //z = 0
+z = x*y;  //z = 2
+z*=5;  //z = 10
+z = z^y;  //z = 100
+z^=2;  //z = 10000
+z = 10/y;  //z = 5
+z/=5;  //z = 1
+z = 14%3;  //z = 2
+z%=2;  //z = 0
+
+//String concatenation
+name = "Alexander";
+str = "Hello my name is " . name . "!";
+
+???
+//All variables are automatically being copied (copy assignment):
+???
+x = 5;
+a = x;
+x = 10; //x = 10, //a = 5
+
+//Conditional operators (maybe we only want pseudo-code style?)
+5 == 5;  //true
+5 < 10  //true
+10 <= 10  //true
+99 > 100  //false
+101 >= 101  //false
+1 equals 5;  //false
+1 not equals 5;  //true
+5 == 5 & 3 equals 3;  //true
+"hi" equals "hi" and "a" == "b";  //false
+5 not equals 3 | 5 == 4;  //true
+"crazy" == "crazier" or 5 != 5;  //false
+
+0;  //false
+1;  //true
+5;  //true
+"hej";  //true ?????
+null;  //false
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Statements
+------------------------------------------------------------------------------
+//The if/else/elseif statements
+
+answer = input("What animal says 'moo'?")
+if (answer == "cow")
+{
+	output ("Correct!");
+}
+elseif (answer == "bull")
+{
+	output ("Almost correct");
+}
+else
+{
+	output ("You're totally wrong!");
+}
+
+name = input("Please input name: ");
+age = input("Please input age: ");
+secret_password = input("Please input secret password")
+if (age > 18 & name != "Annoying name" | secret_password == "123")
+{
+	output("Welcome to our club!");
+}
+elseif(age > 18 & name == "Annoying name" | secret_password == "abc")
+{
+	output("Go to the annoying club nextdoors");
+}
+else
+{
+	output("You are not allowed to join a club!");
+}
+------------------------------------------------------------------------------
+//Loops:
+//Infinite loop
+loop 
+{
+	output("Infinite message");
+}
+
+//Loop 20 times
+loop (20)
+{
+	output("Hello world!");
+}
+
+//Loop 20 times and calculate sum
+//i starts at 0 and will increment each iteration
+sum = 0;
+loop (20, i)
+{
+	sum+=i+1;
+}
+
+//Calculate sum of each even number from 0 to 10
+sum = 0;
+loop (10, i, i+=2)
+{
+    sum+=i;
+}
+
+//Count from 0 to 4 (5 times)
+loop (i, i<5, i++)
+{
+	output(i);
+}
+
+//Loop until condition is false
+loop (valid == false)
+{
+	name = input("Input name please: ");
+	if (is_valid(name))
+	{
+		valid = true;
+	}	
+}
+
+//Calculate sum of items in array
+arr = [1,2,3,4,5,6,7];
+sum = 0;
+loop (arr, item)
+{
+	sum+=item;
+}
+------------------------------------------------------------------------------
+//The start/stop/restart statements:
+
+//Think of a scenario when you want the user to input age until the age is valid
+//In c++ you would use something like this code:
+
+cout >> "Please input age: ";
+age << cin;
+while ( is_valid(age) == false )
+{
+	cout >> "Wrong input";
+	cout >> "Please input age: ";
+	age << cin;
+}
+or...
+do
+{
+	cout >> "Please input age: ";
+	age << cin;
+	if ( is_valid(age) == false)
+	{
+		cout >> "Wrong input";
+	}
+
+} while (is_valid(age) == false);
+
+//As you can see, in both cases some statements are being repeated to be able to write an error message.
+
+//In our language with "start/stop" statements you could do like this instead:
+start
+	age = input("Please input age: ");
+	if ( is_valid(age) == false)
+	{
+		output("Wrong input");
+		restart
+	}
+stop
+
+//Everything inside start and stop is a block, and the block can be restarted from "start" with the "restart" statement.
+//This creates a flexibility when needing do do something an indefinite amount of times without the use of a "while" loop
+------------------------------------------------------------------------------
+//Flexible conditions (and more start/stop/restart)
+//Condition in our language can be combined in a really flexible way
+//Below is an example of using "start/stop/restart" together with combined conditions
+
+start:
+x = input("Input age to make sure you are 38, 26, 18 or 19 years old");
+y = input("Input house number to make sure it is an even number");
+
+//Both if statements are the same
+//if (x equals 38 or 16 or 18 or 19 and y % 2 equals 0)
+if(x == 38 | 26 | 18 | 19 & y % 2 == 0)
+{
+	output("You can live in the house!");
+}
+else
+{
+	output("You're not allowed to live in the house, try again!");
+	restart;
+}
+stop
+------------------------------------------------------------------------------
+//Defining functions
+//Recursive function with return value
+fun fibonacci(n)
+{
+	if (n <= 2)
+	{
+		return 2;
+	}
+	return fibonacci(n-1) + fibonacci(n-2);
+}
+
+//Calculate fibonacci number 7 in the series
+result = fibonacci(7);
+
+//Default value together with multiple parameters
+//"void" function without return value
+fun fight(time, opponent = "the world")
+{
+	output "Fighting" . opponent . " for " . time . "seconds...";
+}
+fight(10);  //"Fighting the world for 10 seconds..."
+fight(20, "myself");  //"Fighting myself for 20 seconds..."
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//Classes:
+/// Awesome class called Cat...
+This class represents a moveable cat
+///
+class Cat
+{
+	auto constructor(name, lives = 9, favoriteBallOfThreadColor = "Green")
+
+	getter
+	{
+		lives;
+		name;
+		x_pos = 0;
+	}
+
+	setter
+	{
+		favoriteBallOfThreadColor;
+	}
+
+	private
+	{
+		hair_ball_size = 0;
+	}
+
+	private fun
+	{
+		distance()
+		{
+			if (favoriteBallOfThreadColor == "Green")
+			{
+				return 10;
+			}
+			else
+			{
+				return 15;
+			}
+		}
+		can_move()
+		{
+			if (name != "Lazy" & hair_ball_size < 10)
+			{
+				return true;
+			}
+			return false;
+		}
+	}
+
+	public fun
+	{
+		move(steps)
+		{
+			loop(steps)
+			{
+				if ( can_move() )
+				{
+					hair_ball_size++;
+					x_pos+=distance;
+				}				
+			}
+		}
+		puke_hair_ball()
+		{
+			hair_ball_size = 0;
+		}
+	}
+
+	static fun
+	{
+		leg_count()
+		{
+			return 4;
+		}
+	}
+}
+Cat.leg_count()  //4
+cat = new Cat("Black Whiskers");
+cat.name;  //"Black Whiskers"
+cat.lives;  //9
+cat.favoriteBallOfThreadColor;  //"Green"
+cat.favoriteBallOfThreadColor = "Blue";
+cat.favoriteBallOfThreadColor;  //"Blue"
+cat.x_pos;  //0
+cat.move(20)
+cat.x_pos  //150-> distance * steps = 15 * 20 (20->10 since hair_ball_size > 10) = 150
+cat.puke_hair_ball()
+cat.move(20)
+cat.x_pos  //300 Move another 10 steps = 150 + 150 = 300
+---------------------------------------------------------
+class Person
+{
+	getter
+	{
+		name;
+		age;
+	}
+
+	//Automatically set variables of same name
+	auto constructor(name, age);
+}
+person = new Person("Human Crazy", 38)
+person.name  //"Human Crazy"
+person.age  //38
+---------------------------------------------------------
+//Old junk:
+Library PersonDB
+{
+	class Person;
+}
+
+#Creates a library/database with 20 persons automatically assigned id
+db = Library.create(Person, 20)
+db_person = PersonDB(20)

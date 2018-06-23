@@ -1,0 +1,52 @@
+fun hello_world()
+{
+	output("Hello world!");
+}
+hello_world();
+
+fun greet(name)
+{
+    output("Hello " . name . "!");
+}
+greet("IP");
+
+fun eat(kilos = 1, food = "Pizza")
+{
+	output("You just ate " . kilos . " kilos of " . food);
+}
+eat();
+eat(10);
+eat(100, "Carrot");
+
+fun valid_username(username)
+{
+    if (username not equals "This username is taken")
+    {
+        return true;
+    }
+    return false;
+}
+
+if (valid_username("Codelover1337"))
+{
+    output("Registered");
+}
+
+if (not valid_username("This username is taken"))
+{
+    output("The username is already taken, try again...");
+}
+
+fun factorial(n)
+{
+    if (n <= 1)
+	{
+		return 1;
+	}    
+    return n * factorial(n-1);
+}
+
+output(factorial(1) . "=1?");
+output(factorial(2) . "=2?");
+output(factorial(5) . "=120?");
+output(factorial(7) . "=5040?");

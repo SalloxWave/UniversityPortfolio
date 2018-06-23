@@ -1,0 +1,126 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Type of language: Object-oriented, imperative
+Slogan: Complex but easy to use!
+Slogan: Powerful but simple!
+Slogan: Everything comes together!
+Slogan: Learn common terms while programming!
+Slogan: Start easy, quickly master!
+
+Relatively easy to use, flexible language
+Combines syntax from C#/Java/C++ with curly brackets and semi-colon.
+A little touch of pseudo code style from languages like Python/Ruby.
+Also with flexible extra features such as loop/start/"^"-operator.
+
+The object-oriented part of the language is made as structured as possible where each type of members of the class is encapsuled in it's own block which creates greater readability for the programmer. Also, all parts of the of the class statements are named with common used words amongst programmers.
+
+While programming you learn common programming words/terms. For example, the constructor is not named same name as class but is named for what it is: a constructor. Also words like getter and setter are rarely used in other programming languages but here these words have a semantic meaning in the code.
+
+The strength of the extra features and common terms will attract advanced programmers. But this programming language will also attract beginners and make them quickly being thrown into a world of programming and its different terms.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Comments: // text text
+Multi-line: /// text text
+                text text
+            ///
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data types:
+Data types can be dynamically assigned
+
+integer (32 bit)
+bool (true/false)
+decimal (x.xxxxx, 64 bit, 0-infinite amount of decimal)
+string (written with "")
+char (written around '')
+null (no value)
+array
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Operators:
++
++=
+++
+--
+-
+-=
+/
+/=
+*
+*=
+^
+^=
+%
+%=
+= (assign)
+ . (only for adding strings, remember to separate with whitespace after string)
+
+Condition Operators:
+&/and
+|/or
+==/equals
+!/not
+0/null/false
+!0/true
+<=
+>=
+<
+>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Statements:
+//Do we want "elseif" to be combined "if" and "else" or a separate statement?
+if (<condition_statement>) <block>
+elseif (<condition_statement>) <block>
+else <block>
+
+loop
+loop <count>
+loop <count> <counting variable>
+loop <count> <counting variable> <counting_variable_statement> (x+=2 etc.)
+loop <condition>
+
+output (<string>)
+input::=<variable> = input (<string>)
+
+start <block>
+restart
+stop
+
+fun <name>(<parameters>) <block>
+
+class <name> <classblock>
+<classblock>::= <class statements>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+class statements:
+getter { <class_variables> }
+setter { <class_variables> }
+static fun <name>
+
+class <name>
+{
+    //read only property
+    getter
+    {
+        <class_member_variables>;
+    }
+    //read and set variable
+    setter
+    {
+        <class_member_variables>;
+    }
+    //private variables
+    private
+    {
+        <class_member_variables>;
+    }
+    
+    //Automatically assign name of paramters to variables in class with same name
+    auto constructor(<parameters>);
+    constructor(<parameters>)
+    {
+        <statements>;
+    }
+    
+    fun <name>(<para>*)
+    {
+        <statements>;
+    }
+}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

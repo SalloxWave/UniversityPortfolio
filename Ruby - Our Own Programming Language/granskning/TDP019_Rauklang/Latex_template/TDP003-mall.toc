@@ -1,0 +1,27 @@
+\select@language {swedish}
+\contentsline {section}{\numberline {1}Revisionshistorik}{2}{section.1}
+\contentsline {section}{\numberline {2}Inledning}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Bakgrund}{2}{subsection.2.1}
+\contentsline {section}{\numberline {3}Användarhandledning}{3}{section.3}
+\contentsline {subsection}{\numberline {3.1}För att köra RaukLang}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Kommentarer}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Datatyper}{3}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Matematiska uttryck}{3}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Villkorssatser}{4}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Jämförelseoperatorer}{5}{subsection.3.6}
+\contentsline {subsection}{\numberline {3.7}Repetitionssatser}{5}{subsection.3.7}
+\contentsline {subsubsection}{\numberline {3.7.1}For-loop}{6}{subsubsection.3.7.1}
+\contentsline {subsubsection}{\numberline {3.7.2}While-loop}{6}{subsubsection.3.7.2}
+\contentsline {subsection}{\numberline {3.8}Print}{6}{subsection.3.8}
+\contentsline {subsection}{\numberline {3.9}Deklaration}{7}{subsection.3.9}
+\contentsline {subsection}{\numberline {3.10}Funktioner}{7}{subsection.3.10}
+\contentsline {subsubsection}{\numberline {3.10.1}Deklarera funktioner}{7}{subsubsection.3.10.1}
+\contentsline {subsubsection}{\numberline {3.10.2}Använda funktioner}{7}{subsubsection.3.10.2}
+\contentsline {section}{\numberline {4}Systemdokumentation}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Grammatik}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Kodstandard}{10}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}När RaukLang körs}{10}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Tokens}{10}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Regler}{11}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Klasser}{11}{subsubsection.4.3.3}
+\contentsline {section}{\numberline {5}Erfarenheter och reflektioner}{12}{section.5}

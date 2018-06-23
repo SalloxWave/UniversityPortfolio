@@ -1,0 +1,58 @@
+Föreläsning 3 - Regler
+<program>::= program <satser> slut-program
+<satser>::=<sats>
+		  |<satser>
+<sats>::=<inmatning>
+		|<utmatning>
+		|<tilldelning>
+		|<villkor>
+		|<repetition>
+		|<uttryck>
+		|<aritm-uttryck>
+		|<predikat-uttryck>
+<inmatning>::= läs <atom>
+<utmatning>::= skriv <atom>
+<tilldelning>::= tilldela <atom> <uttryck>
+<villkor>::=om <predikat-uttryck> <tab> då <satser> <end-tab>
+		   |om <predikat-uttryck> <tab> då <satser> annars <satser> <end-tab>
+<repetition>::=repetera-tills <predikat-uttryck> <tab> <satser> <slut-repetera>
+<uttryck>::=<aritm-uttryck>
+		   |<predikat-uttryck>
+<atom>::=NAME
+		|NUMBER
+		|STRING
+		  
+		  
+		  
+Lösning:
+-----------------------------
+<program>::=program <satser> slut-program
+<satser>::=<sats><satser>|<empty>
+<sats>::=<inmatning>
+		|<utmatning>
+		|<tilldelning>
+		|<villkor>
+		|<repetition>
+<tilldelning>::=tilldela <variabel> <uttryck>;
+<utmatning>::=skriv <uttryck>;
+<inmatning>::=läs <variabel>;
+<villkor>::=om (<predikat-uttryck>)
+				då <sats>
+				annars <sats>
+<repetition>::=repetera-tills(<predikat-uttryck>)
+					<satser>
+			   slut-repetera;
+<uttryck>::=<aritm-uttryck>
+		   |<predikat-uttryck>
+		   |<sträng-uttryck>
+<aritm-uttryck>::=...prioritet x+y*2
+<predikat-uttryck>::=x or y and z >a+b*17
+<sträng-uttryck>::=
+
+repetera-tills(i>antal)
+	tilldela summa summa+1;
+	tilldela i i+1
+slut-repetera;
+
+Parseträd
+Syntaxträd för ovanstående

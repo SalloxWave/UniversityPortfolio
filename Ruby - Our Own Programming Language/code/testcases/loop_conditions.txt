@@ -1,0 +1,64 @@
+//Count from 1 to 20
+x = 0;
+loop (20)
+{
+	x++;
+}
+output(x . "=20?");
+
+//Loop 20 times and calculate sum
+//i starts at 0 and will increment each iteration
+
+sum = 0;
+loop (5, i)
+{
+	sum+=i+1;
+}
+//1+2+3+4+5 = 15
+output(sum . "=15");
+
+//Calculate sum<100 of the last 10 divisors of a number
+//num = 18;
+//divisor = num;
+//sum = 0;
+//loop(10, sum < 100, divisor--)
+//{
+//	if((num % divisor) == 0)
+//	{
+//		sum+=divisor;
+//	} 
+//}
+//output(sum . "=?");
+
+//Calculate sum of each even number from 0 to 18
+//Loop 10 times, start i=0 and increase value of x by 2 after each iteration
+sum = 0;
+loop (10, i, i+=2)
+{
+    sum+=i;
+}
+//0+2+4+6+8+10+12+14+16+18=90
+output(sum . "=90?");
+
+//Count from 2 to 5
+sum = 0;
+loop (i=2, i<=5, i++)
+{
+	sum = sum + i;
+}
+//2 + 3 + 4 + 5 = 14
+output(sum . "=14?");
+
+//Loop until condition is false
+name = "";
+valid = false;
+loop (valid == false)
+{
+	name = input("Input name please: ");
+	if (name == "")
+	{
+		output(name . " is not a valid name");
+	}
+	else{valid = true;}
+}
+output("Your awesome name is " . name);

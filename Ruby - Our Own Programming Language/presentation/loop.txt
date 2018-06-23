@@ -1,0 +1,53 @@
+loop(5)
+{
+    output("This message will appear 5 times!");
+}
+
+output("-----Below will count 0-2-----");
+count = 3;
+loop (count, i)
+{
+    output(i);	
+}
+output("");
+
+output("-----Calculate sum even numbers 0-5-----");
+sum = 0;
+loop (5, i, i+=2)
+{
+    sum+=i;
+}
+//0+2+4+6+8=20
+output("sum = " . sum);
+output("---------------------------");
+output("");
+
+output("-----Regular for-loop (0-4)-----");
+loop(i = 0, i < 5, i++)
+{
+    output(i);
+}
+output("--------------------------------");
+output("");
+
+output("-----Regular while-loop-----");
+
+valid = false;
+loop(not valid)
+{
+    coin_toss = input("Guess heads or tails: ");
+    if (coin_toss == "heads")
+    {
+        valid = true;
+        output("You won the coin toss!");
+    }
+    elseif(coin_toss == "tails")
+    {
+        valid = true;
+        output("You lost the coin toss!");
+    }
+    else
+    {
+        output(coin_toss . " is not a valid coin toss!");
+    }
+}

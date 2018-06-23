@@ -1,0 +1,6 @@
+Things that will get automatically tested when doing the testes:
+- Comments
+- IO
+
+
+

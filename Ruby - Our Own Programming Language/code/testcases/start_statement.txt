@@ -1,0 +1,22 @@
+start
+	age = input("Please input age to enter club: ");
+	if ( age != "18" )
+	{
+		output(age . " is too young");
+		restart
+	}
+    output("Your age is " . age);
+stop
+
+x = 0;start x++;
+    output("This message should appear 3 times");
+	if (x == 3)
+	{
+        tmp = 5;
+	}
+	else{restart}	
+stop
+
+start
+output("I'm inside a start-stop block without a restart so it's really redundant having this start-stop block");
+stop

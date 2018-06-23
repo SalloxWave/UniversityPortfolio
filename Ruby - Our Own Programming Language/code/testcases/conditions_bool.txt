@@ -1,0 +1,47 @@
+a = true;
+output(a . "=true?"); //true
+a = false;
+output(a . "=false?"); //false
+a = (5 == 5);
+output(a . "=true?"); //true
+a = 5 == 4;
+output(a . "=false?"); //false
+a = 10 equals 10;
+output(a . "=true"); //true
+a = 8 equals 9;
+output(a . "=false?"); //false
+
+a = 10 < 20;
+output(a . "=true?"); //true
+a = 20 > 30;
+output(a . "=false?"); //false
+a = 5>=5;
+output(a . "=true?"); //true
+a = 5<=4;
+output(a . "=false?"); //false
+a = 5 equals 5 and 4 equals 4; //This doesnt work
+output(a . "=true?"); //true
+a = 4 == 5 or 5 == 4;
+output(a . "=false?"); //false
+a = 3 equals 3 | false;
+output(a . "=true?"); //true
+a = true and false;
+output(a . "=false?"); //false
+
+t = true;
+f = false;
+
+x = t and f;
+output(x . "=false?"); //false
+
+x = t & t;
+output(x . "=true?"); //true
+
+x = f | (t and t);
+output(x . "=true?"); //true
+
+x = f | f;
+output(x . "=false?"); //false
+
+x = f or (f or (t and t));
+output(x . "=true?"); //true

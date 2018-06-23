@@ -1,0 +1,4 @@
+start
+	output("I'm an annoying message that will go on forever, muhahaha");
+restart
+stop

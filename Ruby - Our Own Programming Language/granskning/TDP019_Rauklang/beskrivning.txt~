@@ -1,0 +1,15 @@
+func foo(var);
+     print("något som ska printas", var);
+     if (var < 5);
+     	var2 = 5 + var;
+     end if;
+     return(var,var2);
+end func;
+
+satser ska se ut som följande:
+villkorsats => if (villkor); sats; end if;
+loop => for (variabel; villkor; variabel++); sats; end for;
+alt loop => while (villkor); sats; end while;
+utskrivning i konsoll => print(det som ska printas);
+Flera saker som skall skrivas ut => print(första utskriften, andra, osv);
+funktion => func foo(variabel1, variabel2); sats; (frivilligt) return(variabel); end func;

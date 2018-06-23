@@ -1,0 +1,12 @@
+- INTEGERS or ARRAY in loop
+<loop_parameters>::=INTEGER , <name>
+<loop_parameters>::=INTEGER , <name> , <assignment>
+<loop_parameters>::=INTEGER , <condition> , <assignment>
+<loop_parameters>::=<condition>
+<loop_parameters>::=ARRAY , <name>
+
+- Not being able to define:
+	- Functions in functions
+	- Functions in classes (except class function block)
+	- Classes in classes
+	- Classes in functions

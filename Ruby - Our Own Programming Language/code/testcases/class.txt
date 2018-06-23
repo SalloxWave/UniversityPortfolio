@@ -1,0 +1,30 @@
+class Person
+{
+	getter
+	{
+		name;
+		age;
+	}
+
+	//Automatically set variables of same name
+	auto constructor(name, age);
+}
+person = new Person("Crazy Alexander", 38);
+output(person.name . "=Crazy Alexander");
+output(person.age . "=38");
+
+class Player
+{
+	private
+	{
+		x = 0;
+		y = 0;
+	}
+
+	public fun
+	{
+		
+	}
+
+
+}

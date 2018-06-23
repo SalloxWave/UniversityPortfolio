@@ -1,0 +1,40 @@
+arr = [1,2,3,4];
+output(arr); //[1,2,3,4]
+arr[0] = 10;
+output(arr); //[10,2,3,4]
+arr[3] = 40;
+output(arr); //[10,2,3,40]
+
+x = arr[3];
+output(x); //x = 40
+output(arr[0]); //10
+
+x = arr[0] + arr[1];
+output(x); //10+2 = 12
+
+arr = [1]
+
+arr[0]++;
+output(arr . "=[2]?");
+
+arr[0]--;
+output(arr . "=[1]?");
+
+arr[0]+=10;
+output(arr . "=[11]?");
+
+arr[0]*=10;
+output(arr . "=[110]?");
+
+arr = [1,2,3,4];
+output("Below should count 1-4");
+loop(arr, item)
+{
+    output(item);
+}
+
+output("Below should count 1-4");
+loop([1,2,3,4], num)
+{
+    output(num);
+}

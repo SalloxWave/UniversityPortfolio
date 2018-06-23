@@ -1,0 +1,136 @@
+Frågor:
+- How to make start recursive with multiple statements?
+- Where does ++ and -- fit in, in its own?
+- How to do with variable names?
+- How to force type of datatype (example loop INTEGER)?
+- Separate for assignment and default value?
+
+Notes:
+Operators (where should incrementations be?)
+Data types written with capital letters
+You can't really have loop/class etc. in statements since those are not allowed inside a condition block/loop block
+
+TODO:
+<condition>
+<loop>
+Where should you be able to start?
+How to do with multiple expressions with logical operators?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Main:
+<valid>::=<expression>
+<valid>::=<statements>
+
+<statements>::=<statement> ";"
+<statements>::=<statement> ";" <valid>
+
+<statement>::=<expression>
+<statement>::=<assignment>
+<statement>::=<IO>
+<statement>::=<start_statement>
+
+<expression>::= <data>
+<expression>::= <expression> <arithmetic_operator> <expression>
+<expression>::= <loop_expression>
+<expression>::= <not_expression>
+<expression>::= <condition>
+<expression>::= <condition_expression>
+<expression>::=<fun_expression>
+<expression>::=<class>
+
+<not_expression>::= "!" <expression>|"not" <expression>
+
+<condition_expression>::= <if_expression>
+<condition_expression>::= <if_expression> <else_expression>
+<condition_expression>::= <if_expression> <elseif_expression> <else_expression>
+
+<if_expression>::="if" "(" <condition> ")" <block>
+<elseif_expression>::="elseif" "(" <condition> ")" <block>
+<elseif_expression>::="elseif" "(" <condition> ")" <block> <elseif_expression>
+<else_expression>::="else" <block>
+
+<condition>::= <expression>
+<condition>::= <condition> <logical_operator> <condition>
+<condition>::= <expression> <condition_operator> <expression>
+
+<assignment>::= <name> <assignment_operator> <expression>
+<assignment>::= <name> <increment_operator>
+
+<fun_expression>::="fun" <name> "(" ")" <block>
+<fun_expression>::="fun" <name> "(" <parameter_list> ")" <block>
+
+<parameter_list>::=<name>
+<parameter_list>::=<assignment>
+<parameter_list>::=<name> "," <parameter_list>
+
+<block>::="{" <statements> "}"
+<block>::=<return_block>
+<block>::=<start_block>
+<block>::=<class_block>
+<return_block>::="{" <statements> <return_statement> "}"
+
+<loop_expression>::="loop" <block>
+<loop_expression>::="loop" "(" <loop_parameters> ")"
+
+<loop_parameters>::=INTEGER "," <name>
+<loop_parameters>::=INTEGER "," <name> "," <assignment>
+<loop_parameters>::=INTEGER "," <condition> "," <assignment>
+<loop_parameters>::=<condition>
+<loop_parameters>::=<array> "," <name>
+
+<IO>::="input" "(" STRING ")"
+<IO>::="output" "(" <data> ")"
+
+<start_statement>::="start" <block> "stop"
+<start_block>::=<statements>
+<start_block>::=<statements> "restart"
+<start_block>::=<statements> "restart" <statements>
+
+<class>::="class" <name> <class_block>
+
+<class_block>::="{" <class_statements> "}"
+
+<class_statements>::=<class_statement>
+<class_statements>::=<class_statement> <class_statements>
+
+<class_statement>::=<access_modifier> <class_attr_block>
+<class_statement>::=<access_modifier> <class_fun_block>
+<class_statement>::=<class_constructor>
+
+<class_attr_block>::="{"" <class_attr_statements> "}"
+<class_attr_statements>::=<class_attr_statement> ";"
+<class_attr_statements>::=<class_attr_statement> ";" <class_attr_statements>
+<class_attr_statement>::=<assignment>
+<class_attr_statement>::=<name>
+
+<class_fun_block>::="fun" "{" <class_fun_statements> "}"
+<class_fun_statements>::=<class_fun> ";"
+<class_fun_statements>::=<class_fun> <class_fun_statements>
+<class_fun>::=<name> "(" ")" <block>
+<class_fun>::=<name> "(" <parameter_list> ")" <block>
+
+<access_modifier>::="getter"|"setter"|"private"|"public"|"static"
+
+<class_constructor>::="constructor" "(" <parameter_list> ")" <block>
+<class_constructor>::= "auto" "constructor" "(" <parameter_list> ")"
+
+Extra:
+------------------------------------------------------------
+<arithmetic_operator>::="+"|"-"|"*"|"/"|"%"|"^"
+
+<assignment_operator>::="="|"+="|"-="|"*="|"/="|"%="
+
+<increment_operator>::="--"|"++"
+
+<condition_operator>::="=="|"equals"|"!="|"not equals"|"<"|">"|"<="|">="
+
+<logical_operator>::="&"|"and"|"|"|"or"|"!"|"not"
+
+<name>::=STRING ([A-Za-z][A-Za-z\d]*)
+
+<data>::=<name>|STRING|INTEGER|BOOL|DECIMAL|CHAR|NULL|<array>
+
+<array>::="[" <arr_items> "]"
+<arr_items>::= <data>
+<arr_items>::= <data> "," <arr_items>
+
+int ko = 3;

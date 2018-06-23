@@ -1,0 +1,29 @@
+//cout >> "Please input name: ";
+//name << cin;
+//while ( name == "")
+//{
+	//cout >> "Your name can't be empty!";
+	//cout >> "Please input name: ";
+	//name << cin;
+//}
+//or...
+//do
+//{
+	//cout >> "Please input name: ";
+	//name << cin;
+	//if ( name == "")
+	//{
+		//cout >> "Your name can't be empty!";
+	//}
+
+//} while (name == "");
+
+start
+    name = input("Input your name: ");
+    if (name == "")
+    {
+        output("Your name can't be empty!");
+        restart
+    }
+    output("Your awesome name is " . name);
+stop

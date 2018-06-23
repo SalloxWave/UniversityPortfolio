@@ -1,0 +1,44 @@
+x = 0;
+output(x); //x = 0
+x++;
+output(x); //x = 1
+x+=9;
+output(x); //x = 10
+x/=2;
+output(x); //x = 5
+x%=2;
+output(x); //x = 1
+x*=2;
+output(x); //x = 2
+x^=3;
+output(x); //x = 8
+x-=7;
+output(x); //x = 1
+x--;
+output(x); //x = 0
+x = 5 + 5;
+output(x); //x = 10
+
+y = x;
+output(y); //y = 10
+y = y + 2;
+output(y); //y = 12
+y = y % 2;
+output(y); //y = 0
+y = y - 10;
+output(y); //y = -10
+y = y / 2;
+output(y); //y = -5
+y = y^3;
+output(y); //y = -125
+
+z = y + y *-1 + 25; //DOESNT WORK FOR NOW (Priority)
+output(z); //z = 25
+z = z^0.5;
+output(z); //z = 5.0
+z = z * 0.5;
+output(z); //z = 2.5
+z = z / 2;
+output(z); //z = 1.25
+z = 3.1415926535897932;
+output(z); //z = 3.1415926535897932

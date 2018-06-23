@@ -1,0 +1,35 @@
+fun no_para()
+{
+	output("JAG HAR INGA PARA");
+}
+
+fun no_def(x)
+{
+	output("JAG HAR INGA DEF " . x);
+}
+
+fun only_def(x=0)
+{
+	output("JAG HAR BARA DEF " . x);
+}
+
+fun mult_def(x=0,b=0)
+{
+	output("MÅNGA DEF " . x . " " . b);
+}
+
+fun def_and_no_def(a,x=0)
+{
+	output("OLIKA " . a . " " . x);
+}
+
+no_para();
+no_def(5);
+only_def();
+only_def(5);
+mult_def();
+mult_def(5);
+mult_def(5,5);
+mult_def(1,5);
+def_and_no_def(5);
+def_and_no_def(5,5);

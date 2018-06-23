@@ -1,0 +1,14 @@
+func foo(a,b):
+	print(a);
+	b = a + 10;
+	print(b);
+end_func;
+func asd(a,b):
+	print(a);
+	return(600);
+	print(b);
+end_func;
+foo(15, 20);
+print("ingen krasch!");
+hej = asd(200, 500);
+print(hej);

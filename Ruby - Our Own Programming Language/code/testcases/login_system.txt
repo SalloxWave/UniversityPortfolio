@@ -1,0 +1,37 @@
+u_name = "";
+p_word = "";
+
+fun register()
+{
+	u_name = input("Please enter your username: ");
+	start
+		p_word = input("Please enter your password: ");
+	    temp = input("Please repeat your password: ");
+		if(p_word != temp)
+		{
+			output("Password dosn't match..");
+			restart
+		}
+	stop
+
+	output("Welcome to the program!");
+	output(p_word);
+	return u_name . " " . p_word;
+}
+fun login(u_p)
+{
+	l_name = "";
+	start
+		l_name = input("Username: ");
+     	l_word = input("Password: ");
+		output("GLOBAL: " . p_word . " " . u_name);
+		if(u_name != l_name | p_word != l_word)
+		{
+			output("Wrong username and/or password. Please try again.");
+			restart
+		}
+	stop
+	output("Welcome " . l_name . "!");
+}
+register();
+login();

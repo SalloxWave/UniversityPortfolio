@@ -1,0 +1,33 @@
+<program> ::= program <satser> slut-program
+
+<satser> ::= <sats> <satser> | <empty>
+
+<sats> ::= <tilldelning>
+         | <utmatning>
+         | <inmatning>
+         | <villkor>
+         | <repetition>
+
+<tilldelning> ::= tilldela <variabel> <uttryck> ;
+
+<utmatning> ::= skriv <uttryck> ;
+
+<inmatning> ::= läs <variabel> ;
+
+<villkor> ::= om ( <predikat-uttryck> )
+              då <sats>
+              annars <sats>
+
+<repetition> ::= repetera-till ( <predikat-uttryck> )
+                 <satser>
+                 slut-repetera ;
+
+<uttryck> ::= <aritmetiskt-uttryck>
+            | <predikat-uttryck>
+            | <sträng-uttryck>
+
+<aritmetiskt-uttryck> ::= ...
+
+<predikat-uttryck> ::= ...
+
+<sträng-uttryck> ::= ...

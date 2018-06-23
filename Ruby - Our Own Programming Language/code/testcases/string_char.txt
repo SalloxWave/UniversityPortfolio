@@ -1,0 +1,10 @@
+str = "Hello";
+output(str); //str = "Hello"
+str+= " world";
+output(str); //str = "Hello world"
+char = "!";
+str = str . char;
+output(str); //str = "Hello world!"
+str2 = " My name is " . "Alexander";
+str+=str2;
+output(str); //str = "Hello world! My name is Alexander"

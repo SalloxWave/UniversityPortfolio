@@ -1,0 +1,44 @@
+x = false;
+if(not x)
+{
+    output("'not " . x . "' is true");
+}
+
+x = null;
+if(x or 0)
+{
+    output("This will not be printed");
+}
+
+secret_password = "Hej IP";
+password = input("Input secret password: ");
+if (password == "Hej IP")
+{
+    output("The password was correct!");
+}
+else
+{
+    output("Wrong password!");
+}
+
+dir = input("Select direction: ");
+if (dir == "up")
+{
+    output("You moved up");
+}
+elseif (dir == "down")
+{
+    output("You moved down");
+}
+elseif (dir == "left")
+{
+    output("You moved to the left");
+}
+elseif (dir == "right")
+{
+    output("You moved to the right");
+}
+else
+{
+    output(dir . " is not a valid direction");
+}

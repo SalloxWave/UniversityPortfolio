@@ -1,0 +1,16 @@
+
+func foo(a,b):
+     a = a + 50;
+     print(a);
+     if (a < b):
+        print("sitt ner");
+        return(foo(a,b););  
+     else:
+        return(a);
+     end_if;
+a = 50;
+end_func;
+foo(400, 500);
+print("slut foo");
+
+

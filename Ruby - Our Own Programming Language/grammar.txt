@@ -1,0 +1,120 @@
+Note: Regex expressions are surrounded with "/"-characters
+--------------------START PROGRAM HERE--------------------
+<program>::=<statements>
+<program>::=EMPTY
+
+<statements>::=<function_declaration> <statements>
+              |<function_declaration>              
+              |<compound_statement> <statements>
+              |<compound_statement>
+              |<simple_statement> ';' <statements>
+              |<simple_statement> ';'
+
+<simple_statement>::=<return_statement>
+                    |<IO>
+                    |<assignment>
+                    |<expression>
+
+<compound_statement>::='restart'
+                      |<start_statement>
+                      |<loop_statement>
+                      |<condition_statement> 
+
+<return_statement>::='return' <expression>
+
+<IO>::=output '(' <expression> ')'
+      |output '(' <condition> ')'
+      |<var> <assignment_operator> 'input' '(' ')'
+      |<var> <assignment_operator> 'input' '(' <expression> ')'
+
+<assignment>::=<array_call> <assignment_operator> <expression>
+              |<var> <assignment_operator> <expression>
+              |<array_call> <increment_operator>
+              |<var> <increment_operator>
+
+<condition>::=<condition> <logical_operator> <comparison>
+             |<comparison>
+<comparison>::=<comparison> <comparison_operator> <condition_data>
+              |<condition_data>
+<condition_data>::=<negation_operator> <condition>
+                  |<expression>
+                  |'(' <condition> ')'
+
+<expression>::=<arithmetic_expression>
+              |<expression> /(\s\.\s|\s\.)/ <expression>
+<arithmetic_expression>::=<arithmetic_expression> <add_operator> <multi_expression>
+              |<multi_expression>
+<multi_expression>::=<multi_expression> <multi_operator> <simple_expression>
+                    |<simple_expression>
+<simple_expression>::=<function_call>
+                     |<array_call>
+                     |<data>
+                     |<var>
+                     |'-' <simple_expression>
+                     |'+' <simple_expression>
+                     |'(' <arithmetic_expression> ')'
+
+<function_call>::=<var> '(' <function_call_parameters> ')'
+                 |<var> '(' ')'
+<function_call_parameters>::=<expression> ',' <function_call_parameters>
+                            |<expression>
+
+<array_call>::=<var> '[' <expression> ']'
+
+<data>::=/"[^"]*"/
+        |FLOAT
+        |INTEGER
+        |ARRAY
+        |'null'
+        |'true'
+        |'false'
+        |<array>
+
+<array>::='[' <array_data> ']'
+<array_data>::=<expression> ',' <array_data>
+              |<expression>
+
+<var>::=/^[A-Za-z_][A-Za-z\d_]*/
+
+<start_statement>::='start' <start_block> 'stop'
+<start_block>::=<statements>
+
+<block>::='{' <statements> '}'
+
+<loop_statement>::='loop' <block>
+                  |'loop' '(' <expression> ')' <block>
+                  |'loop' '(' <expression> ',' <var> ')' <block>
+                  |'loop' '(' <expression> ',' <var> ',' <assignment> ')' <block>
+                  |'loop' '(' <condition> ')' <block>
+                  |'loop' '(' <assignment> ',' <condition> ',' <assignment> ')' <block>        
+
+<condition_statement>::=<if_statement> <elseif_statement> <else_statement>
+                       |<if_statement> <elseif_statement>
+                       |<if_statement> <else_statement>
+                       |<if_statement>
+<if_statement>::='if' '(' <condition> ')' <block>
+<elseif_statement>::='elseif' '(' <condition> ')' <block> <elseif_statement>
+                    |'elseif' '(' <condition> ')' <block>
+<else_statement>::='else' <block>
+
+<function_declaration>::='fun' <var> '(' ')' <block>
+                   |'fun' <var> '(' <parameter_list> ')' <block>
+<parameter_list>::=<var> ',' <parameter_list>
+                  |<default_parameter> ',' <parameter_list>
+                  |<default_parameter>
+                  |<var>
+<default_parameter>::=<var> '=' <data>
+
+<fun_block>::='{' <statements> <return_statement> <statements> '}'
+             |'{' <return_statement> '}'
+             |<block>
+
+<add_operator>::='+'|'-'
+<multi_operator>::='^'|'*'|'/'|'%'
+
+<assignment_operator>::='='|'+='|'-='|'*='|'/='|'%='|'^='
+<increment_operator>::='++'|'--'
+
+<logical_operator>::='&'|'and'| '|' |'or'
+<comparison_operator>::='!='|'not' 'equals'|'=='|'equals'|'<='|'>='|'<'|'>'
+<negation_operator>::='not'|'!'
