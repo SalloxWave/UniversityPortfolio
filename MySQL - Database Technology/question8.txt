@@ -1,0 +1,37 @@
+8. Answer the following theoretical questions:
+a) How can you protect the credit card information in the database from hackers?
+    
+    Hashing is not a good fit for this kind of task, as hashing is not distinctly reversable
+    (you can build up a table of which sequences that hashes to a specific hash, but not the
+    the other way around as a multiple sequences can hash to the same hash).
+
+    This is not a good fit, as it (1) must be possible to obtain the actual card information
+    to e.g. perform a withdrawal and (2) if used for e.g. statistics of how many purchases are made
+    from that card would be bad if several different sets of card information hashed to the same hash.
+
+    Therefore, a better fit for this particular case is encryption. A downside with encryption
+    in contrast to hashing+salting is that it places greater responsibility on the system admins
+    in terms of handling the encryption key in a safe manner.
+
+b) Give three advantages of using stored procedures in the database (and thereby
+execute them on the server) instead of writing the same functions in the frontend
+of the system (in for example java-script on a web-page)?
+
+    Assumption: JavaScript cannot have direct contact with a MySQL database from client-side
+                in modern browsers. As such, "writing the same functions in the frontend"
+                refers to doing something equivalent on the client-side (i.e. either formulate
+                the queries on the client-side or processing the result through iterations on
+                the client-side).
+
+    1. If the queries are formulated client-side it is extremly easy for a malicious
+       user to modify and send a malicious query.
+
+    2. By using stored procedures which processes the information on the server-side by e.g.
+       iterating the information and doing stuff, you have created an API which is easy to use by multiple
+       clients (on different platforms). If the stored procedure had returned data which still needed
+       processing by e.g. iterating it, that logic would have to be implemented on each different client.
+
+    3. If heavy processing is needed it is possible that a, unknown, client does not sport enough performance.
+       I.e. by performing the heavy processing on the server-side you can ensure clients with bad performance
+       is not neglected. This is not entirely an advantage, sometimes it may be preferable to "outsource" some
+       of the processing to the clients as to lessen the load on the server.

@@ -1,0 +1,165 @@
+## Lab 1
+
+# 1
+
+SELECT * FROM jbemployee;
+
+# 2
+
+SELECT name FROM jbdept ORDER BY name
+
+Note: Default sorting order is ascending
+
+# 3
+
+SELECT * FROM jbparts WHERE qoh=0
+
+# 4
+
+SELECT * FROM jbemployee WHERE salary>=9000 AND salary<=10000
+SELECT * FROM jbemployee WHERE salary BETWEEN 9000 AND 10000
+
+# 5
+
+SELECT name,startyear-birthyear AS age FROM jbemployee
+
+Note: Bullock, J.D. and Ross, Stuart are wonderkids
+
+# 6
+
+SELECT * FROM jbemployee WHERE name LIKE "%son,%"
+
+# 7
+
+SELECT * FROM jbitem WHERE supplier IN (SELECT id FROM jbsupplier WHERE name='Fisher-Price')
+
+# 8
+
+SELECT jbitem.* FROM jbitem, jbsupplier 
+WHERE jbsupplier.name='Fisher-Price' AND jbitem.supplier=jbsupplier.id
+
+# 9
+
+SELECT * FROM jbcity WHERE id IN (SELECT city FROM jbsupplier)
+
+# 10
+
+SELECT name, color FROM jbparts
+WHERE weight>(SELECT weight FROM jbparts WHERE name="card reader")
+
+Note: can add LIMIT 1 to the subquery if "card reader" was not unique (but in that case the query makes less sense too, so maybe it's better to let it fail then).
+
+# 11
+
+SELECT jbparts.name, jbparts.color FROM jbparts, jbparts AS jbparts2
+WHERE jbparts.weight>jbparts2.weight AND jbparts2.name="card reader"
+
+# 12
+
+SELECT AVG(weight) FROM jbparts WHERE color='black'
+
+# 13
+
+SELECT subquery.name, SUM(subquery.quan * jbparts.weight) AS total_weight 
+FROM (SELECT * FROM jbsupply, jbsupplier
+WHERE jbsupply.supplier = jbsupplier.id
+AND jbsupplier.city IN (
+SELECT id from jbcity WHERE state="Mass")) AS subquery, jbparts
+WHERE subquery.part = jbparts.id
+GROUP BY subquery.supplier
+
+# 14
+
+mysql> CREATE TABLE myitem (
+    -> id integer(11) not null primary key default 0,
+    -> name varchar(20),
+    -> dept integer(11) not null,
+    -> price integer(11),
+    -> qoh integer(10) unsigned,
+    -> supplier integer(11) not null,
+    -> 
+    -> CONSTRAINT fk_myitem_supplier FOREIGN KEY (supplier) REFERENCES jbsupplier(id),
+    -> CONSTRAINT fk_myitem_dept FOREIGN KEY (dept) REFERENCES jbdept(id)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> 
+mysql> INSERT INTO myitem
+    -> SELECT *
+    -> FROM jbitem
+    -> WHERE price < (SELECT AVG(price) FROM jbitem);
+Query OK, 14 rows affected (0.00 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> select * from myitem;
++-----+-----------------+------+-------+------+----------+
+| id  | name            | dept | price | qoh  | supplier |
++-----+-----------------+------+-------+------+----------+
+|  11 | Wash Cloth      |    1 |    75 |  575 |      213 |
+|  19 | Bellbottoms     |   43 |   450 |  600 |       33 |
+|  21 | ABC Blocks      |    1 |   198 |  405 |      125 |
+|  23 | 1 lb Box        |   10 |   215 |  100 |       42 |
+|  25 | 2 lb Box, Mix   |   10 |   450 |   75 |       42 |
+|  26 | Earrings        |   14 |  1000 |   20 |      199 |
+|  43 | Maze            |   49 |   325 |  200 |       89 |
+| 106 | Clock Book      |   49 |   198 |  150 |      125 |
+| 107 | The 'Feel' Book |   35 |   225 |  225 |       89 |
+| 118 | Towels, Bath    |   26 |   250 | 1000 |      213 |
+| 119 | Squeeze Ball    |   49 |   250 |  400 |       89 |
+| 120 | Twin Sheet      |   26 |   800 |  750 |      213 |
+| 165 | Jean            |   65 |   825 |  500 |       33 |
+| 258 | Shirt           |   58 |   650 | 1200 |       33 |
++-----+-----------------+------+-------+------+----------+
+14 rows in set (0.00 sec)
+
+# 15
+
+CREATE VIEW ltavg AS
+SELECT *
+FROM jbitem
+WHERE price < (SELECT AVG(price) FROM jbitem);
+
+# 16
+
+A view is a virtual table, i.e. a stored query.
+A view is dynamic, since the result is generated dynamically when the query is executed.
+A table is static since it is a direct representation of the state of data in the DBMS.
+
+# 17
+
+CREATE VIEW deb_total_cost_where AS
+SELECT jbdebit.id, SUM(jbitem.price * jbsale.quantity) AS total_cost
+FROM jbdebit, jbsale, jbitem
+WHERE jbdebit.id = jbsale.debit AND
+jbsale.item = jbitem.id
+GROUP BY jbdebit.id
+
+# 18
+
+CREATE VIEW deb_total_cost_join AS
+SELECT jbdebit.id, SUM(jbitem.price * jbsale.quantity) AS total_cost
+FROM jbsale
+INNER JOIN jbdebit ON jbdebit.id = jbsale.debit
+INNER JOIN jbitem ON jbitem.id = jbsale.item
+GROUP BY jbdebit.id
+
+We are using INNER JOIN because INNER JOIN only takes rows in tables where the condition is true,
+which gives same behaviour as using WHERE as we did in last exercize.
+
+# 19
+
+select * from jbsupplier;
+
+DELETE FROM jbsale
+WHERE item IN (SELECT id FROM jbitem
+WHERE supplier IN (SELECT id FROM jbsupplier
+WHERE city IN (SELECT id FROM jbcity WHERE name='Los Angeles')));
+
+DELETE FROM jbitem
+WHERE supplier IN (SELECT id FROM jbsupplier
+WHERE city IN (SELECT id FROM jbcity WHERE name='Los Angeles'));
+
+DELETE FROM jbsupplier
+WHERE city IN (SELECT id FROM jbcity WHERE name='Los Angeles');
+
+select * from jbsupplier; rollback; rollback; rollback;

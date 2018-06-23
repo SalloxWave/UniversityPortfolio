@@ -1,0 +1,60 @@
+ck = candidate key
+
+CreditCard (cardnumber, customer)
+    ck: {cardnumber}
+    FD1: {cardnumber} -> {customer}
+
+Ticket(ticketnumber, passenger, booking)
+    ck: {ticketnumber}
+    FD1: {ticketnumber} -> {passenger, booking}
+    FD2: {passenger, booking} -> {ticketnumber}
+
+Booking(reservation, cardnumber, price)
+    ck: {reservation}
+    FD1: {reservation} -> {cardnumber, price}    
+
+Reservation(id, flight, seats)
+    ck: {id}
+    FD1: {id} -> {flight, seats}    
+
+Flight(flightnumber, week, year)
+    ck: {flightnumber}
+    FD1: {flightnumber} -> {week, year}
+
+Customer(id, firstname, lastname)
+    ck: {id}
+    FD1: {id} -> {firstname, lastname}
+
+Passenger(passportnumber, customer, phonenumber, email)
+    ck: {passportnumber}, {customer}
+    FD1: {passportnumber} -> {customer, phonenumber, email}
+    FD2: {customer} -> {passportnumber, phonenumber, email}
+
+ProfitFactor(year, factor)
+    ck: {year}
+    FD1: {year} -> {factor}
+
+WeeklySchedule(week, year, dayofweek, route, departuretime)
+    ck: {week, year}
+    FD1: {week, year} -> {dayofweek, route, departuretime}
+
+WeekdayFactor(dayofweek, year, factor)
+    ck: {dayofweek, year}
+    FD1: {dayofweek, year} -> {factor}
+
+Country(id, name)
+    ck: {id}
+    FD1: {id} -> {name}
+
+City(id, country, name)
+    ck: {id}
+    FD1: {id} -> {country, name}    
+
+Airport(id, city, name)
+    ck: {id}
+    FD1: {id} -> {city, name}
+    FD2: {city, name} -> {id}
+
+Route(id, airport_departure, airport_arrival, price)
+    ck: {id}
+    FD1: {id} -> {airport_departure, airport_arrival, price}

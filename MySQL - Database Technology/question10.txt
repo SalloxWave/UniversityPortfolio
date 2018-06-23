@@ -1,0 +1,84 @@
+10. Is your BryanAir implementation safe when handling multiple concurrent
+transactions? Let two customers try to simultaneously book more seats than what are
+available on a flight and see what happens. This is tested by executing the testscripts
+available on the course-page using two different MySQL sessions. Note that you
+should not use explicit transaction control unless this is your solution on 10c.
+
+a) Did overbooking occur when the scripts were executed? If so, why? If not,
+why not?
+
+    The critical section is after calculating amount of free seats for the booking and before converting to a booking. 
+    If multiple sessions enters this critical section they can all "verify" that
+    enough free seats are available, without consideration of another session completing its booking before itself.
+
+    No, an overbooking did not occur since the probability of the two sessions going into the critical section 
+    is relativley low as it is the critical section spans a few lines of codes which are quickly executed.
+
+b) Can an overbooking theoretically occur? If an overbooking is possible, in what
+order must the lines of code in your procedures/functions be executed.
+
+    Yes it can as explained in question 10a if the two sessions enters the critical section concurrently
+    Lines of code
+    1. SET freeseats:=calculateFreeSeats(flightnumber);
+    2. INSERT INTO Booking ...
+
+    Order of execution to allow overbooking:
+
+        Session A | Session B
+        1           
+                    1
+        2           
+                    2
+
+    Note that the only requirement of order is that both sessions executes 1 before starting with 2.
+
+c) Try to make the theoretical case occur in reality by simulating that multiple
+sessions call the procedure at the same time. To specify the order in which the
+lines of code are executed use the MySQL query SELECT sleep(5); which
+makes the session sleep for 5 seconds. Note that it is not always possible to
+make the theoretical case occur, if not, motivate why.
+
+    Code:
+
+        SET freeseats:=calculateFreeSeats(flightnumber);
+        
+        ...
+        
+        SELECT "SLEEPING FOR 5 SECONDS..."; -- new code
+        SELECT SLEEP(1); -- new code
+
+        INSERT INTO Booking ...
+
+    Added a sleep inside the critical section described above.
+    This will make the overbooking to occur as long as Session B enters the mentioned 
+    critical area before Session A is out of its sleep.
+
+d) Modify the testscripts so that overbookings are no longer possible using
+(some of) the commands START TRANSACTION, COMMIT, LOCK TABLES, UNLOCK
+TABLES, ROLLBACK, SAVEPOINT, and SELECT…FOR UPDATE. Motivate why your
+solution solves the issue, and test that this also is the case using the sleep
+implemented in 10c. Note that it is not ok that one of the sessions ends up in a
+deadlock scenario. Also, try to hold locks on the common resources for as
+short time as possible to allow multiple sessions to be active at the same time.
+Note that depending on how you have implemented the project it might be very
+hard to block the overbooking due to how transactions and locks are
+implemented in MySQL. If you have a good idea of how it should be solved but
+are stuck on getting the queries right, talk to your lab-assistant and he or she
+might help you get it right or allow you to hand in the exercise with
+pseudocode and a theoretical explanation.
+
+    Solution:
+
+        LOCK TABLES
+            Booking WRITE,
+            Reservation WRITE,
+            PassengerReservation WRITE,
+            CreditCard WRITE,
+            Ticket WRITE,
+            allFlights READ;
+        CALL addPayment (@a, "Sauron",7878787878); -- old line, all other are our code
+        UNLOCK TABLES;
+
+    Our solution solves the issue since it locks down all tables which are used in the addPayment-procedure.
+    When the tables are locked with READ/WRITE, no other session can READ/WRITE to those tables (and will instead
+    wait until they are unlocked). This way, no more than one process can be within the critical zone described above.

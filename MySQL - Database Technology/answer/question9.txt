@@ -1,0 +1,44 @@
+In the next two questions you will see how MySQL handles concurrency. As default
+MySQL commits every single query as a transaction meaning that as soon as a query
+is executed it is also committed to the database. However, MySQL also supports
+multiple queries to be bundled up in a single transaction as described during the
+lecture.
+To test this, open two terminals in the same computer, both connecting to the same
+database, then use the query START TRANSACTION to start a transaction that is
+finished by either COMMIT or ROLLBACK. Note that once the transaction is
+finished the database goes back to the default setting of committing every query
+unless a new transaction is started. The main queries to handle transactions are START
+TRANSACTION, COMMIT, ROLLBACK, LOCK TABLES, UNLOCK TABLES,
+SAVEPOINT and SELECT…FOR UPDATE. Please check the MySQL manual for
+further description and examples of the queries.
+Play around with the transaction queries above in the two terminals and try to
+anticipate what will happen. One important difference between MySQL and what is
+described during the lecture is that MySQL has the transaction isolation level
+Repeatable-Read as default to maintain consistency of the database for the
+transactions. This means that MySQL implicitly adds a write lock on each tuple that is
+inserted, or updated, in any table. It also adds read locks on the tuples when they are
+used in for example IF-statements. For further motivation of this, how it works, and
+how it can be changed, check the MySQL manual regarding transaction isolation
+level.
+
+9. Open two MySQL sessions. We call one of them A and the other one B. Write
+START TRANSACTION; in both terminals.
+
+a) In session A, add a new reservation.
+
+    Ok.
+
+b) Is this reservation visible in session B? Why? Why not?
+
+    No, because changes inside a transaction is only commited if "COMMIT" is used.
+
+c) What happens if you try to modify the reservation from A in B? Explain what
+happens and why this happens and how this relates to the concept of isolation
+of transactions.
+
+    The session B starts waiting for the uncommited changes session A has done in its transaction.
+
+    This creates a type of isolation which makes sure that even if A and B is running 
+    concurrently, you make sure possible changes to the tables are updated before 
+    B touches the tables. This make it seem like each session is running in isolation
+    to each other, without interfering, which makes transactions safe even when running concurrently.
