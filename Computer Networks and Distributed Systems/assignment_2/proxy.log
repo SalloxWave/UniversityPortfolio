@@ -1,0 +1,9 @@
+1 (2017-02-10 16:05:36 +0100):  Was opened at [2017-02-10 16:05:36 +0100]
+1 (2017-02-10 16:05:36 +0100):  Sending request by:
+1 (2017-02-10 16:05:36 +0100):    GET /~TDTS04/labs/2011/ass2/goodtest2.html HTTP/1.1
+1 (2017-02-10 16:05:36 +0100):    Host: www.ida.liu.se
+1 (2017-02-10 16:05:36 +0100):    Connection: close
+1 (2017-02-10 16:05:36 +0100):  response from www.ida.liu.se took ~7 ms.
+1 (2017-02-10 16:05:36 +0100):  http://www.ida.liu.se/~TDTS04/labs/2011/ass2/goodtest2.html seems fine.
+1 (2017-02-10 16:05:36 +0100):  Sending to browser.
+1 (2017-02-10 16:05:36 +0100):  Connection to www.ida.liu.se was closed.

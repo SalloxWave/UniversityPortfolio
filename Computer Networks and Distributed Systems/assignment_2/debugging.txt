@@ -1,0 +1,58 @@
+To debug the program we first printed formatted information from the web browser's requests and the global web server's responses, in the terminal. We later redirected the printed messages to an external log file instead.
+
+----------------------------------------------------------------------------------------------------------------
+Our major problem was that our proxy server slowed down/freezed. We first thought it was because of our search for bad words but later found it had to do with this line: 
+
+"response = proxy_client.read"
+but it's odd... 
+when I go to http://portfolio-jonma993.openshift.ida.liu.se/project/1 (bad_word "warehouse") the response is immediate 
+when I go to http://www.ida.liu.se/~TDTS04/labs/2011/ass2/SpongeBob.html (bad_word "spongebob") the response takes several seconds.
+same when I go to any other page on that subserver.
+
+Comparison of responses of the two websites:
+  ====================================================
+    FAST WEBSITE RESPONSE:
+    http://portfolio-jonma993.openshift.ida.liu.se/project/1    # bad_word "warehouse"
+
+    REDIRECTING TO...
+    http://www.ida.liu.se/~TDTS04/labs/2011/ass2/error2.html ... 
+    HTTP/1.1 200 OK
+    Date: Mon, 06 Feb 2017 16:11:10 GMT
+    Server: Apache/2.2.15 (CentOS)
+    Content-Length: 1198
+    Content-Type: text/html; charset=utf-8
+    Connection: close
+  ====================================================
+    SLOW WEBSITE RESPONSE:
+    http://www.ida.liu.se/~TDTS04/labs/2011/ass2/badtest1.html   # bad_word "spongebob"
+
+    REDIRECTING TO... 
+    http://www.ida.liu.se/~TDTS04/labs/2011/ass2/error2.html ... 
+    HTTP/1.1 200 OK 
+    Date: Mon, 06 Feb 2017 16:10:35 GMT 
+    Server: Apache/2.2.24 (Unix) DAV/2 SVN/1.6.17 PHP/5.3.23 mod_fastcgi/2.4.6 mod_auth_kerb/5.4+ida mod_jk/1.2.31 mod_ssl/2.2.24 OpenSSL/0.9.7d 
+    Last-Modified: Mon, 21 Jan 2008 07:27:50 GMT 
+    ETag: "1847ff-1e4-444366decc98b" 
+    Accept-Ranges: bytes 
+    Content-Length: 484 
+    Content-Type: text/html 
+  ====================================================
+
+The difference between these two websites is the amount of files needed to get from the web server. This made us figure out it must be because the "proxy_client.read" don't stop reading until the connection to the server is closed which can take a really long time depending on the server's TTL(Time To Live). We fixed this problem by adding a header telling the web server to close connection when it is done sending out requested package ("Connection: close"). To be sure this problem had been solved we added logging information about how long it took.
+----------------------------------------------------------------------------------------------------------------
+We had problems when visiting pages through Yahoo searches. Yahoo redirected us to a webpage saying this:
+"The requested URL was not found on this server.
+Please check the URL for proper spelling and capitalization. If you're having trouble locating a destination on Yahoo, try visiting the Yahoo home page or look through a list of Yahoo's online services. Also, you may find what you're looking for if you try searching below."
+???
+We figured this was due to... (help me insert something here please ;_;).
+    response = nil made it so that we didn't put response to web browser after redirecting
+----------------------------------------------------------------------------------------------------------------
+We tried visiting the website "http://kissanime.ru/". This website says this when entering:
+"Please wait 5 seconds...
+Make sure to enable cookies and javascript.
+This site does not work with "Mini browsers" (e.g. UC mini, Opera mini...)"
+???
+Though, the website was not working through our proxy server. We haven't been able to solve this problem but think it has to do that our proxy server doesn't support cookies.
+----------------------------------------------------------------------------------------------------------------
+???
+A header is really sensitive in its format which we realized when we got bad requests because we had accidentally added a new line in the sent request to the web server.

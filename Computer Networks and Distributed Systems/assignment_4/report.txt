@@ -1,0 +1,36 @@
+You should also write a short report in which you carefully describe and discuss:
+ Make sure you have responded in detail to the questions above (particularly to those related to bullets (iii) and (iv)) and use valid sources as references.
+
+(i) how distance vector routing works,
+Routers calculate the cheapest path to a node on the network and advertises that cost to all the nodes it has a direct path to. It calculates this by going through all the nodes, adding the cost to a node and that node's cost to the destination. compares them all, and chooses the advertise the cheapest path.
+
+
+(ii) how you tested the algorithms.
+After adding members to the "RouterNode" class representing the best routes for the node to take and information about node's neighbours, we implemented the "printDistanceTable" method. After this was implemented we could implement the algorithms step by step and see the results.
+
+The first thing we checked was if the first node was initialized with correct values (the constructor) and if the node sent packet updates to its neighbours using "sendToNeighbours"-method. In the beginning the values of the neighbours should be 999 since the nodes haven't received an update yet. Then, in the end, all nodes should have received values of its neighbours, as well as the shortest route to take. To decide if the shortest route is needed to be modified after an update from a neighbours, the method "modifyCost" is used. This method returns true if the cost was modified. if it was, the node needs to use "sendToNeighbours"-method again to notify the neighbours the values have been changed. This continues until everything no new updates are found.
+
+To doublecheck that all costs were calculated properly we printout each calculation (as well as all the necessary router-ID's) in the terminal as it happened. This let us pinpoint where each router failed to find the right path.
+
+
+(iii) some cases in which poisoned reverse may fail.
+
+    (A)--1
+     |    \
+     1    (C)--|--(D)
+     |    /
+    (B)--3
+
+1: Assume B's optimal path is B-A-C-D
+2: Using poison reverse, A tells C that the its cost to D is ∞. (essentially saying the path is invalid)
+3: but B sees that A has a path to D.
+4: The link between C and D fails.
+5: for C, A doesn't have a path, but B still does. because C can't see that B routes through A.
+6: Infinite loop acquired! C->B->A->C.
+
+(iv) a solution to this problem.
+
+One solution is RIP (Routing Information Protocol). With it, each node tells its neighbours not only what the cost to a particular node is, but also the number of hops needed to get there.
+If the number of hops ever exceeds the number of nodes in the network, the node knows that the route is impossible.
+One problem is that RIP's maximum allowed hops is 16. which means it can't be used in much larger networks.
+(splitting this theoretical large network into smaller networks of less than 16 routers each is advisable).

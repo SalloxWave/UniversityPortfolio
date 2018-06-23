@@ -1,0 +1,5 @@
+Ruby Socket Programming Tutorial:
+https://www.tutorialspoint.com/ruby/ruby_socket_programming.htm
+
+Possible alternative way (might be how you're supposed to do):
+https://docs.ruby-lang.org/en/2.2.0/Socket.html#method-c-socketpair

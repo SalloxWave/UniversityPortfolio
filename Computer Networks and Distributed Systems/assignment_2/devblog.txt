@@ -1,0 +1,61 @@
+2017-02-06: 17:23
+
+Jonas:
+commandline arguments for port-number now integrated.
+ruby automagically includes all arguments into an array called ARGV.
+so just used ARGV[0] in an IF statement and was done.
+
+
+
+18:22:
+we can now search for "norrköping" without a problem. str.force_encoding("UTF-8") is nice.
+
+2017-02-07 16:53
+proxy_client.read Probably waits for the connection to close before continuing.
+this is backed up by the FAST WEBSITE having connection:close by default and the SLOW WEBSITE being unspecified.
+
+Should change our code to read and push in chunks?
+
+
+2017-02-09 16:51:
+Notes:
+This page gives bad request reply.
+http://www.viewster.com/ 
+
+Limitations:
+Can't stream on this page
+http://www.dailymotion.com/video/x5b5gm9_this-7-year-old-boy-started-his-own-recycling-company-and-saved-10k-for-college_lifestyle
+
+No caching is done on our proxy-server.
+
+Can't load, complaining about cookies and javascript
+http://kissanime.ru/
+
+
+
+To Work On:
+5: Imposes no limit
+6: Compatible with all major browsers
+
+USER MANUAL
+COMMENTS
+PRINT SOURCE
+TESTING!
+LIMITATIONS!
+URBANDICTIONARY - CHUNKED?!
+
+Debugging:
+
+No support with Yahoo:
+"The requested URL was not found on this server.
+Please check the URL for proper spelling and capitalization. If you're having trouble locating a destination on Yahoo, try visiting the Yahoo home page or look through a list of Yahoo's online services. Also, you may find what you're looking for if you try searching below.":
+    response = nil made it so that we didn't put response to web browser after redirecting
+
+
+Doesn't load everything from osu.ppy, imdb etc.:
+    Due to accidental newlines/tabulars
+    FIXED
+
+"http://kissanime.ru/"
+    This website checks for cookies and javascript compability and redirects us to a weird path: "/cdn-cgi/l/chk_jschl?jschl_vc=4eec7b9a6f854050a1f90dc387038478&pass=1486728076.886-U2NPZZX0na&jschl_answer=-9931". This doesn't work for our proxy server.
+

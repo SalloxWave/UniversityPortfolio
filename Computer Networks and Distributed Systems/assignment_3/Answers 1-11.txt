@@ -1,0 +1,68 @@
+Assignment 3:
+jonma993
+alejo720
+
+01. What are the first and last packets for the POST request?
+    4 contains the header (actual POST request). The last PACKET sent is 203
+
+02. What is the IP address and the TCP port used by the client computer (source) that is transferring the file to gaia.cs.umass.edu?
+    client: 192.168.1.102 using port 1161
+
+03. What is the IP address of gaia.cs.umass.edu? On what port number is it sending and receiving TCP  segments for this connection?
+    server: 128.119.245.12 using port 80
+
+04. What is the sequence number of the TCP SYN segment that is used to initiate the TCP connection between the client computer and gaia.cs.umass.edu? What is it in the segment that identifies the segment as a SYN segment?
+    Sequence number: 0
+    Flags: 0x002. (or 0000 0000 0010)
+
+05. What is the sequence number of the SYNACK segment sent by gaia.cs.umass.edu to the client computer in reply to the SYN? What is the value of the ACKnowledgement field in the SYNACK segment? How did gaia.cs.umass.edu determine that value? What is it in the segment that identifies the segment as a SYNACK segment?
+    Sequence number: 0.
+    Acknowledgement number: 1 since the packet has successfully arrived
+    Flags: 0x012 (or 0000 0001 0010)
+
+06. What is the sequence number of the TCP segment containing the HTTP POST command?
+    Sequence number: 1
+
+07. Consider the TCP segment containing the HTTP POST as the first segment in the TCP connection. What are the sequence numbers of the first six segments in the TCP connection (including the segment containing the HTTP POST)? At what time was each segment sent? When was the ACK for each segment received? Given the difference between when each TCP segment was sent, and when its acknowledgement was received, what is the RTT value for each of the six segments? What is the EstimatedRTT value (see page 277 in text) after the receipt of each ACK? Assume that the value of the EstimatedRTT is equal to the measured RTT for the first segment, and then is computed using the EstimatedRTT equation on page 277 for all subsequent segments.
+     SEQ #:    TIMESENT:  ACK RECV:  EstimRTT:
+   1 1       | 0.026477 | 0.053937 | 0.0034325
+   2 566     | 0.041737 | 0.077294 | 0.0074480625
+   3 2026    | 0.054026 | 0.124085 | 0.0152744296875
+   4 3486    | 0.054690 | 0.169118 | 0.0276686259765625
+   5 4946    | 0.077405 | 0.217299 | 0.04169679772949218
+   6 6406    | 0.078157 | 0.267802 | 0.06019032301330565
+    we made an external program that made the calculations for us.
+____________________________________________________________________    
+
+old_estimated_rtt = 0
+File.readlines("data.txt").each do |line|
+  timesent, ack_recv = line.split
+  sample_rtt = ack_recv.to_f - timesent.to_f
+  estimated_rtt = (1-0.125)*old_estimated_rtt + (0.125 * sample_rtt)
+  old_estimated_rtt = estimated_rtt
+  puts "Estimated rtt: #{estimated_rtt}"
+end
+____________________________________________________________________    
+    
+08. What is the length of each of the first six TCP segments?
+    1 619
+    2 1514
+    3 1514
+    4 1514
+    5 1514
+    6 1514
+    
+09. What is the minimum amount of available buffer space advertised at the receiver for the entire trace? Does the lack of receiver buffer space ever throttle the sender?
+    packet 2: SYN ACK: 5840 B
+    No. the Window Size Value is never smaller than the packet being sent.
+    
+10. Are there any retransmitted segments in the trace file? What did you check for (in the trace) in order to answer this question?
+    a: yes there are.
+    b: first jonma993 counted the TCP-segments and the ACKs (122 vs 77)
+       then we figured there should be an easier way: Any time the the TCP segment dips in size it's an indication of a dropped packet. We also checked the end-HTTP packet where the TCP segments were fused together. Wireshark added the information: [122 Reassembled TCP Segments (164090 bytes): ...]
+    
+11. How much data does the receiver typically acknowledge in an ACK? Can you identify cases where the receiver is ACKing every other received segment (see Table 3.2 on page 285 in the text).
+    a: the ACK packet contains 40 bytes plus 20 bytes of header.
+    b: Around timestamp 0.899423 the server starts to throttle how many packets it acknowledges. first 5, then 4 and then keeping it steady at 3 (that is to say every other packet).
+    
+12. What is the throughput (bytes transferred per unit time) for the TCP connection? Explain how you calculated this value.

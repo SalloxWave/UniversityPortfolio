@@ -1,0 +1,14 @@
+Task A: Now, based on questions 1-12, please write two paragraphs explaining and discussing your observations from the above practice questions. One paragraph should describe and discuss the connections at a high level. The second paragraph should discuss the impact of RTT estimates, packet losses, and interpreted packet loss events. Note that your answer may benefit from explaining and/or referring to some of your observations from the practice questions explicitly. Note that, similar to previous assignments, you are expected to convince us that you understand these aspects of TCP. 
+
+
+  High-level:
+the first step when uploading a file is to open a connection. After an initial 3-way handshake between the client (sending to port 80) and server (sending to port 1161). after this is done the client starts sending the file. this is done by seperating the file in to many smaller TCP Segments, each no larger than 1560 Bytes. After the server has recieved a TCP Segment is sends an ACK back to the client, if an ACK is not sent, the client assumes the file was lost in transit and cuts down the size of the segment and sends it again (it is assumed that a smaller segment has a smaller chance of being lost.)
+
+  Low-Level:
+this is a very oddly phrased question if you ask me. the question's scope is way too broad.
+the impact of RTT estimates? it doesn't really impact anything, does it?
+the client notices that too much time has passed since sending the packet and no ACK has yet to be recieved. thus a packet was lost.
+the next time it sends the packet, the estimated RTT is increased to give more time for the ACK to arrive?
+
+
+
