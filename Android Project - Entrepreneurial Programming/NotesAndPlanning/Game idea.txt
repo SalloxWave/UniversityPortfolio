@@ -1,0 +1,52 @@
+Name ideas:
+- Speed Eraser
+- Erase the Line
+- Erase Speeder
+- Paint evolution
+- Paint Erase Speeder
+
+Theme:
+- Paper with line(s).
+- The player is an eraser.
+- Multiple skins to eraser/paper/lines.
+- Player should get a colorful feeling while playing.
+- Player should get a speed run/rhythm feeling.
+- (Erase annoying lines/doodles from school desktops).
+
+Gameplay:
+- Player's goal is to erase all lines as fast as possible/fast enough.
+- Line can be any direction and can cross.
+- Eraser gets smaller as the level ends, which encourages precision
+- Two erasers at the same time with a line for each eraser (split screen or see more zoomed out)
+- Jump over obstacles and between papers.
+- Minus points if not jumping over obstacles (player touches obstacles).
+- (Time based minus points if player stops erasing when there is no obstacles/jumps to another paper).
+- Player loses if touched by edge of screen.
+- Different medals/score based on % amount erased.
+- Sudden change of size of line which forces player to zoom.
+- Extra doodles/lines on the side to gain extra score.
+
+Restrictions:
+- (When releasing finger, you can only start at where you were last. Basically where the line continues).
+
+Controls:
+- Hold and drag to erase line
+- (Hold and drag to follow line).
+- Release finger to "jump".
+- After releasing, press where to continue, then start holding and draging again.
+
+Shop:
+- Skins/custom color for eraser.
+- Different styles on erasers.
+- Temporary bigger eraser (1 game use)
+
+Obstacles:
+- Ad on level, if touch, player have to watch extra ad after game.
+- Ruler, pens, daub and other paper-related objects.
+- Obstactle could be something you don't want to erase, for example a post it note.
+
+Custom maps shop:
+- Skins/custom color for paper/line.
+- Funny/Interesting obstacles.
+- Background on paper.
+- Environment between papers. For example water.

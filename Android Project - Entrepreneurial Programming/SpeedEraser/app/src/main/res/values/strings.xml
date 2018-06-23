@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">SpeedEraserMain</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">vAfm7M90ZYJw4NOoWBnlmXizN</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">8Y9YYzyNR30oXyRxFcmsi8SYSgV0NAzdr3zDjHro6R3RO60lPi</string>
+
+    <!-- Sign in activity -->
+    <string name="anonymous_signin_button">Continue without signing in</string>
+    <string name="link_text">Select sign in method below to link your anonymous account</string>
+
+    <!-- Nickname activity -->
+    <string name="nickname_header">Welcome! Please select your nickname for the game</string>
+    <string name="nickname_continue">Continue</string>
+    <string name="nickname_placeholder">Input nickname</string>
+
+    <!-- Main menu activity -->
+    <string name="logo_content_description">Game logo</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_settings">Settings</string>
+
+    <!-- Fragment home -->
+    <string name="home_header">Welcome to Speed Eraser</string>
+    <string name="home_nickname_placeholder">Loading nickname…</string>
+    <string name="home_record_placeholder">Loading record…</string>
+    <string name="home_record_header">Record</string>
+    <string name="btn_play">Play</string>
+
+    <!-- Fragment settings -->
+    <string name="btn_logout">Logout</string>
+    <string name="btn_link">Link account with Google/Twitter</string>
+    <string name="btn_invite">Invite friends to play</string>
+    <string name="tv_signin_method_header">You are signed in with</string>
+    <string name="tv_signin_method_anonymous">You are signed in as a guest</string>
+
+    <!-- Invite strings -->
+    <string name="invitation_title">Speed Eraser</string>
+    <string name="invitation_message">Try out Speed Eraser, an awesome game. Download from Google Play</string>
+    <string name="invitation_html_content">
+        You have been invited to try Speed Eraser. Click %%APPINVITE_LINK_PLACEHOLDER%% to download now for free
+    </string>
+    <string name="invitation_email_subject">Invitation to play Speed Eraser</string>
+    <string name="invitation_call_to_action_text">Get on Google Play</string>
+
+    <!-- Custom event strings -->
+    <string name="event_nickname_choice">nickname_choice</string>
+    <string name="event_nickname_parameter">tries</string>
+    <string name="event_friend_invite">friend_invite</string>
+    <string name="event_friend_invite_parameter">amount</string>
+    <string name="event_signin">sign_in</string>
+    <string name="event_signin_parameter">choice</string>
+    <string name="event_geofence_is_entered">geofence_is_entered</string>
+    <string name="event_pressed_play">pressed_play</string>
+
+    <!-- Notification strings -->
+    <string name="notification_channel_test_id">channel_test</string>
+    <string name="notification_channel_test_name">Testname</string>
+    <string name="notification_channel_test_description">This is a notification test</string>
+
+    <!-- Geofence strings -->
+    <string name="geo_fence_motala">Motala City</string>
+    <string name="geofence_transition_notification_text">
+        Click to return to Speed Eraser
+    </string>
+
+    <!-- Buttons strings -->
+    <string name="add_geofences">Add geofences</string>
+    <string name="remove_geofences">Remove geofences</string>
+
+    <string name="geofences_added">Geofences added</string>
+    <string name="geofences_removed">Geofences removed</string>
+
+    <!-- Error strings -->
+    <string name="geofence_not_available">Geofence service is not available now</string>
+    <string name="geofence_too_many_geofences">Your app has registered too many geofences</string>
+    <string name="geofence_too_many_pending_intents">
+        You have provided too many PendingIntents to the addGeofences() call
+    </string>
+    <string name="unknown_geofence_error">
+        Unknown error: the Geofence service is not available now
+    </string>
+    <string name="geofence_transition_invalid_type">
+        Geofence transition error: invalid transition type %1$d
+    </string>
+
+    <!-- Transition type strings -->
+    <string name="geofence_transition_entered">Entered</string>
+    <string name="geofence_transition_exited">Exited</string>
+    <string name="unknown_geofence_transition">Unknown Transition</string>
+</resources>

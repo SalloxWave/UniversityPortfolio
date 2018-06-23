@@ -1,0 +1,10 @@
+- Idea:
+• Lines on papers
+• Jump between papers/obstacles, by releasing finger
+• Chased by an eraser, player is a stick figure, falling down/erased from line if not too quick
+
+- Game modes:
+• Tutorial, diving directly into the game theme and fast spaced gameplay
+• Drag, speed varies based on player drag speed (loops possible)
+• Constant speed, player holds to follow (loops only possible if pausing, 
+which can disturb the game flow).

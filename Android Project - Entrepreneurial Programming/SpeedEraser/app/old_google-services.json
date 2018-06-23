@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "719778023577",
+    "firebase_url": "https://speederaser-803df.firebaseio.com",
+    "project_id": "speederaser-803df",
+    "storage_bucket": "speederaser-803df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719778023577:android:28847198646542c3",
+        "android_client_info": {
+          "package_name": "com.example.alexander.speederasermain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719778023577-ri2vs25sun1iv9pe1klkajkchndkp18r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.alexander.speederasermain",
+            "certificate_hash": "845bf585f3fc41f61887549e1e0f9a052ab167ec"
+          }
+        },
+        {
+          "client_id": "719778023577-tmmgl6g8rj7davs2napukegjbaf6u615.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm4IBXM9BgpC1POVwQ1-ZF7fBubvIbajc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "719778023577-tmmgl6g8rj7davs2napukegjbaf6u615.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

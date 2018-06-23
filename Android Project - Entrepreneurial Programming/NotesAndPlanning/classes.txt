@@ -1,0 +1,17 @@
+• MainActivity:
+The menu that will lead to the game and other menu options
+
+• GameThread:
+Where the game loop will take place, here the game will updated, then drawn in a specified FPS
+
+• GamePanel:
+Where the game graphically will be drawn and updated as called by the game thread
+
+• GameObject: 
+Everything that will have position, speed or height and can collide
+
+• Player: 
+This will basically be the eraser, score and 
+
+• Line:
+The line for the player to erase that the camera will follow

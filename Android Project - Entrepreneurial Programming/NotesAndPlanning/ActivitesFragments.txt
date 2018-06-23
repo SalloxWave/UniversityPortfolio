@@ -1,0 +1,30 @@
+Log in with Google
+
+Main Menu
+	Play
+	Editor
+	Leaderboards
+	Options
+
+Play
+	Adventure
+	Custom maps
+	Customize Eraser
+
+Editor
+	Create map
+	Edit map
+	Shop
+
+Leaderboards
+	Adventure
+	Best rated maps
+	Statistics	
+
+Options
+	Music (volume)
+	Sound effects (volume)
+	Notifications (on/off)
+	
+
+

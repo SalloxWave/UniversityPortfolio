@@ -1,0 +1,88 @@
+<resources>
+    <string name="app_name">SpeedEraserMain</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">vAfm7M90ZYJw4NOoWBnlmXizN</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">8Y9YYzyNR30oXyRxFcmsi8SYSgV0NAzdr3zDjHro6R3RO60lPi</string>
+
+    <!-- Sign in activity -->
+    <string name="anonymous_signin_button">Fortsätt som anonym</string>
+    <string name="link_text">Välj inloggning nedanför för att länka ditt anonyma konto</string>
+
+    <!-- Nickname activity -->
+    <string name="nickname_header">Välkommen, välj ditt smeknamn för spelet</string>
+    <string name="nickname_continue">Fortsätt</string>
+    <string name="nickname_placeholder">Skriv in smeknamn</string>
+
+    <!-- Main menu activity -->
+    <string name="logo_content_description">Spelets logotyp</string>
+    <string name="tab_home">Hem</string>
+    <string name="tab_settings">Inställningar</string>
+
+    <!-- Fragment home -->
+    <string name="home_header">Välkommen till Speed Eraser</string>
+    <string name="home_nickname_placeholder">Laddar smeknamn…</string>
+    <string name="home_record_placeholder">Laddar rekord…</string>
+    <string name="home_record_header">Rekord</string>
+    <string name="btn_play">Spela</string>
+
+    <!-- Fragment settings -->
+    <string name="btn_logout">Logga ut</string>
+    <string name="btn_link">Länka konto med Google/Twitter</string>
+    <string name="btn_invite">Bjud in vänner att spela</string>
+    <string name="tv_signin_method_header">Du är inloggad med</string>
+    <string name="tv_signin_method_anonymous">Du är inloggad som gäst</string>
+
+    <!-- Invite strings -->
+    <string name="invitation_title">Speed Eraser</string>
+    <string name="invitation_message">Testa Speed Eraser, ett fantastiskt spel. Ladda ner från Google Play</string>
+    <string name="invitation_html_content">
+		Du har blivit inbjuden att spela Speed Eraser. Klicka %%APPINVITE_LINK_PLACEHOLDER%% för att ladda ner från Google play
+    </string>
+    <string name="invitation_email_subject">Inbjuden att spela Speed Eraser</string>
+    <string name="invitation_call_to_action_text">Ladda ner från Google Play</string>
+
+    <!-- Custom event strings -->
+    <string name="event_nickname_choice">nickname_choice</string>
+    <string name="event_nickname_parameter">tries</string>
+    <string name="event_friend_invite">friend_invite</string>
+    <string name="event_friend_invite_parameter">amount</string>
+    <string name="event_signin">sign_in</string>
+    <string name="event_signin_parameter">choice</string>
+    <string name="event_geofence_is_entered">geofence_is_entered</string>
+    <string name="event_pressed_play">pressed_play</string>
+
+    <!-- Notification strings -->
+    <string name="notification_channel_test_id">channel_test</string>
+    <string name="notification_channel_test_name">Testname</string>
+    <string name="notification_channel_test_description">This is a notification test</string>
+
+    <!-- Geofence strings -->
+    <string name="geo_fence_motala">Motala City</string>
+    <string name="geofence_transition_notification_text">
+        Klicka för att återgå till Speed Eraser
+    </string>
+
+    <!-- Buttons strings -->
+    <string name="add_geofences">Add geofences</string>
+    <string name="remove_geofences">Remove geofences</string>
+
+    <string name="geofences_added">Geofences added</string>
+    <string name="geofences_removed">Geofences removed</string>
+
+    <!-- Error strings -->
+    <string name="geofence_not_available">Geofence service is not available now</string>
+    <string name="geofence_too_many_geofences">Your app has registered too many geofences</string>
+    <string name="geofence_too_many_pending_intents">
+        You have provided too many PendingIntents to the addGeofences() call
+    </string>
+    <string name="unknown_geofence_error">
+        Unknown error: the Geofence service is not available now
+    </string>
+    <string name="geofence_transition_invalid_type">
+        Geofence transition error: invalid transition type %1$d
+    </string>
+
+    <!-- Transition type strings -->
+    <string name="geofence_transition_entered">Du är nu inom</string>
+    <string name="geofence_transition_exited">Du gick precis ut från</string>
+    <string name="unknown_geofence_transition">Unknown Transition</string>
+</resources>
