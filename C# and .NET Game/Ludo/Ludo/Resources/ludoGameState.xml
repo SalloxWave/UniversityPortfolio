@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LudoGameState>
+  <PlayerCount>4</PlayerCount>
+  <CurrentPlayer>3</CurrentPlayer>
+  <DiceTossed>False</DiceTossed>
+  <GameOver>False</GameOver>
+  <DiceHistory />
+  <Winners />
+  <Squares>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>None</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Red</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Red</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Red</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Red</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Green</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Green</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Green</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Green</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Blue</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Blue</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Blue</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Blue</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Yellow</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Yellow</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Yellow</TokenColor>
+      <Token />
+    </Square>
+    <Square>
+      <TokenColor>Yellow</TokenColor>
+      <Token />
+    </Square>
+  </Squares>
+  <HomeYards>
+    <HomeYard>
+      <TokenColor>Red</TokenColor>
+      <Tokens>
+        <Token>
+          <TokenID>4</TokenID>
+        </Token>
+        <Token>
+          <TokenID>3</TokenID>
+        </Token>
+        <Token>
+          <TokenID>2</TokenID>
+        </Token>
+        <Token>
+          <TokenID>1</TokenID>
+        </Token>
+      </Tokens>
+    </HomeYard>
+    <HomeYard>
+      <TokenColor>Green</TokenColor>
+      <Tokens>
+        <Token>
+          <TokenID>8</TokenID>
+        </Token>
+        <Token>
+          <TokenID>7</TokenID>
+        </Token>
+        <Token>
+          <TokenID>6</TokenID>
+        </Token>
+        <Token>
+          <TokenID>5</TokenID>
+        </Token>
+      </Tokens>
+    </HomeYard>
+    <HomeYard>
+      <TokenColor>Blue</TokenColor>
+      <Tokens>
+        <Token>
+          <TokenID>12</TokenID>
+        </Token>
+        <Token>
+          <TokenID>11</TokenID>
+        </Token>
+        <Token>
+          <TokenID>10</TokenID>
+        </Token>
+        <Token>
+          <TokenID>9</TokenID>
+        </Token>
+      </Tokens>
+    </HomeYard>
+    <HomeYard>
+      <TokenColor>Yellow</TokenColor>
+      <Tokens>
+        <Token>
+          <TokenID>16</TokenID>
+        </Token>
+        <Token>
+          <TokenID>15</TokenID>
+        </Token>
+        <Token>
+          <TokenID>14</TokenID>
+        </Token>
+        <Token>
+          <TokenID>13</TokenID>
+        </Token>
+      </Tokens>
+    </HomeYard>
+  </HomeYards>
+  <Players>
+    <Player>
+      <TokenColor>Red</TokenColor>
+      <Winner>False</Winner>
+      <FinishedTokens>0</FinishedTokens>
+    </Player>
+    <Player>
+      <TokenColor>Green</TokenColor>
+      <Winner>False</Winner>
+      <FinishedTokens>0</FinishedTokens>
+    </Player>
+    <Player>
+      <TokenColor>Blue</TokenColor>
+      <Winner>False</Winner>
+      <FinishedTokens>0</FinishedTokens>
+    </Player>
+    <Player>
+      <TokenColor>Yellow</TokenColor>
+      <Winner>False</Winner>
+      <FinishedTokens>0</FinishedTokens>
+    </Player>
+  </Players>
+</LudoGameState>

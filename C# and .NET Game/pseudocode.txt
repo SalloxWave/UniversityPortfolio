@@ -1,0 +1,135 @@
+class GUI
+{
+	Ludo ludo;
+	Player[] players = new Player[];
+	
+	static void main()
+	{
+		players = new Player[playerCount];
+		for i
+			Player player = new Player();
+			player.TokenColor = SelectedColor;			
+			players[i] = player;
+
+		ludo = new Ludo(players);
+	}
+	
+	token_click
+	{
+		ludo.SelectToken(event.ID);
+
+		Player player = ludo.GetCurrentPlayer();
+		player.SelectToken();
+		if (!player.CanPlay)  //Ex: no 6 dice roll
+		{
+			return;
+		}
+
+		//Select token user clicked on
+		player.SelectToken(event.GetPosition());
+		//Decided to move out
+		if (inHomeYard(token))
+		{
+			//Moves out current player's selected token
+			ludo.MoveOutToken();
+		}
+		//Decided to move token
+		else
+		{
+			ludo.Step();
+			ludo.HandleCollison();
+		}
+	}
+	
+	roll_click()
+	{
+		ludo.RollDice();
+		int result = ludo.Dice.Roll();
+		//Limit: 2 rolls
+		if (ludo.Dice.GetHistory(3) only 6)
+		{
+			ludo.NextPlayer();
+		}
+		//Can move token or move out token
+		else if(result == 6)
+		{
+			ludo.GetCurrentPlayer().CanMoveOut = true;
+		}
+		else
+		{
+
+		}
+	}
+}
+
+class Ludo
+{
+	Dice dice;
+
+	public Ludo(Player[] players)
+	{
+		this.players = players;		
+	}
+
+	public void InitGame()
+	{
+		buildBoard();		
+	}
+
+	private void buildBoard()
+	{
+		initHomeYard();
+	}
+
+	public void DecidePlayOrder()
+	{
+		//Roll a dice for each player and rearrange array accordingly
+	}
+
+	public void MoveOutToken()
+	{
+		TokenColor color = players[currentPlayer].TokenColor;		
+		Token token = homeYard[color].take();
+		Point pos = getStartingPositionByColor(color);
+		token.Move(pos);
+	}
+
+	private Point getStartingPositionByColor(TokenColor color)
+	{
+
+	}
+
+	public void Step(int tokenId)
+	{
+		Token token = players[currentPlayer].GetSelectedToken();
+		int newPos = token.StepCount + dice.result;
+		if (squares[newPos].Occupied)
+		{
+			if (squares[newPos].GetPlayer().TokenColor != token.TokenColor)
+			{
+				homeYard
+			}
+		}
+		squares[++dice.result] = 
+	}
+
+	public void HandleCollision()
+	{
+		//Get where the two tokens has collided
+		//Return to homeyard, the token of these two that aren't current player's
+	}
+
+	public void initHomeYard()
+	{
+
+	}
+
+	public void NextPlayer()
+	{
+		currPlayer++;
+		dice.ClearHistory();
+	}
+}
+
+
+

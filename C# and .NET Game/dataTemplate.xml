@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LudoGameState>
+  <PlayerCount></PlayerCount>
+  <CurrentPlayer></CurrentPlayer>
+  <DiceTossed></DiceTossed>
+  <GameOver></GameOver>
+  <DiceHistory>
+	  <DiceResult></DiceResult>
+	  ...
+  </DiceHistory>
+  <Winners>
+	  <Winner></Winner>
+	  <Winner></Winner>
+	  <Winner></Winner>
+	  <Winner></Winner>
+  </Winners>
+  <Squares>
+	  <Square>
+		  <TokenColor></TokenColor>
+		  <Token>
+			  <TokenColor></TokenColor>
+			  <TokenID></TokenID>
+			  <StepCount></StepCount>
+		  </Token>		
+	  </Square>
+	  <Square>
+		  <TokenColor></TokenColor>
+		  <Token />		
+	  </Square>
+  </Squares>
+  <HomeYards>
+	  <HomeYard>
+		  <TokenColor></TokenColor>
+		  <Tokens>
+			  <Token>
+          <TokenID></TokenID>
+			  </Token>
+		  </Tokens>
+	  </HomeYard>
+  </HomeYards>
+  <Players>
+	  <Player>
+		  <TokenColor></TokenColor>
+		  <Winner></Winner>
+		  <FinishedTokens></FinishedTokens>
+	  </Player>
+  </Players>
+</LudoGameState>

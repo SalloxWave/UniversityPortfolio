@@ -1,0 +1,3 @@
+InvalidPlayerCountException
+DiceTossException
+GameOverException

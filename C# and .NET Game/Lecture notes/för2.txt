@@ -1,0 +1,35 @@
+sealed class: Prevents other classes to inherit from the class
+class A {}
+sealed class B : A {}
+
+Diamond structure: Why multiple inheritance is bad. Could inherit move() twice and move() can be overrided on the way.
+
+GLAxD
+GLAxD
+
+Composition: Doesn't have any meaning on its own
+
+Dependency Injection (DI):
+
+Same car with different engines
+engine has interface
+electronics of the car has interface
+
+DI: If you want to have a car, ask for the engine and say what you attributes you want.
+//Not DI
+public Human()
+{
+	rHand = new Hand();
+	lHand = new Hand();
+}
+//is DI
+public Human(rHand, lHand)
+{
+	this.rHand =rHand;
+	this.lHand = lHand
+}
+
+Presentation p = new Presentation(new Logic(new Data)));
+
+Three-Tier Architecture:
+

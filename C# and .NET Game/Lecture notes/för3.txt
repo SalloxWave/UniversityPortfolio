@@ -1,0 +1,3 @@
+Data binding example: Textbox with name binded to property name in class. Property will update as user types in the name
+
+One-way binding and two-way binding
